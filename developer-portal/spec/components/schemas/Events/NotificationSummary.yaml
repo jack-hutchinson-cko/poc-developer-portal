@@ -1,7 +1,7 @@
 type: object
 properties:
   id:
-    $ref: './NotificationId.yaml'
+    $ref: '#/components/schemas/NotificationId'
   url:
     type: string
     description: The notification endpoint

@@ -1,8 +1,8 @@
 type: object
 description: A card payment source
 allOf:
-  - $ref: "../PaymentRequestSource.yaml"
-  - $ref: "../RequestSources/03_PaymentRequestCardSource.yaml"
+  - $ref: "#/components/schemas/PaymentRequestSource"
+  - $ref: "#/components/schemas/03_PaymentRequestCardSource"
   - type: object
     properties:
       number:

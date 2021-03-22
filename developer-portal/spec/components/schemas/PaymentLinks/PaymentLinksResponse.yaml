@@ -24,6 +24,6 @@ properties:
       redirect:
         type: object
         allOf:
-          - $ref: '../Links/Link.yaml'
+          - $ref: '#/components/schemas/Link'
         example:
           href: 'https://pay.checkout.com/link/ELqQJXdXzabU'

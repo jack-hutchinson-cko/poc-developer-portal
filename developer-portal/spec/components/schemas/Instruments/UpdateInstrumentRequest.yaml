@@ -23,11 +23,11 @@ properties:
             billing_address:
                 description: The billing address of the account holder
                 allOf:
-                  - $ref: "../Address.yaml"
+                  - $ref: "#/components/schemas/Address"
             phone:
                 description: The phone number of the account holder
                 allOf:
-                    - $ref: "../Events/Phone.yaml"
+                    - $ref: "#/components/schemas/Phone"
     customer:
         type: object
         description: The customer attached to the instrument

@@ -5,7 +5,7 @@ type: object
 description: 'Sofort Source'
 allOf:
   -
-    $ref: '../PaymentResponseSource.yaml'
+    $ref: '#/components/schemas/PaymentResponseSource'
   -
     type: object
     properties:

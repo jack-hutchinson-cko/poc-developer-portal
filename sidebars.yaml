@@ -66,5 +66,5 @@ training:
   - group: Checkout.com
     expanded: true
     pages:
-      - page: openapi/reference.page.yaml/*
+      - page: openapi/cko-reference.page.yaml/*
 

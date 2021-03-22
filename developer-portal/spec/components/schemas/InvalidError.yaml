@@ -1,5 +1,5 @@
 allOf:
-  - $ref: "./Error.yaml"
+  - $ref: "#/components/schemas/Error"
   - type: object
     properties:
       details:

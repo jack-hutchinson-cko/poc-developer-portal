@@ -3,9 +3,9 @@ description: The destination of the payout.<br><i>Use to pay out to a card</i>.
 discriminator:
   propertyName: type
   mapping:
-    token: './RequestDestinations/01_PaymentRequestTokenDestination.yaml'
-    id: './RequestDestinations/02_PaymentRequestIdDestination.yaml'
-    card: './RequestDestinations/03_PaymentRequestCardDestination.yaml'
+    token: '#/components/schemas/01_PaymentRequestTokenDestination'
+    id: '#/components/schemas/02_PaymentRequestIdDestination'
+    card: '#/components/schemas/03_PaymentRequestCardDestination'
 required:
   - type
 properties:
@@ -13,8 +13,3 @@ properties:
     type: string
     description: The payout destination type
     example: "token"
-  token: 
-    type: string  
-    description: The Checkout.com token (e.g., a card or digital wallet token)
-    pattern: "^(tok)_(\\w{26})$"
-    example: "tok_4gzeau5o2uqubbk6fufs3m7p54"

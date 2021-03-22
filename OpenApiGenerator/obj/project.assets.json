@@ -4558,19 +4558,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/jack.hutchinson/.nuget/packages/": {}
+    "/Users/Christina.Webster/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jack.hutchinson/Documents/Repos/Redocly-POC/OpenApiGenerator/OpenApiGenerator.csproj",
+      "projectUniqueName": "/Users/Christina.Webster/Documents/GitHub/Redocly-POC/OpenApiGenerator/OpenApiGenerator.csproj",
       "projectName": "OpenApiGenerator",
-      "projectPath": "/Users/jack.hutchinson/Documents/Repos/Redocly-POC/OpenApiGenerator/OpenApiGenerator.csproj",
-      "packagesPath": "/Users/jack.hutchinson/.nuget/packages/",
-      "outputPath": "/Users/jack.hutchinson/Documents/Repos/Redocly-POC/OpenApiGenerator/obj/",
+      "projectPath": "/Users/Christina.Webster/Documents/GitHub/Redocly-POC/OpenApiGenerator/OpenApiGenerator.csproj",
+      "packagesPath": "/Users/Christina.Webster/.nuget/packages/",
+      "outputPath": "/Users/Christina.Webster/Documents/GitHub/Redocly-POC/OpenApiGenerator/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/jack.hutchinson/.nuget/NuGet/NuGet.Config"
+        "/Users/Christina.Webster/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

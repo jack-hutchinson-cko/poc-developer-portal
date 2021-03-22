@@ -5,7 +5,7 @@ type: object
 description: 'OXXO Source'
 allOf:
   -
-    $ref: '../PaymentResponseSource.yaml'
+    $ref: '#/components/schemas/PaymentResponseSource'
   -
     type: object
     allOf:

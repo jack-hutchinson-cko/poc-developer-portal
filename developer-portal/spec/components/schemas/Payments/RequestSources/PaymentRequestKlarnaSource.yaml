@@ -5,7 +5,7 @@ type: object
 description: 'Klarna Source'
 allOf:
   -
-    $ref: '../PaymentRequestSource.yaml'
+    $ref: '#/components/schemas/PaymentRequestSource'
   -
     type: object
     required:

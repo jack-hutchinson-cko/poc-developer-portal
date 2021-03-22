@@ -2,7 +2,7 @@ type: object
 description: 'KNet Source'
 allOf:
   -
-    $ref: '../PaymentRequestSource.yaml'
+    $ref: '#/components/schemas/PaymentRequestSource'
   -
     type: object
     required:

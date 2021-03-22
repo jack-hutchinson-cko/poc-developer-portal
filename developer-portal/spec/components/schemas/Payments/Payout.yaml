@@ -1,12 +1,9 @@
 type: object
 required:
-  - source
-  - source.type
-  - source.token
   - currency
 properties:
   destination:
-    $ref: './PaymentRequestDestination.yaml'
+    $ref: '#/components/schemas/PaymentRequestDestination'
   amount:
     type: integer
     description: |
@@ -53,7 +50,7 @@ properties:
       Providing this field will automatically set `capture` to true
 
     allOf:
-      - $ref: '../Timestamp.yaml'
+      - $ref: '#/components/schemas/Timestamp'
   customer:
     type: object
     description: The customer's details
@@ -77,7 +74,7 @@ properties:
         maxLength: 255
         example: "Jack Napier"
   billing_descriptor:
-    $ref: './BillingDescriptor.yaml'
+    $ref: '#/components/schemas/BillingDescriptor'
   shipping:
     type: object
     description: The shipping details
@@ -85,13 +82,13 @@ properties:
       address:
         description: The shipping address
         allOf:
-          - $ref: '../Address.yaml'
+          - $ref: '#/components/schemas/Address'
       phone:
         description: The phone number associated with the shipping address
         allOf:
-          - $ref: '../PhoneNumber.yaml'
+          - $ref: '#/components/schemas/PhoneNumber'
   3ds:
-    $ref: './3dsRequest.yaml'
+    $ref: '#/components/schemas/3dsRequest'
   previous_payment_id:
     type: string
     description: |
@@ -99,7 +96,7 @@ properties:
       an existing payment identifier from the recurring series or the Scheme Transaction Id
     example: "pay_fun26akvvjjerahhctaq2uzhu4"
   risk:
-    $ref: './RiskRequest.yaml'
+    $ref: '#/components/schemas/RiskRequest'
   success_url:
     type: string
     format: uri
@@ -115,9 +112,9 @@ properties:
   payment_ip:
     description: The IP address used to make the payment. Required for some risk checks
     allOf:
-      - $ref: '../IPAddress.yaml'
+      - $ref: '#/components/schemas/IPAddress'
   recipient:
-    $ref: './PaymentRecipient.yaml'
+    $ref: '#/components/schemas/PaymentRecipient'
   processing:
     type: object
     description: Use the processing object to influence or override the data sent during card processing
@@ -128,8 +125,8 @@ properties:
         properties:
           reference:
             type: string
-            description: Merchant's unique customer ID.
-            maxLength: 19
+            description: Merchant's unique customer ID.<br> <i>Alphanumeric characters only</i>.
+            maxLength: 16
           accountNumber:
             type: string
             description: The account number.

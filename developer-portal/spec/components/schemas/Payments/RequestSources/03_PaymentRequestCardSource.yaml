@@ -1,7 +1,7 @@
 type: object
 description: A card payment source
 allOf:
-  - $ref: "../PaymentRequestSource.yaml"
+  - $ref: "#/components/schemas/PaymentRequestSource"
   - type: object
     required:
       - type
@@ -46,8 +46,8 @@ allOf:
       billing_address:
         description: The billing address of the cardholder
         allOf:
-          - $ref: '../../Address.yaml'
+          - $ref: '#/components/schemas/Address'
       phone:
         description: The phone number of the cardholder
         allOf:
-          - $ref: '../../PhoneNumber.yaml'
+          - $ref: '#/components/schemas/PhoneNumber'

@@ -1,7 +1,7 @@
 type: object
 description: Card Token Request
 allOf:
-  - $ref: './TokenRequest.yaml'
+  - $ref: '#/components/schemas/TokenRequest'
   - type: object
     required:
       - number
@@ -38,8 +38,8 @@ allOf:
       billing_address:
         description: The payment source owner's billing address
         allOf:
-          - $ref: '../Address.yaml'
+          - $ref: '#/components/schemas/Address'
       phone:
         description: The payment source owner's phone number
         allOf:
-          - $ref: '../PhoneNumber.yaml'
+          - $ref: '#/components/schemas/PhoneNumber'

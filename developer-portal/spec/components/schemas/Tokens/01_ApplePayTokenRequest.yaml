@@ -1,7 +1,7 @@
 type: object
 description: Apple Pay Token Request
 allOf:
-  - $ref: './TokenRequest.yaml'
+  - $ref: '#/components/schemas/TokenRequest'
   - type: object
     properties:
       token_data:

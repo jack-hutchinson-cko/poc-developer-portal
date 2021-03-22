@@ -1,4 +1,4 @@
 type: object
 description: Apple Pay Token Response
 allOf:
-  - $ref: './TokenResponse.yaml'
+  - $ref: '#/components/schemas/TokenResponse'

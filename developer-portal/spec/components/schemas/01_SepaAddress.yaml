@@ -22,7 +22,7 @@ properties:
     description: The address state
     example: Berlin
   zip:
-    type: integer
+    type: string
     description: The address zip/postal code
     example: 10117
   country:

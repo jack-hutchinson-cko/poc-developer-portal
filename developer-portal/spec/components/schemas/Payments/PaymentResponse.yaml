@@ -14,11 +14,11 @@ properties:
   id:
     description: The payment's unique identifier
     allOf:
-      - $ref: './PaymentId.yaml'
+      - $ref: '#/components/schemas/PaymentId'
   action_id:
     description: The unique identifier for the action performed against this payment
     allOf:
-      - $ref: './ActionId.yaml'
+      - $ref: '#/components/schemas/ActionId'
   amount:
     type: integer
     description: The payment amount
@@ -60,7 +60,7 @@ properties:
     type: object
     description: Provides 3D Secure enrollment status if the payment was downgraded to non-3D Secure
     allOf:
-      - $ref: './3dsEnrollmentData.yaml'
+      - $ref: '#/components/schemas/3dsEnrollmentData'
     example:
       downgraded: true
       enrolled: N
@@ -77,21 +77,21 @@ properties:
     description: The source of the payment
     type: object
     allOf:
-      - $ref: './PaymentResponseSource.yaml'
+      - $ref: '#/components/schemas/PaymentResponseSource'
   #destination:
     #description: The destination of the payment
     #type: object
     #allOf:
-     # - $ref: '../components/schemas/PaymentResponseDestination'
+     # - $ref: '#/components/schemas/PaymentResponseDestination'
   customer:
     type: object
     description: The customer associated with the payment, if provided in the request
     allOf:
-      - $ref: './PaymentResponseCustomer.yaml'
+      - $ref: '#/components/schemas/PaymentResponseCustomer'
   processed_on:
     description: The date/time the payment was processed
     allOf:
-      - $ref: '../ServerTimestamp.yaml'
+      - $ref: '#/components/schemas/ServerTimestamp'
   reference:
     type: string
     description: Your reference for the payment
@@ -130,27 +130,27 @@ properties:
       self:
         type: object
         allOf:
-          - $ref: '../Links/Link.yaml'
+          - $ref: '#/components/schemas/Link'
         description: The URI of the payment
       actions:
         type: object
         allOf:
-          - $ref: '../Links/Link.yaml'
+          - $ref: '#/components/schemas/Link'
         description: A link to the payment's associated actions
       void:
         type: object
         allOf:
-          - $ref: '../Links/Link.yaml'
+          - $ref: '#/components/schemas/Link'
         description: A link to void the payment, where applicable
       capture:
         type: object
         allOf:
-          - $ref: '../Links/Link.yaml'
+          - $ref: '#/components/schemas/Link'
         description: A link to capture the payment, where applicable
       refund:
         type: object
         allOf:
-          - $ref: '../Links/Link.yaml'
+          - $ref: '#/components/schemas/Link'
         description: A link to refund the payment, where applicable
     example:
       self:

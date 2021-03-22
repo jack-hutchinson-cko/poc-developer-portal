@@ -3,7 +3,7 @@ description: A token payment source
 required:
   - token
 allOf:
-  - $ref: "../PaymentRequestSource.yaml"
+  - $ref: "#/components/schemas/PaymentRequestSource"
   - type: object
     properties:
       token:
@@ -14,9 +14,9 @@ allOf:
       billing_address:
         description: The customer's billing address. This will override the billing address specified during tokenization
         allOf:
-          - $ref: '../../Address.yaml'
+          - $ref: '#/components/schemas/Address'
       phone:
         description: The customer's phone number. This will override the phone number specified during tokenization
         allOf:
-          - $ref: '../../PhoneNumber.yaml'
+          - $ref: '#/components/schemas/PhoneNumber'
 

@@ -4,13 +4,13 @@ required:
   - billing_address
   - source_data
 allOf:
-  - $ref: './SourceRequest.yaml'
+  - $ref: '#/components/schemas/SourceRequest'
   - type: object
     properties:
       billing_address:
         description: The payment source owner's billing address
         allOf:
-          - $ref: '../Address.yaml'
+          - $ref: '#/components/schemas/Address'
       source_data:
         type: object
         description: Additional data required to create ACH payment sources

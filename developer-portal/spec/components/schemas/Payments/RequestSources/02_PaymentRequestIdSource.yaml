@@ -3,7 +3,7 @@ description: An existing payment source
 required:
   - id
 allOf:
-  - $ref: "../PaymentRequestSource.yaml"
+  - $ref: "#/components/schemas/PaymentRequestSource"
   - type: object
     properties:
       id:

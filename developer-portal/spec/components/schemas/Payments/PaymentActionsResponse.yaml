@@ -1,6 +1,6 @@
 type: array
 items:
-  $ref: './PaymentAction.yaml'
+  $ref: '#/components/schemas/PaymentAction'
 minItems: 1
 description: |
   The payment actions

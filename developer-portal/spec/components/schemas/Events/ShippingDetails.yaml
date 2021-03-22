@@ -19,4 +19,4 @@ properties:
     type: string
     example: Greater London
   phone:
-    $ref: './Phone.yaml'
+    $ref: '#/components/schemas/Phone'

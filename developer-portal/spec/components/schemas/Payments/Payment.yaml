@@ -12,21 +12,21 @@ properties:
   id:
     description: Payment unique identifier
     allOf:
-      - $ref: './PaymentId.yaml'
+      - $ref: '#/components/schemas/PaymentId'
   requested_on:
     description: The date/time the payment was requested
     allOf:
-      - $ref: '../ServerTimestamp.yaml'
+      - $ref: '#/components/schemas/ServerTimestamp'
   source:
     description: The source of the payment
     type: object
     allOf:
-      - $ref: './PaymentResponseSource.yaml'
+      - $ref: '#/components/schemas/PaymentResponseSource'
   destination:
     description: The destination of the payment
     type: object
     allOf:
-      - $ref: './PaymentResponseDestination.yaml'
+      - $ref: '#/components/schemas/PaymentResponseDestination'
   amount:
     type: integer
     description: The original payment amount
@@ -78,7 +78,7 @@ properties:
     type: object
     description: Provides information relating to the processing of 3D Secure payments
     allOf:
-      - $ref: './3dsData.yaml'
+      - $ref: '#/components/schemas/3dsData'
   risk:
     type: object
     description: Returns the payments risk assessment results
@@ -108,7 +108,7 @@ properties:
     required:
       - id
   billing_descriptor:
-    $ref: './BillingDescriptor.yaml'
+    $ref: '#/components/schemas/BillingDescriptor'
   shipping:
     type: object
     description: The payment shipping details
@@ -116,17 +116,17 @@ properties:
       address:
         description: The shipping address
         allOf:
-          - $ref: '../Address.yaml'
+          - $ref: '#/components/schemas/Address'
       phone:
         description: The phone number associated with the shipping address
         allOf:
-          - $ref: '../PhoneNumber.yaml'
+          - $ref: '#/components/schemas/PhoneNumber'
   payment_ip:
     description: The IP address used to make the payment
     allOf:
-      - $ref: '../IPAddress.yaml'
+      - $ref: '#/components/schemas/IPAddress'
   recipient:
-    $ref: './PaymentRecipient.yaml'
+    $ref: '#/components/schemas/PaymentRecipient'
   metadata:
     type: object
     description: A set of key-value pairs that you can attach to a payment. It can be useful for storing additional information in a structured format
@@ -147,7 +147,7 @@ properties:
   actions:
     type: array
     items:
-      $ref: './PaymentActionSummary.yaml'
+      $ref: '#/components/schemas/PaymentActionSummary'
     description: |
       A summary of the payment's actions, 
       returned when a session ID is used to get the payment details
@@ -162,27 +162,27 @@ properties:
       self:
         type: object
         allOf:
-          - $ref: '../Links/Link.yaml'
+          - $ref: '#/components/schemas/Link'
         description: The URI of the payment
       actions:
         type: object
         allOf:
-          - $ref: '../Links/Link.yaml'
+          - $ref: '#/components/schemas/Link'
         description: A link to the payment's associated actions
       void:
         type: object
         allOf:
-          - $ref: '../Links/Link.yaml'
+          - $ref: '#/components/schemas/Link'
         description: A link to void the payment, where applicable
       capture:
         type: object
         allOf:
-          - $ref: '../Links/Link.yaml'
+          - $ref: '#/components/schemas/Link'
         description: A link to capture the payment, where applicable
       refund:
         type: object
         allOf:
-          - $ref: '../Links/Link.yaml'
+          - $ref: '#/components/schemas/Link'
         description: A link to refund the payment, where applicable
     example:
       self:

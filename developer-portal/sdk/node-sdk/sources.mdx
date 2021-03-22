@@ -3,27 +3,18 @@ id: sources
 title: Sources
 ---
 
-export const Highlight = ({children, color}) => (
-<span
-style={{
-      color: color,
-      padding: '0.2rem',
-    }}>
-{children}
-</span>
-);
+import { Information } from '../../../components/Information';
+
 
 You can find a list of request body parameters and possible outcomes [here](https://api-reference.checkout.com/#tag/Sources).
 
 The SDK will infer the type of the source, if not provided.
 
-## Add a <Highlight color="#25c2a0">SEPA source</Highlight>
+## Add a SEPA source
 
-:::note
 
-SEPA is not enabled by default, so please let your account manager know if you want to use it.
+<Information>SEPA is not enabled by default, so please let your account manager know if you want to use it.</Information>
 
-:::
 
 ```js
 const source = await cko.sources.add({
@@ -53,7 +44,7 @@ const source = await cko.sources.add({
 });
 ```
 
-## Add a <Highlight color="#25c2a0">ACH source</Highlight>
+## Add a ACH source
 
 :::note
 

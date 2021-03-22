@@ -52,7 +52,7 @@ training:
       - label: Payments
         page: developer-portal/sdk/node-sdk/payments.md
       - label: Sources
-        page: developer-portal/sdk/node-sdk/sources.md
+        page: developer-portal/sdk/node-sdk/sources.mdx
       - label: Tokens
         page: developer-portal/sdk/node-sdk/tokens.md
       - label: Customers

@@ -1,16 +1,16 @@
 import { lighten, darken, readableColor } from 'polished';
 
 export const theme = {
-  spacing: {
-    unit: 5,
-    // sectionHorizontal: ({ spacing }) => spacing.unit * 8,
-    // sectionVertical: ({ spacing }) => spacing.unit * 8,
-  },
+  // spacing: {
+  //   unit: 5,
+  //   sectionHorizontal: ({ spacing }) => spacing.unit * 8,
+  //   sectionVertical: ({ spacing }) => spacing.unit * 8,
+  // },
   breakpoints: {
     xs: 0,
-    small: '600px',
-    medium: '1024x',
-    large: '1360px',
+    small: '550px',
+    medium: '900px',
+    large: '1200px',
   },
   colors: {
     // tonalOffset: 0.2,

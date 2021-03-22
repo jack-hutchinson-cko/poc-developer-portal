@@ -5,15 +5,6 @@ title: Payments
 
 You can find a list of request body parameters and possible outcomes [here](https://api-reference.checkout.com/#tag/Payments).
 
-export const Highlight = ({children, color}) => (
-<span
-style={{
-      color: color,
-      padding: '0.2rem',
-    }}>
-{children}
-</span>
-);
 
 ## Request a card payment with a <Highlight color="#25c2a0">card token</Highlight>
 

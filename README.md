@@ -13,6 +13,8 @@
 
     yarn start
 
+    Open localhost:3000
+
 Note: search isn't functional in the development environment.
 
 ## Troubleshooting

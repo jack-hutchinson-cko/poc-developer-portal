@@ -3,13 +3,11 @@ id: payments
 title: Payments
 ---
 
-import Information from '../../../components/Information'
-
 # Payments
 
 You can find a list of request body parameters and possible outcomes [here](https://api-reference.checkout.com/#tag/Payments).
 
-#### Using boolean/falsy values
+## Using boolean/falsy values
 
 "nil" or empty strings will be stripped from API calls
 
@@ -94,7 +92,7 @@ puts(response.data) # => {...}
 puts(response.body) # => "..."
 ```
 
-## Request a <div style={{color:"#25c2a0"}}>3D Secure payment</div>
+## Request a 3D Secure payment
 
 You have the ability to authenticate with 3DS in a payment request. The request body is similar to normal card payments, but with some additional parameters. [Read more about 3DS](https://docs.checkout.com/docs/3d-secure-payments)
 

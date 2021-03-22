@@ -21,25 +21,25 @@ export const theme = {
       // contrastText: ({ colors }) => readableColor(colors.primary.main),
     },
     // success: {
-    //   main: '#00aa13',
+    //   main: '#70C9B7',
     //   light: ({ colors }) => lighten(colors.tonalOffset * 3, colors.success.main),
     //   dark: ({ colors }) => darken(colors.tonalOffset, colors.success.main),
     //   contrastText: ({ colors }) => readableColor(colors.success.main),
     // },
-    // error: {
-    //   main: '#e53935',
-    //   light: ({ colors }) => lighten(colors.tonalOffset * 2, colors.error.main),
-    //   dark: ({ colors }) => darken(colors.tonalOffset, colors.error.main),
-    //   contrastText: ({ colors }) => readableColor(colors.error.main),
+    // note: {
+    //   main: '#F3C25D',
+    //   light: ({ colors }) => lighten(colors.tonalOffset * 2, colors.note.main),
+    //   dark: ({ colors }) => darken(colors.tonalOffset, colors.note.main),
+    //   contrastText: ({ colors }) => readableColor(colors.note.main),
     // },
     // warning: {
-    //   main: '#d4ad03',
+    //   main: '#EE6D5F',
     //   light: ({ colors }) => lighten(colors.tonalOffset * 2, colors.warning.main),
     //   dark: ({ colors }) => darken(colors.tonalOffset, colors.warning.main),
     //   contrastText: ({ colors }) => readableColor(colors.warning.main),
     // },
     // info: {
-    //   main: '#4782cb',
+    //   main: '#80E5E9',
     //   light: ({ colors }) => lighten(colors.tonalOffset * 2, colors.info.main),
     //   dark: ({ colors }) => darken(colors.tonalOffset, colors.info.main),
     //   contrastText: ({ colors }) => readableColor(colors.info.main),
@@ -151,6 +151,10 @@ export const theme = {
       color: '#0C1141',
       backgroundColor: '#E6E7EC',
       wrap: false,
+    },
+    pre: {
+      border: '1px solid #E6E7EC',
+      borderRadius: '8px',
     },
     links: {
       color: ({ colors }) => colors.primary.main,

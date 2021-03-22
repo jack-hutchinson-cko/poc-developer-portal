@@ -6,14 +6,9 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./scripts/build.js && redocly-portal develop -p 3000",
-    "build": "redocly-portal build",
+    "build": "node ./scripts/build.js && redocly-portal build",
     "clean": "redocly-portal clean",
-    "deploy": "npm run build && deploy-to-gh-pages --update web_deploy",
-    "deploy-branch": "node ./scripts/deploy-branch.js",
-    "test": "swagger-cli validate --no-schema web_deploy/swagger.yaml",
-    "swagger": "swagger-repo",
-    "sync-generated-apm-specs": "node ./scripts/sync-generated-apm-specs.js",
-    "sync-generated-apm-specs-legacy-aws-env": "node ./scripts/sync-generated-apm-specs-legacy-aws-env.js"
+    "test": "swagger-cli validate --no-schema web_deploy/swagger.yaml"
   },
   "dependencies": {
     "@redocly/developer-portal": "1.0.0-beta.120",
@@ -21,8 +16,6 @@
     "request": "2.88.0",
     "shelljs": "^0.8.4",
     "styled-components": "^5.2.1",
-    "swagger-cli": "2.1.0",
-    "swagger-repo": "^1.5.1",
     "swagger-ui": "^2.2.10",
     "yamljs": "0.3.0"
   }

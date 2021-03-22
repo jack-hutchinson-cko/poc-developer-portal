@@ -1,6 +1,5 @@
-training:
-  - page: developer-portal/index.md
-  - group: Checkout.com
+checkout:
+  - group: API Reference
     expanded: true
     pages:
       - page: openapi/cko-reference.page.yaml/*

@@ -5,26 +5,22 @@ meta:
 headerIcon: ./assets/images/logo.svg
 enableToc: true
 oasDefinitions:
-  petstore: ./openapi/petstore.yaml
-  checkout: ./openapi/checkout.yaml
-  # add links to definitions in our API registry by using a fully qualified URL.
+  checkout: ./openapi/swagger.yaml
+
 stylesheets:
   - ./assets/theme.css
 ga:
-  # you can use any options here from https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/
-  # note that GA doesn't work in DEV
  trackingId: UA-83886670-8
 scripts:
  - ./scripts/headscripts/hotjar.js
+
 nav:
   - search: true
-
   - label: Training exercises
     page: developer-portal/index.md
 
-  - label: External docs
-    href: https://docs.checkout.com/test-12345678
-
+  - label: Get test account
+    href: https://checkout.com/get-test-account
 
 footer:
   copyrightText: Pretty footer goes here

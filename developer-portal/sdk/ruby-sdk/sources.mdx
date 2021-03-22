@@ -3,16 +3,18 @@ id: sources
 title: Sources
 ---
 
+import Information from '../../../components/Information';
+
+# Sources
 
 You can find a list of request body parameters and possible outcomes [here](https://api-reference.checkout.com/#tag/Sources).
 
 ## Add a <Highlight color="#25c2a0">SEPA source</Highlight>
 
-:::note
 
-SEPA is not enabled by default, so please let your account manager know if you want to use it.
-
-:::
+<Information type="information">
+    SEPA is not enabled by default, so please let your account manager know if you want to use it.
+</Information>
 
 ```ruby
 payment_source = CheckoutSdk::PaymentSource.new

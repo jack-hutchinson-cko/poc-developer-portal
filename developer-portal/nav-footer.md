@@ -105,12 +105,6 @@ footer:
           href: 'https://redoc.ly/privacy-policy/'
         - label: Cookie Notice
           href: 'https://redoc.ly/privacy-policy/'
-    - group: Support
-      items:
-        - label: FAQ
-          page: faq.md
-        - label: Contact us
-          page: contact.mdx
 ```
 
 Each item in a group may link to either a `page` or an `href`.
@@ -135,12 +129,7 @@ footer:
           href: 'https://docs.redoc.ly/developer-portal/introduction/'
         - label: CI/CD workflows
           href: 'https://docs.redoc.ly/ci-cd-workflows/'
-    - group: Support
-      items:
-        - label: FAQ
-          page: faq.md
-        - label: Contact us
-          page: contact.mdx
+
 ```
 
 You may also override the navbar and footer components.

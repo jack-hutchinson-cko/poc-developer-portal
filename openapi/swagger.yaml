@@ -36,89 +36,11 @@ info:
 
 
     Never share your secret keys. Keep them guarded and secure.
-externalDocs:
-  description: For specific guidance and use cases see our documentation.
-  url: https://docs.checkout.com
 servers:
   - url: https://api.checkout.com
     description: Live API
   - url: https://api.sandbox.checkout.com
     description: Sandbox API
-paths:
-  '/customers/{id}':
-    $ref: 'paths/customers@{id}.yaml'
-  '/disputes':
-    $ref: 'paths/disputes.yaml'
-  '/disputes/{dispute_id}':
-    $ref: 'paths/disputes@{dispute_id}.yaml'
-  '/disputes/{dispute_id}/accept':
-    $ref: 'paths/disputes@{dispute_id}@accept.yaml'
-  '/disputes/{dispute_id}/evidence':
-    $ref: 'paths/disputes@{dispute_id}@evidence.yaml'
-  '/event-types':
-    $ref: 'paths/event-types.yaml'
-  '/events/{eventId}':
-    $ref: 'paths/events@{eventId}.yaml'
-  '/events@{eventId}@notifications@{notificationId}.yaml':
-    $ref: 'paths/events@{eventId}@notifications@{notificationId}.yaml'
-  '/events/{eventId}/webhooks/{webhookId}/retry':
-    $ref: 'paths/events@{eventId}@webhooks@{webhookId}@retry.yaml'
-  '/events/{eventId}/webhooks/retry.yaml':
-    $ref: 'paths/events@{eventId}@webhooks@retry.yaml'
-  '/files':
-    $ref: 'paths/files.yaml'
-  '/files/{file_id}':
-    $ref: 'paths/files@{file_id}.yaml'
-  '/hosted-payments':
-    $ref: 'paths/hosted-payments.yaml'
-  '/instruments':
-    $ref: 'paths/instruments.yaml'
-  '/instruments/{id}':
-    $ref: 'paths/instruments@{id}.yaml'
-  '/payment-links':
-    $ref: 'paths/payment-links.yaml'
-  '/payments':
-    $ref: 'paths/payments.yaml'
-  '/payments/{id}':
-    $ref: 'paths/payments@{id}.yaml'
-  '/payments/{id}/actions':
-    $ref: 'paths/payments@{id}@actions.yaml'
-  '/payments/{id}/captures':
-    $ref: 'paths/payments@{id}@captures.yaml'
-  '/payments/{id}/refunds':
-    $ref: 'paths/payments@{id}@refunds.yaml'
-  '/payments/{id}/voids':
-    $ref: 'paths/payments@{id}@voids.yaml'
-  '/reporting/payments':
-    $ref: 'paths/reporting@payments.yaml'
-  '/reporting/payments/{paymentId}':
-    $ref: 'paths/reporting@payments@{paymentId}.yaml'
-  '/reporting/payments/download':
-    $ref: 'paths/reporting@payments@download.yaml'
-  '/reporting/statements':
-    $ref: 'paths/reporting@statements.yaml'
-  '/reporting/statements/{StatementId}/payments/download':
-    $ref: 'paths/reporting@statements@{StatementId}@payments@download.yaml'
-  '/reporting/statements/download':
-    $ref: 'paths/reporting@statements@download.yaml'
-  '/sources':
-    $ref: 'paths/sources.yaml'
-  '/tokens':
-    $ref: 'paths/tokens.yaml'
-  '/webhooks':
-    $ref: 'paths/webhooks.yaml'
-  '/webhooks/{id}':
-    $ref: 'paths/webhooks@{id}.yaml'
-components:
-  securitySchemes:
-    ApiSecretKey:
-      type: apiKey
-      in: header
-      name: Authorization
-    ApiPublicKey:
-      type: apiKey
-      in: header
-      name: Authorization
 tags:
   - name: Payments
     description: Process and manage payments from a variety of sources and to various destinations all within one integration.
@@ -138,34 +60,26 @@ tags:
     description: Use events to monitor and get insights into your transactions.
   - name: Disputes
     description: Keep track of and act on your open disputes (also known as chargebacks) to submit the best possible response.
-  - name: Customers 
-    description: Keep your customers' details up to date.
-  - name: Reconcilliation
-    description: Quickly find all fees associated with each of your payments, allowing you to concentrate on the important stuff while streamlining your financial reporting.
   # - name: Files
   #   description: |
   #     Upload files to be used as input to other APIs
+
 x-tagGroups:
-  - name: Make payments
-    tags: 
-      - Payments
-      - Payment Links
-      - Hosted Payments
-  - name: Store card or payment details
-    tags:
-      - Sources
-      - Tokens
-      - Instruments
+  - name: 
   - name: Notifications
-    tags: 
+    description: |
+      foo
+    tags:
       - Webhooks
       - Events
-  - name: Customers
-    tags: 
+  - name: Vault
+    tags:
+      - Cards
+      - Tokens
       - Customers
-      - Disputes
-  - name: Reporting and insights
-    tags: Reconcilliation
+      - Instruments
+
+
 paths:
   /customers/{id}:
     patch:
@@ -189,7 +103,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/Customers/UpdateCustomerRequest.yaml'
+              $ref: '#/components/schemas/UpdateCustomerRequest'
       responses:
         '204':
           description: Customer updated successfully
@@ -200,7 +114,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
         '404':
           description: Customer not found
   /disputes:
@@ -290,7 +204,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "../components/schemas/Disputes/DisputePaged.yaml"
+                $ref: "#/components/schemas/DisputePaged"
         "401":
           description: Unauthorized
         "422":
@@ -298,7 +212,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "../components/schemas/Disputes/DisputePaged.yaml"
+                $ref: "#/components/schemas/PagingError"
       x-code-samples:
         - lang: C#
           source: "var api = CheckoutApi.Create(\"your secret key\");\n\nvar getDisputesRequest = new GetDisputesRequest(limit: 5);\nvar getDisputesResponse = await api.Disputes.GetDisputesAsync(getDisputesRequest: getDisputesRequest);"
@@ -328,7 +242,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "../components/schemas/Disputes/Dispute.yaml"
+                $ref: "#/components/schemas/Dispute"
         "401":
           description: Unauthorized
         "404":
@@ -393,7 +307,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "../components/schemas/Disputes/ProvideEvidenceRequest.yaml"
+              $ref: "#/components/schemas/ProvideEvidenceRequest"
       responses:
         "204":
           description: Dispute evidence provided successfully
@@ -434,7 +348,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "../components/schemas/Disputes/Evidence.yaml"
+                $ref: "#/components/schemas/Evidence"
         "401":
           description: Unauthorized
         "404":
@@ -499,12 +413,12 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '../components/schemas/Events/EventTypesObject.yaml'
+                  $ref: '#/components/schemas/EventTypesObject'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
       x-code-samples:
@@ -536,12 +450,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "../components/schemas/Events/EventObject.yaml"
+                $ref: "#/components/schemas/EventObject"
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         "401":
           description: Unauthorized
         "404":
@@ -581,12 +495,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Events/Notification.yaml'
+                $ref: '#/components/schemas/Notification'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '404':
@@ -626,9 +540,9 @@ paths:
           description: Retry accepted
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '404':
@@ -660,9 +574,9 @@ paths:
           description: Retry accepted
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '404':
@@ -686,19 +600,19 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: "../components/schemas/Disputes/File.yaml"
+              $ref: "#/components/schemas/File"
       responses:
         "200":
           description: File uploaded successfully
           content:
             application/json:
               schema:
-                $ref: "../components/schemas/Disputes/FileUploadResponse.yaml"
+                $ref: "#/components/schemas/FileUploadResponse"
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         "401":
           description: Unauthorized
         "422":
@@ -733,12 +647,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "../components/schemas/Disputes/FileResult.yaml"
+                $ref: "#/components/schemas/FileResult"
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         "401":
           description: Unauthorized
         "404":
@@ -767,14 +681,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "../components/schemas/HostedPayments/HostedPaymentsRequest.yaml"
+              $ref: "#/components/schemas/HostedPaymentsRequest"
       responses:
         "201":
           description: Created Hosted Payments Page
           content:
             application/json:
               schema:
-                $ref: "../components/schemas/HostedPayments/HostedPaymentsResponse.yaml"
+                $ref: "#/components/schemas/HostedPaymentsResponse"
         "401":
           description: Unauthorized
         "422":
@@ -782,7 +696,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "../components/schemas/ValidationError.yaml"
+                $ref: "#/components/schemas/ValidationError"
   /instruments:
     post:
       security:
@@ -798,14 +712,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/Instruments/InstrumentRequest.yaml'
+              $ref: '#/components/schemas/InstrumentRequest'
       responses:
         '201':
           description: Instrument created successfully
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Instruments/InstrumentResponse.yaml'  
+                $ref: '#/components/schemas/InstrumentResponse'  
         '401':
           description: Unauthorized
         '422':
@@ -813,7 +727,7 @@ paths:
           content:
             application/json:
              schema:
-               $ref: '../components/schemas/ValidationError.yaml'
+               $ref: '#/components/schemas/ValidationError'
         '500':
           description: Internal Error
       x-code-samples:
@@ -842,12 +756,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Instruments/RetrieveInstrumentResponse.yaml'
+                $ref: '#/components/schemas/RetrieveInstrumentResponse'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '404':
@@ -874,19 +788,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/Instruments/UpdateInstrumentRequest.yaml'
+              $ref: '#/components/schemas/UpdateInstrumentRequest'
       responses:
         '200':
           description: Instrument updated successfully
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Instruments/UpdateInstrumentResponse.yaml'
+                $ref: '#/components/schemas/UpdateInstrumentResponse'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '422':
@@ -894,7 +808,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
         '404':
           description: Instrument not found
   /payment-links:
@@ -912,14 +826,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/PaymentLinks/PaymentLinksRequest.yaml'
+              $ref: '#/components/schemas/PaymentLinksRequest'
       responses:
         '201':
           description: Create Payment Link Page
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/PaymentLinks/PaymentLinksResponse.yaml'
+                $ref: '#/components/schemas/PaymentLinksResponse'
         '401':
           description: Unauthorized
         '422':
@@ -927,7 +841,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
   /payments:
     post:
       security:
@@ -943,21 +857,72 @@ paths:
     
         To verify the success of the payment, check the `approved` field in the response.
       parameters:
-        - $ref: '../components/parameters/ckoIdempotencyKey.yaml'
+        - $ref: '#/components/parameters/ckoIdempotencyKey'
       requestBody:
         content:
           application/json:
             schema:
               oneOf:
-                - $ref: '../components/schemas/Payments/PaymentRequest.yaml'
-                - $ref: '../components/schemas/Payments/Payout.yaml'
+                - $ref: '#/components/schemas/PaymentRequest'
+                - $ref: '#/components/schemas/Payout'
+            example:
+              source:
+                type: token
+                token: tok_4gzeau5o2uqubbk6fufs3m7p54
+              amount: 6540
+              currency: USD
+              payment_type: Recurring
+              reference: "ORD-5023-4E89"
+              description: "Set of 3 masks"
+              capture: true
+              capture_on: "2019-09-10T10:11:12Z"
+              customer:
+                id: "cus_udst2tfldj6upmye2reztkmm4i"
+                email: "jokershere@gmail.com"
+                name: "Jack Napier"
+              billing_descriptor:
+                name: SUPERHEROES.COM
+                city: GOTHAM
+              shipping:
+                address:
+                  address_line1: Checkout.com
+                  address_line2: 90 Tottenham Court Road
+                  city: London
+                  state: London
+                  zip: W1T 4TJ
+                  country: GB
+                phone:
+                  country_code: "+1"
+                  number: 415 555 2671
+              3ds:
+                enabled: true
+                attempt_n3d: true
+                eci: "05"
+                cryptogram: AgAAAAAAAIR8CQrXcIhbQAAAAAA=
+                xid: MDAwMDAwMDAwMDAwMDAwMzIyNzY=
+                version: "2.0.1"
+              previous_payment_id: "pay_fun26akvvjjerahhctaq2uzhu4"
+              risk:
+                enabled: false
+              success_url: "http://example.com/payments/success"
+              failure_url: "http://example.com/payments/fail"
+              payment_ip: "90.197.169.245"
+              recipient:
+                dob: "1985-05-15"
+                account_number: "5555554444"
+                zip: W1T
+                last_name: Jones
+              metadata:
+                coupon_code: "NY2018"
+                partner_id: 123989
+    
       responses:
         '201':
           description: Payment processed successfully
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Payments/PaymentResponse.yaml'
+                $ref: '#/components/schemas/PaymentResponse'
               example:
                 id: "pay_mbabizu24mvu3mela5njyhpit4"
                 action_id: "act_mbabizu24mvu3mela5njyhpit4"
@@ -1003,7 +968,7 @@ paths:
                 _links:
                   self:
                     href: "https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4"
-                  actions:
+                  action:
                     href: "https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/actions"
                   void:
                     href: "https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/voids"
@@ -1011,20 +976,20 @@ paths:
                     href: "https://api.sandbox.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4/captures"
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '202':
           description: Payment asynchronous or further action required
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Payments//PaymentAcceptedResponse.yaml'
+                $ref: '#/components/schemas/PaymentAcceptedResponse'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '429':
@@ -1032,13 +997,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
         '422':
           description: Invalid data was sent
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
         '502':
           description: Bad gateway
       x-code-samples:
@@ -1082,12 +1047,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Payments/Payment.yaml'
+                $ref: '#/components/schemas/Payment'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '404':
@@ -1127,12 +1092,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Payments/PaymentActionsResponse.yaml'
+                $ref: '#/components/schemas/PaymentActionsResponse'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '404':
@@ -1161,7 +1126,7 @@ paths:
     
         For card payments, capture requests are processed asynchronously. You can use [webhooks](#tag/Webhooks) to be notified if the capture is successful.
       parameters:
-        - $ref: '../components/parameters/ckoIdempotencyKey.yaml'
+        - $ref: '#/components/parameters/ckoIdempotencyKey'
         - in: path
           name: id
           schema:
@@ -1173,19 +1138,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/Payments/CaptureRequest.yaml'
+              $ref: '#/components/schemas/CaptureRequest'
       responses:
         '202':
           description: Capture accepted
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Payments/CaptureAcceptedResponse.yaml'
+                $ref: '#/components/schemas/CaptureAcceptedResponse'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '403':
@@ -1195,7 +1160,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
         '404':
           description: Payment not found
         '502':
@@ -1224,7 +1189,7 @@ paths:
     
         For card payments, refund requests are processed asynchronously. You can use [webhooks](#tag/Webhooks) to be notified if the refund is successful.
       parameters:
-        - $ref: '../components/parameters/ckoIdempotencyKey.yaml'
+        - $ref: '#/components/parameters/ckoIdempotencyKey'
         - in: path
           name: id
           schema:
@@ -1236,19 +1201,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/Payments/RefundRequest.yaml'
+              $ref: '#/components/schemas/RefundRequest'
       responses:
         '202':
           description: Refund accepted
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Payments/RefundAcceptedResponse.yaml'
+                $ref: '#/components/schemas/RefundAcceptedResponse'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '422':
@@ -1256,7 +1221,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
         '403':
           description: Refund not allowed
         '404':
@@ -1287,7 +1252,7 @@ paths:
     
         For card payments, void requests are processed asynchronously. You can use [webhooks](#tag/Webhooks) to be notified if the void is successful.
       parameters:
-        - $ref: '../components/parameters/ckoIdempotencyKey.yaml'
+        - $ref: '#/components/parameters/ckoIdempotencyKey'
         - in: path
           name: id
           schema:
@@ -1299,19 +1264,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/Payments/VoidRequest.yaml'
+              $ref: '#/components/schemas/VoidRequest'
       responses:
         '202':
           description: Void accepted
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Payments/VoidAcceptedResponse.yaml'
+                $ref: '#/components/schemas/VoidAcceptedResponse'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '422':
@@ -1319,7 +1284,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
         '403':
           description: Void not allowed
         '404':
@@ -1390,18 +1355,18 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Reporting/PaymentsReportResponse.yaml'
+                $ref: '#/components/schemas/PaymentsReportResponse'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '422':
           description: Invalid data was sent
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
         '502':
           description: Bad gateway
   /reporting/payments/{paymentId}:
@@ -1435,18 +1400,18 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Reporting/PaymentsReportResponse.yaml'
+                $ref: '#/components/schemas/PaymentsReportResponse'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '422':
           description: Invalid data was sent
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
         '502':
           description: Bad gateway
   /reporting/payments/download:
@@ -1460,6 +1425,9 @@ paths:
       tags:
         - Reconciliation
       summary: Get CSV payments report
+      responses:
+        '200':
+          description: CSV downloaded successfully
       operationId: getCsvPaymentsReport
       description: 
         In addition to the JSON format returned by the `reporting/payments` endpoint, you can also download a CSV report containing the same data.
@@ -1479,9 +1447,6 @@ paths:
             format: date-time
           required: false
           description: Date and time until which to search for payments
-      responses:
-        '200':
-          description: CVS downloaded
   /reporting/statements:
     servers:
       - url: https://api.checkout.com
@@ -1518,18 +1483,18 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "../components/schemas/Reporting/StatementsReportResponse.yaml"
+                $ref: "#/components/schemas/StatementsReportResponse"
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '422':
           description: Invalid data was sent
           content:
             application/json:
               schema:
-                $ref: "../components/schemas/ValidationError.yaml"
+                $ref: "#/components/schemas/ValidationError"
         '502':
           description: Bad gateway
   /reporting/statements/{StatementId}/payments/download:
@@ -1545,6 +1510,9 @@ paths:
       summary: Get CSV single statement report
       operationId: GetCsvSingleStatementReport
       description: Downloads a CSV statement report containing all of the data related to a specific statement, based on the statement's identifier.
+      responses: 
+        '200':
+          description: CSV downloaded successfully
       parameters:
         - in: path
           name: StatementId
@@ -1553,24 +1521,22 @@ paths:
             type: string
           required: true
           description: The unique statement identifier
-      responses: 
-        '200':
-          description: Downloaded CSV
   /reporting/statements/download:
     servers:
       - url: https://api.checkout.com
         description: Live API
+    
     get:
       security:
         - ApiSecretKey: []
       tags:
         - Reconciliation
+      responses:
+        '200':
+          description: CSV downloaded successfully
       summary: Get CSV statements report
       operationId: getCsvStatementsReport
       description: In addition to the JSON format returned by the `reporting/statements` endpoint, you can also download a CSV report containing the same data.
-      responses:
-        '200':
-          description: CSV downloaded
   /sources:
     post:
       security:
@@ -1587,19 +1553,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/Sources/SourceRequest.yaml'
+              $ref: '#/components/schemas/SourceRequest'
       responses:
         '201':
           description: Payment source added successfully
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Sources/AddSourceResponse.yaml'
+                $ref: '#/components/schemas/AddSourceResponse'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '422':
@@ -1607,7 +1573,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
         '502':
           description: Bad gateway
       x-code-samples:
@@ -1635,19 +1601,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/Tokens/TokenRequest.yaml'
+              $ref: '#/components/schemas/TokenRequest'
       responses:
         '201':
           description: Reference token created successfully
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Tokens/TokenResponse.yaml'
+                $ref: '#/components/schemas/TokenResponse'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '422':
@@ -1655,7 +1621,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
       x-code-samples:
         - lang: C#
           source: "var api = CheckoutApi.Create(\"your secret key\", useSandbox: true, \"your public key\");\nvar tokenData = new Dictionary<string, object>\n{\n  { \"version\", \"EC_v1\" },\n  { \"data\", \"t7GeajLB9skXB6QSWfEpPA4WPhD...\" },\n  { \"signature\", \"MIAGCSqGSIb3DQEHAqCAMI...\" },\n  { \"header\", new Dictionary<string, string>\n    {\n      { \"ephemeralPublicKey\", \"MFkwEwYHK...\" },\n      { \"publicKeyHash\", \"tqYV+tmG9aMh+l...\" },\n      { \"transactionId\", \"3cee89679130a4...\" }\n    }\n  }\n};\nvar request = new WalletTokenRequest(WalletType.ApplePay, tokenData);\n\ntry\n{\n  var response = await api.Tokens.RequestAsync(request);\n  var token = response.Token;\n}\ncatch (CheckoutValidationException validationEx)\n{\n  return ValidationError(validationEx.Error);\n}\ncatch (CheckoutApiException apiEx)\n{\n  Log.Error(\"Token request failed with status code {HttpStatusCode}\", apiEx.HttpStatusCode);\n  throw;\n}"
@@ -1682,12 +1648,12 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '../components/schemas/Webhooks/Webhook.yaml'
+                  $ref: '#/components/schemas/Webhook'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '204':
           description: No webhooks configured
         '401':
@@ -1713,19 +1679,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/Webhooks/WebhookRequest.yaml'
+              $ref: '#/components/schemas/WebhookRequest'
       responses:
         '201':
           description: Webhook registered successfully
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Webhooks/Webhook.yaml'
+                $ref: '#/components/schemas/Webhook'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '422':
@@ -1733,7 +1699,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
         '409':
           description: URL already registered for another webhook
       x-code-samples:
@@ -1771,7 +1737,7 @@ paths:
               schema:
                 type: object
                 allOf:
-                  - $ref: '../components/schemas/Webhooks/WebhookRequest.yaml'
+                  - $ref: '#/components/schemas/WebhookRequest'
                 required:
                   - url
         '401':
@@ -1809,14 +1775,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/Webhooks/WebhookRequest.yaml'
+              $ref: '#/components/schemas/WebhookRequest'
       responses:
         '200':
           description: Updated webhook
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Webhooks/Webhook.yaml'
+                $ref: '#/components/schemas/Webhook'
         '401':
           description: Unauthorized
         '422':
@@ -1824,7 +1790,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
         '404':
           description: Webhook not found
         '409':
@@ -1859,19 +1825,19 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../components/schemas/Webhooks/WebhookRequest.yaml'
+              $ref: '#/components/schemas/WebhookRequest'
       responses:
         '200':
           description: Updated webhook
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/Webhooks/Webhook.yaml'
+                $ref: '#/components/schemas/Webhook'
           headers:
             Cko-Request-Id:
-              $ref: "../components/headers/Cko-Request-Id.yaml"
+              $ref: "#/components/headers/Cko-Request-Id"
             Cko-Version:
-              $ref: "../components/headers/Cko-Version.yaml"
+              $ref: "#/components/headers/Cko-Version"
         '401':
           description: Unauthorized
         '422':
@@ -1879,7 +1845,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '../components/schemas/ValidationError.yaml'
+                $ref: '#/components/schemas/ValidationError'
         '404':
           description: Webhook not found
         '409':
@@ -1951,7 +1917,7 @@ components:
           description: The address state
           example: Berlin
         zip:
-          type: integer
+          type: string
           description: The address zip/postal code
           example: 10117
         country:
@@ -2018,7 +1984,7 @@ components:
             self:
               type: object
               allOf:
-                - $ref: '../components/schemas/Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: The URI of the batch
               example:
                 href: "https://api.checkout.com/batches/bat_fa72f568492b4d3eb6d81e0645e320f6"
@@ -2068,7 +2034,7 @@ components:
             self:
               type: object
               allOf:
-                - $ref: '../components/schemas/Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: The URI of the batch
               example:
                 href: "https://api.checkout.com/batches/bat_fa72f568492b4d3eb6d81e0645e320f6"
@@ -2118,6 +2084,11 @@ components:
           description: The current status of the dispute
           enum: [evidence_required, evidence_under_review, resolved, won, lost, canceled, expired, accepted]
           example: "evidence_required"
+        resolved_reason:
+          type: string
+          description: If the dispute is automatically resolved, `resolved_reason` will contain the reason why it was resolved
+          enum: [rapid_dispute_resolution, negative_amount, already_refunded]
+          example: "already_refunded"
         relevant_evidence:
           type: array
           description: <i>This list and the dispute categories will change over time. Your evidence logic should be informed by this field, not hard coded.</i>
@@ -2236,7 +2207,7 @@ components:
           type: array
           description: The list of disputes
           items:
-            $ref: "./DisputeSummary.yaml"
+            $ref: "#/components/schemas/DisputeSummary"
     DisputeSummary:
       type: object
       properties:
@@ -2351,7 +2322,7 @@ components:
           description: The filename, including its extension
           example: "receipt.jpg"
         purpose:
-          $ref: "./FilePurpose.yaml"
+          $ref: "#/components/schemas/FilePurpose"
         size:
           type: integer
           description: The size of the file upload object (in bytes)
@@ -2373,7 +2344,7 @@ components:
               description: The temporary file download URL. This expires after 60 minutes
               properties:    
                 href:
-                  example: "https://cabinet-upload-prod.s3.eu-west-1.amazonaws.com/ucdac/ucdac/6lbss42ezvoufcb2beo76rvwly?X-Amz-Expires=3600&x-amz-security-token=FQoDYXdzENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEa"
+                  example: "https://file-bucket.s3.eu-west-1.amazonaws.com/ucdac/ucdac/6lbss42ezvoufcb2beo76rvwly?X-Amz-Expires=3600&x-amz-security-token=FQoDYXdzENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEa"
     FileUploadResponse:
       type: object
       description: File uploaded successfully
@@ -2496,7 +2467,7 @@ components:
           type: string
           example: Georgia
         phone:
-          $ref: './Phone.yaml'
+          $ref: '#/components/schemas/Phone'
     Card:
       type: object
       properties:
@@ -2510,7 +2481,7 @@ components:
           type: string
           example: 2018
         billing_details:
-          $ref: './BillingDetails.yaml'
+          $ref: '#/components/schemas/BillingDetails'
         id:
           type: string
           example: card_D44D7F4CCC6348698717CD80072808B0
@@ -2578,11 +2549,11 @@ components:
         id:
           description: The payment unique identifier
           allOf:
-            - $ref: '../Payments/PaymentId.yaml'
+            - $ref: '#/components/schemas/PaymentId'
         action_id:
           description: The unique identifier for the action performed against this payment
           allOf:
-            - $ref: '../Payments/ActionId.yaml'
+            - $ref: '#/components/schemas/ActionId'
         amount:
           type: integer
           description: The payment amount
@@ -2627,7 +2598,7 @@ components:
           type: object
           description: Provides 3D Secure enrollment status if the payment was downgraded to non-3D Secure
           allOf:
-            - $ref: '../Payments/3dsEnrollmentData.yaml'
+            - $ref: '#/components/schemas/3dsEnrollmentData'
           example:
             downgraded: true
             enrolled: N
@@ -2640,16 +2611,16 @@ components:
           description: The source of the payment
           type: object
           allOf:
-            - $ref: '../Payments/PaymentResponseSource.yaml'
+            - $ref: '#/components/schemas/PaymentResponseSource'
         customer:
           type: object
           description: The customer to which this payment is linked
           allOf:
-            - $ref: '../Payments/PaymentResponseCustomer.yaml'
+            - $ref: '#/components/schemas/PaymentResponseCustomer'
         processed_on:
           description: The date/time the payment was processed
           allOf:
-            - $ref: '../ServerTimestamp.yaml'
+            - $ref: '#/components/schemas/ServerTimestamp'
         reference:
           type: string
           description: Your reference for the payment
@@ -2673,14 +2644,14 @@ components:
         self:
           type: object
           allOf:
-            - $ref: '../Links/Link.yaml'
+            - $ref: '#/components/schemas/Link'
           description: The URI of the event
           example:
             href: "https://api.checkout.com/events/evt_az5sblvku4ge3dwpztvyizgcau"
         webhooks-retry:
           type: object
           allOf:
-            - $ref: '../Links/Link.yaml'
+            - $ref: '#/components/schemas/Link'
           description: A link to retry all of the webhooks configured for the event
           example:
             href: "https://api.checkout.com/events/evt_az5sblvku4ge3dwpztvyizgcau/webhooks/retry"
@@ -2688,7 +2659,7 @@ components:
       type: object
       properties:
         id:
-          $ref: './EventId.yaml'
+          $ref: '#/components/schemas/EventId'
         type:
           type: string
           description: The event type
@@ -2700,16 +2671,16 @@ components:
         created_on:
           description: The date/time the event occurred
           allOf:
-            - $ref: '../ServerTimestamp.yaml'
+            - $ref: '#/components/schemas/ServerTimestamp'
         data:
-          $ref: './Data.yaml'
+          $ref: '#/components/schemas/Data'
         notifications:
           type: array
           description: The notifications (e.g., webhooks) that have been sent for the event
           items:
-            $ref: './NotificationSummary.yaml'
+            $ref: '#/components/schemas/NotificationSummary'
         _links:
-          $ref: './EventLinks.yaml'
+          $ref: '#/components/schemas/EventLinks'
     EventResult:
       type: object
       properties:
@@ -2738,7 +2709,7 @@ components:
         data:
           type: array
           items:
-            $ref: './EventSummary.yaml'
+            $ref: '#/components/schemas/EventSummary'
     EventSummary:
       type: object
       properties:
@@ -2755,9 +2726,9 @@ components:
         created_on:
           description: The date/time the event occurred
           allOf:
-            - $ref: '../ServerTimestamp.yaml'
+            - $ref: '#/components/schemas/ServerTimestamp'
         _links:
-          $ref: './EventLinks.yaml'
+          $ref: '#/components/schemas/EventLinks'
     EventTypesObject:
       type: object
       properties:
@@ -2797,7 +2768,7 @@ components:
       type: object
       properties:
         id:
-          $ref: './NotificationId.yaml'
+          $ref: '#/components/schemas/NotificationId'
         url:
           type: string
           description: The notification endpoint
@@ -2814,7 +2785,7 @@ components:
           type: array
           description: The notification events ordered by timestamp in descending order (latest first)
           items:
-            $ref: './NotificationAttempt.yaml'
+            $ref: '#/components/schemas/NotificationAttempt'
         _links:
           type: object
           description: The links related to the notification
@@ -2823,14 +2794,14 @@ components:
               type: object
               description: The URI of the notification
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               example:
                 href: https://api.checkout.com/events/evt_az5sblvku4ge3dwpztvyizgcau/notifications/ntf_az5sblvku4ge3dwpztvyizgcau
             retry:
               type: object
               description: A link to retry the notification to the configured webhook
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               example:
                 href: https://api.checkout.com/events/evt_az5sblvku4ge3dwpztvyizgcau/webhooks/wh_5nuzkt62ddxuho5rwsvt6pyesi/retry
     NotificationAttempt:
@@ -2854,7 +2825,7 @@ components:
           type: string
           description: The date/time the attempt was made
           allOf:
-            - $ref: '../ServerTimestamp.yaml'
+            - $ref: '#/components/schemas/ServerTimestamp'
     NotificationId:
       type: string
       description: The unique notification identifier
@@ -2865,7 +2836,7 @@ components:
       type: object
       properties:
         id:
-          $ref: './NotificationId.yaml'
+          $ref: '#/components/schemas/NotificationId'
         url:
           type: string
           description: The notification endpoint
@@ -2942,7 +2913,7 @@ components:
           type: string
           example: Greater London
         phone:
-          $ref: './Phone.yaml'
+          $ref: '#/components/schemas/Phone'
     HostedPaymentsRequest:
       type: object
       required:
@@ -2997,44 +2968,44 @@ components:
               required:
                 - country
               allOf:
-                - $ref: '../Address.yaml'
+                - $ref: '#/components/schemas/Address'
             phone:
               type: object
               description: The customer's phone number. This will override the phone number specified during tokenization
               required:
                 - number
               allOf:
-                - $ref: '../PhoneNumber.yaml'
+                - $ref: '#/components/schemas/PhoneNumber'
         products:
           type: array
           description: Details about the products in the order
           minItems: 1
           maxItems: 1000
           items:
-              type: object
-              additionalProperties: false
-              required:
-                - name
-                - quantity
-                - price
-              properties:
-                name:
-                  type: string
-                  description: Descriptive item name
-                  example: Gold Necklace
-                quantity:
-                  type: integer
-                  description: The item quantity. Non-negative
-                  minimum: 1
-                  example: 1
-                price:
-                  type: integer
-                  description: 'Minor units. Includes tax, excludes discounts. The exact format <a href="https://docs.checkout.com/docs/calculating-the-value" target="_blank">depends on the currency</a>'
-                  minimum: 0
-                  maximum: 100000000
-                  example: 1000
+            type: object
+            additionalProperties: false
+            required:
+              - name
+              - quantity
+              - price
+            properties:
+              name:
+                type: string
+                description: Descriptive item name
+                example: Gold Necklace
+              quantity:
+                type: integer
+                description: The item quantity. Non-negative
+                minimum: 1
+                example: 1
+              price:
+                type: integer
+                description: 'Minor units. Includes tax, excludes discounts. The exact format <a href="https://docs.checkout.com/docs/calculating-the-value" target="_blank">depends on the currency</a>'
+                minimum: 0
+                maximum: 100000000
+                example: 1000
         risk:
-          $ref: '../Payments/RiskRequest.yaml'
+          $ref: '#/components/schemas/RiskRequest'
         success_url:
           type: string
           format: uri
@@ -3069,11 +3040,6 @@ components:
               description: Determines whether to attempt a 3D Secure payment as non-3D Secure should the card issuer not be enrolled
               default: false
               example: false
-        locale:
-          type: string
-          pattern: /^[a-z]{2,3}(?:-[A-Z]{2,3}(?:-[a-zA-Z]{4})?)?$/
-          description: RFC 1766 customer's locale. Optional, default taken from business settings
-          example: en-GB
     HostedPaymentsResponse:
       type: object
       required:
@@ -3092,7 +3058,7 @@ components:
             redirect:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               example:
                 href: 'https://pay.checkout.com/page/d6a471b9430f13b1035072f9ce45a8ce:9e5de0d41e9748cf6bc91e650f2c823845997bc52be6108969b47eedffcd06c57e034af5d3090b6c137a0c5de665e68458db94c95b89e2acf326d1996d71f3e2cb52fbfdcadf505af7f4078ff6135d1ebf20b02543dc78b883a313605684b7544d3a14146961c3c7b7e47145971d2388d62553eacce2176b9604484023db1017'
       example:
@@ -3289,11 +3255,11 @@ components:
                   billing_address:
                       description: The billing address of the account holder
                       allOf:
-                        - $ref: "../Address.yaml"
+                        - $ref: "#/components/schemas/Address"
                   phone:
                       description: The phone number of the account holder
                       allOf:
-                          - $ref: "../Events/Phone.yaml"
+                          - $ref: "#/components/schemas/Phone"
           customer:
               type: object
               description: The customer attached to the instrument
@@ -3340,11 +3306,11 @@ components:
                   billing_address:
                       description: The billing address of the account holder
                       allOf:
-                        - $ref: "../Address.yaml"
+                        - $ref: "#/components/schemas/Address"
                   phone:
                       description: The phone number of the account holder
                       allOf:
-                          - $ref: "../Events/Phone.yaml"
+                          - $ref: "#/components/schemas/Phone"
           customer:
               type: object
               description: The customer attached to the instrument
@@ -3374,7 +3340,7 @@ components:
               example: vnsdrvikkvre3dtrjjvlm5du4q
     InvalidError:
       allOf:
-        - $ref: "./Error.yaml"
+        - $ref: "#/components/schemas/Error"
         - type: object
           properties:
             details:
@@ -3397,7 +3363,7 @@ components:
     SelfLink:
       type: object
       allOf:
-        - $ref: "./Link.yaml"
+        - $ref: "#/components/schemas/Link"
       properties:
         rel:
           description: The link type
@@ -3479,14 +3445,14 @@ components:
               required:
                 - country
               allOf:
-                - $ref: '../Address.yaml'
+                - $ref: '#/components/schemas/Address'
             phone:
               type: object
               description: The customer's phone number
               required:
                 - number
               allOf:
-                - $ref: '../PhoneNumber.yaml'
+                - $ref: '#/components/schemas/PhoneNumber'
         products:
           type: array
           description: Details about the products in the order
@@ -3533,7 +3499,7 @@ components:
               description: Determines whether to attempt a 3D Secure payment as non-3D Secure should the card issuer not be enrolled
               default: false
         risk:
-          $ref: '../Payments/RiskRequest.yaml'
+          $ref: '#/components/schemas/RiskRequest'
         return_url:
           type: string
           format: uri
@@ -3566,7 +3532,7 @@ components:
             redirect:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               example:
                 href: 'https://pay.checkout.com/link/ELqQJXdXzabU'
     3dsData:
@@ -3707,7 +3673,7 @@ components:
         action_id:
           description: The unique identifier for the capture action
           allOf:
-            - $ref: './ActionId.yaml'
+            - $ref: '#/components/schemas/ActionId'
         reference:
           type: string
           description: Your reference for the capture request
@@ -3721,14 +3687,14 @@ components:
             payment:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: The URI of the payment to be captured. Use this to check the status of the payment
               example:
                 href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44"
             redirect:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: For some alternative payments, the URI that the customer should be redirected to to complete the capture
               example:
                 href: "https://api.checkout.com/redirect/act_y3oqhf46pyzuxjbcn2giaqnb44"
@@ -3808,21 +3774,21 @@ components:
         id:
           description: Payment unique identifier
           allOf:
-            - $ref: './PaymentId.yaml'
+            - $ref: '#/components/schemas/PaymentId'
         requested_on:
           description: The date/time the payment was requested
           allOf:
-            - $ref: '../ServerTimestamp.yaml'
+            - $ref: '#/components/schemas/ServerTimestamp'
         source:
           description: The source of the payment
           type: object
           allOf:
-            - $ref: './PaymentResponseSource.yaml'
+            - $ref: '#/components/schemas/PaymentResponseSource'
         destination:
           description: The destination of the payment
           type: object
           allOf:
-            - $ref: './PaymentResponseDestination.yaml'
+            - $ref: '#/components/schemas/PaymentResponseDestination'
         amount:
           type: integer
           description: The original payment amount
@@ -3874,7 +3840,7 @@ components:
           type: object
           description: Provides information relating to the processing of 3D Secure payments
           allOf:
-            - $ref: './3dsData.yaml'
+            - $ref: '#/components/schemas/3dsData'
         risk:
           type: object
           description: Returns the payments risk assessment results
@@ -3904,7 +3870,7 @@ components:
           required:
             - id
         billing_descriptor:
-          $ref: './BillingDescriptor.yaml'
+          $ref: '#/components/schemas/BillingDescriptor'
         shipping:
           type: object
           description: The payment shipping details
@@ -3912,17 +3878,17 @@ components:
             address:
               description: The shipping address
               allOf:
-                - $ref: '../Address.yaml'
+                - $ref: '#/components/schemas/Address'
             phone:
               description: The phone number associated with the shipping address
               allOf:
-                - $ref: '../PhoneNumber.yaml'
+                - $ref: '#/components/schemas/PhoneNumber'
         payment_ip:
           description: The IP address used to make the payment
           allOf:
-            - $ref: '../IPAddress.yaml'
+            - $ref: '#/components/schemas/IPAddress'
         recipient:
-          $ref: './PaymentRecipient.yaml'
+          $ref: '#/components/schemas/PaymentRecipient'
         metadata:
           type: object
           description: A set of key-value pairs that you can attach to a payment. It can be useful for storing additional information in a structured format
@@ -3943,7 +3909,7 @@ components:
         actions:
           type: array
           items:
-            $ref: './PaymentActionSummary.yaml'
+            $ref: '#/components/schemas/PaymentActionSummary'
           description: |
             A summary of the payment's actions, 
             returned when a session ID is used to get the payment details
@@ -3958,27 +3924,27 @@ components:
             self:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: The URI of the payment
             actions:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: A link to the payment's associated actions
             void:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: A link to void the payment, where applicable
             capture:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: A link to capture the payment, where applicable
             refund:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: A link to refund the payment, where applicable
           example:
             self:
@@ -3998,7 +3964,7 @@ components:
           description: The payment's unique identifier
           readOnly: true
           allOf:
-            - $ref: './PaymentId.yaml'
+            - $ref: '#/components/schemas/PaymentId'
         status:
           type: string
           description: The status of the payment
@@ -4012,12 +3978,12 @@ components:
           type: object
           description: The customer associated with the payment, if provided in the request
           allOf:
-            - $ref: './PaymentResponseCustomer.yaml'
+            - $ref: '#/components/schemas/PaymentResponseCustomer'
         3ds:
           type: object
           description: Provides 3D Secure enrollment status
           allOf:
-            - $ref: './3dsEnrollmentData.yaml'
+            - $ref: '#/components/schemas/3dsEnrollmentData'
         _links:
           type: object
           description: The links related to the payment
@@ -4027,14 +3993,14 @@ components:
             self:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: The URI of the payment
               example:
                 href: "https://api.checkout.com/payments/pay_mbabizu24mvu3mela5njyhpit4"
             redirect:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: The URI that the customer should be redirected to in order to complete the payment
               example:
                 href: "https://api.checkout.com/3ds/pay_mbabizu24mvu3mela5njyhpit4"
@@ -4053,7 +4019,7 @@ components:
         id:
           description: The unique identifier of the payment action
           allOf:
-            - $ref: './ActionId.yaml'
+            - $ref: '#/components/schemas/ActionId'
         type:
           type: string
           description: The type of action
@@ -4067,7 +4033,7 @@ components:
         processed_on:
           description: The date/time the action was processed
           allOf:
-            - $ref: '../ServerTimestamp.yaml'
+            - $ref: '#/components/schemas/ServerTimestamp'
         amount:
           type: integer
           description: The action amount
@@ -4116,7 +4082,7 @@ components:
     PaymentActionsResponse:
       type: array
       items:
-        $ref: './PaymentAction.yaml'
+        $ref: '#/components/schemas/PaymentAction'
       minItems: 1
       description: |
         The payment actions
@@ -4162,7 +4128,7 @@ components:
         id:
           description: The unique identifier of the payment action
           allOf:
-            - $ref: './ActionId.yaml'
+            - $ref: '#/components/schemas/ActionId'
         type:
           type: string
           description: The type of action
@@ -4238,15 +4204,10 @@ components:
     PaymentRequest:
       type: object
       required:
-        - source
-        - source.type
-        - source.number
-        - source.expiry_month
-        - source.expiry_year
         - currency
       properties:
         source:
-          $ref: './PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         amount:
           type: integer
           description: |
@@ -4296,7 +4257,7 @@ components:
             Providing this field will automatically set `capture` to true
       
           allOf:
-            - $ref: '../Timestamp.yaml'
+            - $ref: '#/components/schemas/Timestamp'
         customer:
           type: object
           description: The customer's details
@@ -4320,7 +4281,7 @@ components:
               maxLength: 255
               example: "Jack Napier"
         billing_descriptor:
-          $ref: './BillingDescriptor.yaml'
+          $ref: '#/components/schemas/BillingDescriptor'
         shipping:
           type: object
           description: The shipping details
@@ -4328,13 +4289,13 @@ components:
             address:
               description: The shipping address
               allOf:
-                - $ref: '../Address.yaml'
+                - $ref: '#/components/schemas/Address'
             phone:
               description: The phone number associated with the shipping address
               allOf:
-                - $ref: '../PhoneNumber.yaml'
+                - $ref: '#/components/schemas/PhoneNumber'
         3ds:
-          $ref: './3dsRequest.yaml'
+          $ref: '#/components/schemas/3dsRequest'
         previous_payment_id:
           type: string
           description: |
@@ -4343,7 +4304,7 @@ components:
           maxLength: 100
           example: "pay_fun26akvvjjerahhctaq2uzhu4"
         risk:
-          $ref: './RiskRequest.yaml'
+          $ref: '#/components/schemas/RiskRequest'
         success_url:
           type: string
           format: uri
@@ -4359,9 +4320,9 @@ components:
         payment_ip:
           description: The IP address used to make the payment. Required for some risk checks
           allOf:
-            - $ref: '../IPAddress.yaml'
+            - $ref: '#/components/schemas/IPAddress'
         recipient:
-          $ref: './PaymentRecipient.yaml'
+          $ref: '#/components/schemas/PaymentRecipient'
         processing:
           type: object
           description: Use the processing object to influence or override the data sent during card processing
@@ -4413,9 +4374,9 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          token: './RequestDestinations/01_PaymentRequestTokenDestination.yaml'
-          id: './RequestDestinations/02_PaymentRequestIdDestination.yaml'
-          card: './RequestDestinations/03_PaymentRequestCardDestination.yaml'
+          token: '#/components/schemas/01_PaymentRequestTokenDestination'
+          id: '#/components/schemas/02_PaymentRequestIdDestination'
+          card: '#/components/schemas/03_PaymentRequestCardDestination'
       required:
         - type
       properties:
@@ -4423,76 +4384,45 @@ components:
           type: string
           description: The payout destination type
           example: "token"
-        token: 
-          type: string  
-          description: The Checkout.com token (e.g., a card or digital wallet token)
-          pattern: "^(tok)_(\\w{26})$"
-          example: "tok_4gzeau5o2uqubbk6fufs3m7p54"
     PaymentRequestSource:
       type: object
       description: The source of the payment.<br><i>Use to request a payment</i>.
       discriminator:
         propertyName: type
         mapping:
-          token: './RequestSources/01_PaymentRequestTokenSource.yaml'
-          id: './RequestSources/02_PaymentRequestIdSource.yaml'
-          card: './RequestSources/03_PaymentRequestCardSource.yaml'
-          customer: './RequestSources/04_PaymentRequestCustomerSource.yaml'
-          network_token: './RequestSources/05_PaymentRequestNetworkTokenSource.yaml'
-          alipay: './RequestSources/PaymentRequestAlipaySource.yaml'
-          benefitpay: './RequestSources/PaymentRequestBenefitPaySource.yaml'
-          baloto: './RequestSources/PaymentRequestBalotoSource.yaml'
-          boleto: './RequestSources/PaymentRequestBoletoSource.yaml'
-          eps: './RequestSources/PaymentRequestEpsSource.yaml'
-          giropay: './RequestSources/PaymentRequestGiropaySource.yaml'
-          ideal: './RequestSources/PaymentRequestIdealSource.yaml'
-          klarna: './RequestSources/PaymentRequestKlarnaSource.yaml'
-          knet: './RequestSources/PaymentRequestKnetSource.yaml'
-          oxxo: './RequestSources/PaymentRequestOXXOSource.yaml'
-          p24: './RequestSources/PaymentRequestP24Source.yaml'
-          pagofacil: './RequestSources/PaymentRequestPagoFacilSource.yaml'
-          paypal: './RequestSources/PaymentRequestPayPalSource.yaml'
-          poli: './RequestSources/PaymentRequestPoliSource.yaml'
-          rapipago: './RequestSources/PaymentRequestRapiPagoSource.yaml'
-          bancontact: './RequestSources/PaymentRequestBancontactSource.yaml'
-          fawry: './RequestSources/PaymentRequestFawrySource.yaml'
-          qpay: './RequestSources/PaymentRequestQPaySource.yaml'
-          multibanco: './RequestSources/PaymentRequestMultibancoSource.yaml'
-          dLocal: './RequestSources/06_PaymentRequestdLocalSource.yaml'
-          sofort: './RequestSources/PaymentRequestSofortSource.yaml'
+          token: '#/components/schemas/01_PaymentRequestTokenSource'
+          id: '#/components/schemas/02_PaymentRequestIdSource'
+          card: '#/components/schemas/03_PaymentRequestCardSource'
+          customer: '#/components/schemas/04_PaymentRequestCustomerSource'
+          network_token: '#/components/schemas/05_PaymentRequestNetworkTokenSource'
+          alipay: '#/components/schemas/PaymentRequestAlipaySource'
+          benefitpay: '#/components/schemas/PaymentRequestBenefitPaySource'
+          baloto: '#/components/schemas/PaymentRequestBalotoSource'
+          boleto: '#/components/schemas/PaymentRequestBoletoSource'
+          eps: '#/components/schemas/PaymentRequestEpsSource'
+          giropay: '#/components/schemas/PaymentRequestGiropaySource'
+          ideal: '#/components/schemas/PaymentRequestIdealSource'
+          klarna: '#/components/schemas/PaymentRequestKlarnaSource'
+          knet: '#/components/schemas/PaymentRequestKnetSource'
+          oxxo: '#/components/schemas/PaymentRequestOXXOSource'
+          p24: '#/components/schemas/PaymentRequestP24Source'
+          pagofacil: '#/components/schemas/PaymentRequestPagoFacilSource'
+          paypal: '#/components/schemas/PaymentRequestPayPalSource'
+          poli: '#/components/schemas/PaymentRequestPoliSource'
+          rapipago: '#/components/schemas/PaymentRequestRapiPagoSource'
+          bancontact: '#/components/schemas/PaymentRequestBancontactSource'
+          fawry: '#/components/schemas/PaymentRequestFawrySource'
+          qpay: '#/components/schemas/PaymentRequestQPaySource'
+          multibanco: '#/components/schemas/PaymentRequestMultibancoSource'
+          dLocal: '#/components/schemas/06_PaymentRequestdLocalSource'
+          sofort: '#/components/schemas/PaymentRequestSofortSource'
       required:
-        - type  
-        - number
-        - expiry_month
-        - expiry_year
+        - type
       properties:
         type:
           type: string
           description: The payment source type <br> *Note:* *To make a payment with full card details, you must be <a href="https://docs.checkout.com/risk-management/pci-compliance" target="blank">SAQ D PCI compliant</a>*
           example: "card"
-        number:
-          type: integer
-          description: The card number (without separators)
-          example: 4242424242424242
-          maxLength: 19
-          minLength: 19
-        expiry_month:
-          type: integer
-          description: The expiry month of the card
-          example: 5
-          minLength: 1
-          maxLength: 2
-        expiry_year:
-          type: integer
-          description: The expiry year of the card
-          example: 2025
-          maxLength: 4
-          minLength: 2
-        cvv:
-          type: integer
-          description: The card cvv
-          example: 100
-         
     PaymentResponse:
       type: object
       description: Payment Response
@@ -4510,11 +4440,11 @@ components:
         id:
           description: The payment's unique identifier
           allOf:
-            - $ref: './PaymentId.yaml'
+            - $ref: '#/components/schemas/PaymentId'
         action_id:
           description: The unique identifier for the action performed against this payment
           allOf:
-            - $ref: './ActionId.yaml'
+            - $ref: '#/components/schemas/ActionId'
         amount:
           type: integer
           description: The payment amount
@@ -4556,7 +4486,7 @@ components:
           type: object
           description: Provides 3D Secure enrollment status if the payment was downgraded to non-3D Secure
           allOf:
-            - $ref: './3dsEnrollmentData.yaml'
+            - $ref: '#/components/schemas/3dsEnrollmentData'
           example:
             downgraded: true
             enrolled: N
@@ -4573,21 +4503,21 @@ components:
           description: The source of the payment
           type: object
           allOf:
-            - $ref: './PaymentResponseSource.yaml'
+            - $ref: '#/components/schemas/PaymentResponseSource'
         #destination:
           #description: The destination of the payment
           #type: object
           #allOf:
-           # - $ref: '../components/schemas/PaymentResponseDestination'
+           # - $ref: '#/components/schemas/PaymentResponseDestination'
         customer:
           type: object
           description: The customer associated with the payment, if provided in the request
           allOf:
-            - $ref: './PaymentResponseCustomer.yaml'
+            - $ref: '#/components/schemas/PaymentResponseCustomer'
         processed_on:
           description: The date/time the payment was processed
           allOf:
-            - $ref: '../ServerTimestamp.yaml'
+            - $ref: '#/components/schemas/ServerTimestamp'
         reference:
           type: string
           description: Your reference for the payment
@@ -4626,27 +4556,27 @@ components:
             self:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: The URI of the payment
             actions:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: A link to the payment's associated actions
             void:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: A link to void the payment, where applicable
             capture:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: A link to capture the payment, where applicable
             refund:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: A link to refund the payment, where applicable
           example:
             self:
@@ -4682,7 +4612,7 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          card: './ResponseDestinations/01_PaymentResponseCardDestination.yaml'
+          card: '#/components/schemas/01_PaymentResponseCardDestination'
       required:
         - type
       properties:
@@ -4700,11 +4630,11 @@ components:
         billing_address:
           description: The payment source owner's billing address
           allOf:
-            - $ref: '../Address.yaml'
+            - $ref: '#/components/schemas/Address'
         phone:
           description: The payment source owner's phone number
           allOf:
-            - $ref: '../PhoneNumber.yaml'
+            - $ref: '#/components/schemas/PhoneNumber'
     PaymentResponseSource:
       type: object
       description: Payment source
@@ -4712,27 +4642,27 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          card: './ResponseSources/01_PaymentResponseCardSource.yaml'
-          alipay: './ResponseSources/PaymentResponseAlipaySource.yaml'
-          benefitpay: './ResponseSources/PaymentResponseBenefitPaySource.yaml'
-          baloto: './ResponseSources/PaymentResponseBalotoSource.yaml'
-          boleto: './ResponseSources/PaymentResponseBoletoSource.yaml'
-          eps: './ResponseSources/PaymentResponseEpsSource.yaml'
-          giropay: './ResponseSources/PaymentResponseGiropaySource.yaml'
-          ideal: './ResponseSources/PaymentResponseIdealSource.yaml'
-          klarna: './ResponseSources/PaymentResponseKlarnaSource.yaml'
-          knet: './ResponseSources/PaymentResponseKnetSource.yaml'
-          oxxo: './ResponseSources/PaymentResponseOXXOSource.yaml'
-          p24: './ResponseSources/PaymentResponseP24Source.yaml'
-          pagofacil: './ResponseSources/PaymentResponsePagoFacilSource.yaml'
-          paypal: './ResponseSources/PaymentResponsePayPalSource.yaml'
-          poli: './ResponseSources/PaymentResponsePoliSource.yaml'
-          rapipago: './ResponseSources/PaymentResponseRapiPagoSource.yaml'
-          bancontact: './ResponseSources/PaymentResponseBancontactSource.yaml'
-          fawry: './ResponseSources/PaymentResponseFawrySource.yaml'
-          qpay: './ResponseSources/PaymentResponseQPaySource.yaml'
-          multibanco: './ResponseSources/PaymentResponseMultibancoSource.yaml'
-          sofort: './ResponseSources/PaymentResponseSofortSource.yaml'
+          card: '#/components/schemas/01_PaymentResponseCardSource'
+          alipay: '#/components/schemas/PaymentResponseAlipaySource'
+          benefitpay: '#/components/schemas/PaymentResponseBenefitPaySource'
+          baloto: '#/components/schemas/PaymentResponseBalotoSource'
+          boleto: '#/components/schemas/PaymentResponseBoletoSource'
+          eps: '#/components/schemas/PaymentResponseEpsSource'
+          giropay: '#/components/schemas/PaymentResponseGiropaySource'
+          ideal: '#/components/schemas/PaymentResponseIdealSource'
+          klarna: '#/components/schemas/PaymentResponseKlarnaSource'
+          knet: '#/components/schemas/PaymentResponseKnetSource'
+          oxxo: '#/components/schemas/PaymentResponseOXXOSource'
+          p24: '#/components/schemas/PaymentResponseP24Source'
+          pagofacil: '#/components/schemas/PaymentResponsePagoFacilSource'
+          paypal: '#/components/schemas/PaymentResponsePayPalSource'
+          poli: '#/components/schemas/PaymentResponsePoliSource'
+          rapipago: '#/components/schemas/PaymentResponseRapiPagoSource'
+          bancontact: '#/components/schemas/PaymentResponseBancontactSource'
+          fawry: '#/components/schemas/PaymentResponseFawrySource'
+          qpay: '#/components/schemas/PaymentResponseQPaySource'
+          multibanco: '#/components/schemas/PaymentResponseMultibancoSource'
+          sofort: '#/components/schemas/PaymentResponseSofortSource'
       required:
         - type
       
@@ -4752,21 +4682,18 @@ components:
         billing_address:
           description: The payment source owner's billing address
           allOf:
-            - $ref: '../Address.yaml'
+            - $ref: '#/components/schemas/Address'
         phone:
           description: The payment source owner's phone number
           allOf:
-            - $ref: '../PhoneNumber.yaml'
+            - $ref: '#/components/schemas/PhoneNumber'
     Payout:
       type: object
       required:
-        - source
-        - source.type
-        - source.token
         - currency
       properties:
         destination:
-          $ref: './PaymentRequestDestination.yaml'
+          $ref: '#/components/schemas/PaymentRequestDestination'
         amount:
           type: integer
           description: |
@@ -4813,7 +4740,7 @@ components:
             Providing this field will automatically set `capture` to true
       
           allOf:
-            - $ref: '../Timestamp.yaml'
+            - $ref: '#/components/schemas/Timestamp'
         customer:
           type: object
           description: The customer's details
@@ -4837,7 +4764,7 @@ components:
               maxLength: 255
               example: "Jack Napier"
         billing_descriptor:
-          $ref: './BillingDescriptor.yaml'
+          $ref: '#/components/schemas/BillingDescriptor'
         shipping:
           type: object
           description: The shipping details
@@ -4845,13 +4772,13 @@ components:
             address:
               description: The shipping address
               allOf:
-                - $ref: '../Address.yaml'
+                - $ref: '#/components/schemas/Address'
             phone:
               description: The phone number associated with the shipping address
               allOf:
-                - $ref: '../PhoneNumber.yaml'
+                - $ref: '#/components/schemas/PhoneNumber'
         3ds:
-          $ref: './3dsRequest.yaml'
+          $ref: '#/components/schemas/3dsRequest'
         previous_payment_id:
           type: string
           description: |
@@ -4859,7 +4786,7 @@ components:
             an existing payment identifier from the recurring series or the Scheme Transaction Id
           example: "pay_fun26akvvjjerahhctaq2uzhu4"
         risk:
-          $ref: './RiskRequest.yaml'
+          $ref: '#/components/schemas/RiskRequest'
         success_url:
           type: string
           format: uri
@@ -4875,9 +4802,9 @@ components:
         payment_ip:
           description: The IP address used to make the payment. Required for some risk checks
           allOf:
-            - $ref: '../IPAddress.yaml'
+            - $ref: '#/components/schemas/IPAddress'
         recipient:
-          $ref: './PaymentRecipient.yaml'
+          $ref: '#/components/schemas/PaymentRecipient'
         processing:
           type: object
           description: Use the processing object to influence or override the data sent during card processing
@@ -4888,8 +4815,8 @@ components:
               properties:
                 reference:
                   type: string
-                  description: Merchant's unique customer ID.
-                  maxLength: 19
+                  description: Merchant's unique customer ID.<br> <i>Alphanumeric characters only</i>.
+                  maxLength: 16
                 accountNumber:
                   type: string
                   description: The account number.
@@ -4947,7 +4874,7 @@ components:
         action_id:
           description: The unique identifier for the refund action
           allOf:
-            - $ref: './ActionId.yaml'
+            - $ref: '#/components/schemas/ActionId'
         reference:
           type: string
           description: Your reference for the refund request
@@ -4961,7 +4888,7 @@ components:
             payment:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: The URI of the payment to be refunded. Use this to check the status of the payment
               example:
                 href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44"
@@ -4996,7 +4923,7 @@ components:
         - first_name
         - last_name
       allOf:
-        - $ref: "../PaymentRequestDestination.yaml"
+        - $ref: "#/components/schemas/PaymentRequestDestination"
         - type: object
           properties:
             token:
@@ -5015,11 +4942,11 @@ components:
             billing_address:
               description: The payout destination owner's billing address. This will override the billing address specified during tokenization
               allOf:
-                - $ref: '../../Address.yaml'
+                - $ref: '#/components/schemas/Address'
             phone:
               description: The payout destination owner's phone number. This will override the phone number specified during tokenization
               allOf:
-                - $ref: '../../PhoneNumber.yaml'
+                - $ref: '#/components/schemas/PhoneNumber'
       
       
     02_PaymentRequestIdDestination:
@@ -5030,7 +4957,7 @@ components:
         - first_name
         - last_name
       allOf:
-        - $ref: "../PaymentRequestDestination.yaml"
+        - $ref: "#/components/schemas/PaymentRequestDestination"
         - type: object
           properties:
             id:
@@ -5056,7 +4983,7 @@ components:
         - first_name
         - last_name
       allOf:
-        - $ref: "../PaymentRequestDestination.yaml"
+        - $ref: "#/components/schemas/PaymentRequestDestination"
         - type: object
           properties:
             number:
@@ -5091,18 +5018,18 @@ components:
             billing_address:
               description: The payout destination owner's billing address
               allOf:
-                - $ref: '../../Address.yaml'
+                - $ref: '#/components/schemas/Address'
             phone:
               description: The payout destination owner's phone number
               allOf:
-                - $ref: '../../PhoneNumber.yaml'
+                - $ref: '#/components/schemas/PhoneNumber'
     01_PaymentRequestTokenSource:
       type: object
       description: A token payment source
       required:
         - token
       allOf:
-        - $ref: "../PaymentRequestSource.yaml"
+        - $ref: "#/components/schemas/PaymentRequestSource"
         - type: object
           properties:
             token:
@@ -5113,11 +5040,11 @@ components:
             billing_address:
               description: The customer's billing address. This will override the billing address specified during tokenization
               allOf:
-                - $ref: '../../Address.yaml'
+                - $ref: '#/components/schemas/Address'
             phone:
               description: The customer's phone number. This will override the phone number specified during tokenization
               allOf:
-                - $ref: '../../PhoneNumber.yaml'
+                - $ref: '#/components/schemas/PhoneNumber'
       
     02_PaymentRequestIdSource:
       type: object
@@ -5125,7 +5052,7 @@ components:
       required:
         - id
       allOf:
-        - $ref: "../PaymentRequestSource.yaml"
+        - $ref: "#/components/schemas/PaymentRequestSource"
         - type: object
           properties:
             id:
@@ -5143,7 +5070,7 @@ components:
       type: object
       description: A card payment source
       allOf:
-        - $ref: "../PaymentRequestSource.yaml"
+        - $ref: "#/components/schemas/PaymentRequestSource"
         - type: object
           required:
             - type
@@ -5188,35 +5115,31 @@ components:
             billing_address:
               description: The billing address of the cardholder
               allOf:
-                - $ref: '../../Address.yaml'
+                - $ref: '#/components/schemas/Address'
             phone:
               description: The phone number of the cardholder
               allOf:
-                - $ref: '../../PhoneNumber.yaml'
+                - $ref: '#/components/schemas/PhoneNumber'
     04_PaymentRequestCustomerSource:
       type: object
       description: A customer source
       allOf:
-        - $ref: "../PaymentRequestSource.yaml"
+        - $ref: "#/components/schemas/PaymentRequestSource"
         - type: object
+          required:
+            - id
           properties:
             id:
               type: string
               pattern: "^(cus)_(\\w{26})$"
-              description: The customer's identifier. Required if `email` is not provided
+              description: The customer's identifier.
               example: "cus_y3oqhf46pyzuxjbcn2giaqnb44"
-            email:
-              type: string
-              format: email
-              description: The customer's email address. Required if `id` is not provided
-              maxLength: 255
-              example: "jokershere@gmail.com"
       
     05_PaymentRequestNetworkTokenSource:
       type: object
       description: A network token payment source
       allOf:
-        - $ref: "../PaymentRequestSource.yaml"
+        - $ref: "#/components/schemas/PaymentRequestSource"
         - type: object
           required:
             - type
@@ -5281,17 +5204,17 @@ components:
             billing_address:
               description: The customer's billing address
               allOf:
-                - $ref: '../../Address.yaml'
+                - $ref: '#/components/schemas/Address'
             phone:
               description: The customer's phone number
               allOf:
-                - $ref: '../../PhoneNumber.yaml'
+                - $ref: '#/components/schemas/PhoneNumber'
     06_PaymentRequestdLocalSource:
       type: object
       description: A card payment source
       allOf:
-        - $ref: "../PaymentRequestSource.yaml"
-        - $ref: "../RequestSources/03_PaymentRequestCardSource.yaml"
+        - $ref: "#/components/schemas/PaymentRequestSource"
+        - $ref: "#/components/schemas/03_PaymentRequestCardSource"
         - type: object
           properties:
             number:
@@ -5303,7 +5226,7 @@ components:
       type: object
       description: Alipay Source
       allOf:
-        - $ref: "../PaymentRequestSource.yaml"
+        - $ref: "#/components/schemas/PaymentRequestSource"
     PaymentRequestBalotoSource:
       ###
       # Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
@@ -5312,7 +5235,7 @@ components:
       description: 'Baloto Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5364,7 +5287,7 @@ components:
       description: 'Bancontact Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5407,7 +5330,7 @@ components:
       description: 'BenefitPay Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5427,7 +5350,7 @@ components:
       description: 'Boleto Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5479,7 +5402,7 @@ components:
       description: 'Eps Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5501,7 +5424,7 @@ components:
       description: 'Fawry Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5560,7 +5483,7 @@ components:
       description: 'Giropay Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5597,7 +5520,7 @@ components:
       description: 'Ideal Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5624,7 +5547,7 @@ components:
       description: 'Klarna Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5700,7 +5623,7 @@ components:
       description: 'KNet Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5784,7 +5707,7 @@ components:
       description: 'Multibanco Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5815,7 +5738,7 @@ components:
       description: 'OXXO Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5867,7 +5790,7 @@ components:
       description: 'P24 Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5903,7 +5826,7 @@ components:
       description: 'PagoFacil Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -5953,7 +5876,7 @@ components:
       required:
         - invoice_number
       allOf:
-        - $ref: "../PaymentRequestSource.yaml"
+        - $ref: "#/components/schemas/PaymentRequestSource"
         - type: object
           properties:
             invoice_number:
@@ -6080,7 +6003,7 @@ components:
       type: object
       description: POLi Source
       allOf:
-        - $ref: "../PaymentRequestSource.yaml"
+        - $ref: "#/components/schemas/PaymentRequestSource"
     PaymentRequestQPaySource:
       ###
       # Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
@@ -6089,7 +6012,7 @@ components:
       description: 'QPay Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -6117,7 +6040,7 @@ components:
       description: 'RapiPago Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           required:
@@ -6169,7 +6092,7 @@ components:
       description: 'Sofort Source'
       allOf:
         -
-          $ref: '../PaymentRequestSource.yaml'
+          $ref: '#/components/schemas/PaymentRequestSource'
         -
           type: object
           properties:
@@ -6183,7 +6106,7 @@ components:
       type: object
       description: A card payment destination
       allOf:
-        - $ref: "../PaymentResponseDestination.yaml"
+        - $ref: "#/components/schemas/PaymentResponseDestination"
         - type: object
           required:
             - expiry_month
@@ -6266,7 +6189,7 @@ components:
       type: object
       description: A card payment source
       allOf:
-        - $ref: "../PaymentResponseSource.yaml"
+        - $ref: "#/components/schemas/PaymentResponseSource"
         - type: object
           required:
             - expiry_month
@@ -6367,7 +6290,7 @@ components:
       type: object
       description: An Alipay payment source
       allOf:
-        - $ref: "../PaymentResponseSource.yaml"
+        - $ref: "#/components/schemas/PaymentResponseSource"
     PaymentResponseBalotoSource:
       ###
       # Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
@@ -6376,7 +6299,7 @@ components:
       description: 'Baloto Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           allOf:
@@ -6431,7 +6354,7 @@ components:
       description: 'Bancontact Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           properties:
@@ -6447,7 +6370,7 @@ components:
       description: 'BenefitPay Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           properties:
@@ -6474,7 +6397,7 @@ components:
       description: 'Boleto Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           allOf:
@@ -6574,7 +6497,7 @@ components:
       description: 'Eps Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           properties:
@@ -6601,7 +6524,7 @@ components:
       description: 'Fawry Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           required:
@@ -6622,7 +6545,7 @@ components:
       description: 'Giropay Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           properties:
@@ -6649,7 +6572,7 @@ components:
       description: 'Ideal Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           required:
@@ -6679,7 +6602,7 @@ components:
       description: 'Klarna Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           properties:
@@ -6691,7 +6614,7 @@ components:
       description: 'KNet Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           properties:
@@ -6820,7 +6743,7 @@ components:
       description: 'Multibanco Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           properties:
@@ -6838,7 +6761,7 @@ components:
       description: 'OXXO Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           allOf:
@@ -6938,7 +6861,7 @@ components:
       description: 'P24 Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           properties:
@@ -6953,7 +6876,7 @@ components:
       description: 'PagoFacil Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           allOf:
@@ -7053,12 +6976,12 @@ components:
       type: object
       description: 'PayPal payment source'
       allOf:
-        - $ref: "../PaymentResponseSource.yaml"
+        - $ref: "#/components/schemas/PaymentResponseSource"
     PaymentResponsePoliSource:
       type: object
       description: A POLi payment source
       allOf:
-        - $ref: "../PaymentResponseSource.yaml"
+        - $ref: "#/components/schemas/PaymentResponseSource"
     PaymentResponseQPaySource:
       ###
       # Warning: this file was auto generated from OpenAPI specs using 'npm run sync-generated-specs'. Do not manually edit. 
@@ -7067,7 +6990,7 @@ components:
       description: 'QPay Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           required:
@@ -7093,7 +7016,7 @@ components:
       description: 'RapiPago Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           allOf:
@@ -7148,7 +7071,7 @@ components:
       description: 'Sofort Source'
       allOf:
         -
-          $ref: '../PaymentResponseSource.yaml'
+          $ref: '#/components/schemas/PaymentResponseSource'
         -
           type: object
           properties:
@@ -7181,7 +7104,7 @@ components:
         action_id:
           description: The unique identifier for the void action
           allOf:
-            - $ref: './ActionId.yaml'
+            - $ref: '#/components/schemas/ActionId'
         reference:
           type: string
           description: Your reference for the void request
@@ -7195,7 +7118,7 @@ components:
             payment:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               example:
                 href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44"
           required:
@@ -7231,11 +7154,11 @@ components:
         id:
           description: The unique payment identifier
           allOf:
-            - $ref: './PaymentId.yaml'
+            - $ref: '#/components/schemas/PaymentId'
         action_id:
           description: The unique identifier for the void action
           allOf:
-            - $ref: './ActionId.yaml'
+            - $ref: '#/components/schemas/ActionId'
         amount:
           type: integer
           description: The void amount
@@ -7261,7 +7184,7 @@ components:
         processed_on:
           description: The date/time the void was processed
           allOf:
-            - $ref: '../ServerTimestamp.yaml'
+            - $ref: '#/components/schemas/ServerTimestamp'
         reference:
           type: string
           description: Your reference for the void request
@@ -7274,7 +7197,7 @@ components:
             payment:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: The URI of the payment
               example:
                 href: "https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44"
@@ -7597,13 +7520,13 @@ components:
         - billing_address
         - source_data
       allOf:
-        - $ref: './SourceRequest.yaml'
+        - $ref: '#/components/schemas/SourceRequest'
         - type: object
           properties:
             billing_address:
               description: The payment source owner's billing address
               allOf:
-              - $ref: '../01_SepaAddress.yaml'
+              - $ref: '#/components/schemas/01_SepaAddress'
             source_data:
               type: object
               description: Additional data required to create SEPA payment sources
@@ -7611,7 +7534,6 @@ components:
                 - first_name
                 - last_name
                 - account_iban
-                - bic
                 - billing_descriptor
                 - mandate_type
               properties:
@@ -7646,7 +7568,7 @@ components:
       type: object
       description: The SEPA mandate details
       allOf:
-        - $ref: './AddSourceResponse.yaml'
+        - $ref: '#/components/schemas/AddSourceResponse'
         - type: object
           properties:
             response_data:
@@ -7666,12 +7588,12 @@ components:
                 self:
                   type: object
                   allOf:
-                    - $ref: '../Links/Link.yaml'
+                    - $ref: '#/components/schemas/Link'
                   description: The URI of the payment source
                 cancel:
                   type: object
                   allOf:
-                    - $ref: '../Links/Link.yaml'
+                    - $ref: '#/components/schemas/Link'
                   description: A link to cancel the SEPA Direct Debit mandate
     02_AchSource:
       type: object
@@ -7680,13 +7602,13 @@ components:
         - billing_address
         - source_data
       allOf:
-        - $ref: './SourceRequest.yaml'
+        - $ref: '#/components/schemas/SourceRequest'
         - type: object
           properties:
             billing_address:
               description: The payment source owner's billing address
               allOf:
-                - $ref: '../Address.yaml'
+                - $ref: '#/components/schemas/Address'
             source_data:
               type: object
               description: Additional data required to create ACH payment sources
@@ -7741,8 +7663,8 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          sepa: './01_SepaSourceResponse.yaml'
-          ach: './AddSourceResponse.yaml'
+          sepa: '#/components/schemas/01_SepaSourceResponse'
+          ach: '#/components/schemas/AddSourceResponse'
       required:
         - type
         - response_code
@@ -7763,7 +7685,7 @@ components:
           type: object
           description: The customer associated with the payment source if provided in the request
           allOf:
-            - $ref: './SourceResponseCustomer.yaml'
+            - $ref: '#/components/schemas/SourceResponseCustomer'
     Source:
       type: object
       required:
@@ -7788,7 +7710,7 @@ components:
             self:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: The URI of the payment source
               example:
                 href: https://api.checkout.com/sources/src_y3oqhf46pyzuxjbcn2giaqnb44
@@ -7804,8 +7726,8 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          sepa: './01_SepaSource.yaml'
-          ach: './02_AchSource.yaml'
+          sepa: '#/components/schemas/01_SepaSource'
+          ach: '#/components/schemas/02_AchSource'
       properties:
         type:
           type: string
@@ -7818,7 +7740,7 @@ components:
         phone:
           description: The payment source owner's phone number
           allOf:
-            - $ref: '../PhoneNumber.yaml'
+            - $ref: '#/components/schemas/PhoneNumber'
         customer:
           type: object
           description: Details of the customer to associate with the source
@@ -7866,7 +7788,7 @@ components:
       type: object
       description: Apple Pay Token Request
       allOf:
-        - $ref: './TokenRequest.yaml'
+        - $ref: '#/components/schemas/TokenRequest'
         - type: object
           properties:
             token_data:
@@ -7900,12 +7822,12 @@ components:
       type: object
       description: Apple Pay Token Response
       allOf:
-        - $ref: './TokenResponse.yaml'
+        - $ref: '#/components/schemas/TokenResponse'
     02_GooglePayTokenRequest:
       type: object
       description: Google Pay Token Request
       allOf:
-        - $ref: './TokenRequest.yaml'
+        - $ref: '#/components/schemas/TokenRequest'
         - type: object
           properties:
             token_data:
@@ -7934,12 +7856,12 @@ components:
       type: object
       description: Google Pay Token Response
       allOf:
-        - $ref: './TokenResponse.yaml'
+        - $ref: '#/components/schemas/TokenResponse'
     03_CardTokenRequest:
       type: object
       description: Card Token Request
       allOf:
-        - $ref: './TokenRequest.yaml'
+        - $ref: '#/components/schemas/TokenRequest'
         - type: object
           required:
             - number
@@ -7976,11 +7898,11 @@ components:
             billing_address:
               description: The payment source owner's billing address
               allOf:
-                - $ref: '../Address.yaml'
+                - $ref: '#/components/schemas/Address'
             phone:
               description: The payment source owner's phone number
               allOf:
-                - $ref: '../PhoneNumber.yaml'
+                - $ref: '#/components/schemas/PhoneNumber'
     03_CardTokenResponse:
       type: object
       description: Card Token Response
@@ -7990,17 +7912,17 @@ components:
         - last4
         - bin
       allOf:
-        - $ref: './TokenResponse.yaml'
+        - $ref: '#/components/schemas/TokenResponse'
         - type: object
           properties:
             billing_address:
               description: The payment source owner's billing address
               allOf:
-                - $ref: '../Address.yaml'
+                - $ref: '#/components/schemas/Address'
             phone:
               description: The payment source owner's phone number
               allOf:
-                - $ref: '../PhoneNumber.yaml'
+                - $ref: '#/components/schemas/PhoneNumber'
             expiry_month:
               type: integer
               description: The expiry month
@@ -8073,11 +7995,9 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          applepay: './01_ApplePayTokenRequest.yaml'
-          googlepay: './02_GooglePayTokenRequest.yaml'
-          card: './03_CardTokenRequest.yaml'
-      required:
-        - type
+          applepay: '#/components/schemas/01_ApplePayTokenRequest'
+          googlepay: '#/components/schemas/02_GooglePayTokenRequest'
+          card: '#/components/schemas/03_CardTokenRequest'
       properties:
         type:
           type: string
@@ -8089,9 +8009,9 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          applepay: './01_ApplePayTokenResponse.yaml'
-          googlepay: './02_GooglePayTokenResponse.yaml'
-          card: './03_CardTokenResponse.yaml'
+          applepay: '#/components/schemas/01_ApplePayTokenResponse'
+          googlepay: '#/components/schemas/02_GooglePayTokenResponse'
+          card: '#/components/schemas/03_CardTokenResponse'
       required:
         - type
         - token
@@ -8112,7 +8032,7 @@ components:
         expires_on:
           description: The date/time the token will expire
           allOf:
-            - $ref: '../ServerTimestamp.yaml'
+            - $ref: '#/components/schemas/ServerTimestamp'
         expiry_month:
           type: integer
           description: The expiry month
@@ -8210,14 +8130,14 @@ components:
             - xml
           example: json
         event_types:
-          $ref: './WebhookEvents.yaml'
+          $ref: '#/components/schemas/WebhookEvents'
         _links:
           type: object
           properties:
             self:
               type: object
               allOf:
-                - $ref: '../Links/Link.yaml'
+                - $ref: '#/components/schemas/Link'
               description: The URI of the payment source
               example:
                 href: "https://api.checkout.com/webhooks/wh_387ac7a83a054e37ae140105429d76b5"
@@ -8269,7 +8189,7 @@ components:
           default: json
           example: json
         event_types:
-          $ref: './WebhookEvents.yaml'
+          $ref: '#/components/schemas/WebhookEvents'
   headers:
     Cko-Request-Id:
       description: The unique identifier of the request
@@ -8396,25 +8316,25 @@ components:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/Error'
+            $ref: '#/components/schemas/Error'
     Conflict:
       description: Conflict
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/Error'
+            $ref: '#/components/schemas/Error'
     InvalidDataError:
       description: Invalid data was sent
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/ValidationError'
+            $ref: '#/components/schemas/ValidationError'
     NotFound:
       description: Resource was not found
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/Error'
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     ApiPublicKey:
       description: >

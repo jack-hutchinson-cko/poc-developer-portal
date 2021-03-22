@@ -3,6 +3,7 @@ id: files
 title: Files
 ---
 
+# Files
 
 You can find a list of request body parameters and possible outcomes [here](http://localhost:3000/#tag/Disputes/paths/~1files/post).
 

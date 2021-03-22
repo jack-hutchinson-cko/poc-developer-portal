@@ -3,6 +3,7 @@ id: tokens
 title: Tokens
 ---
 
+# Tokens
 
 You can find a list of request body parameters and possible outcomes [here](https://api-reference.checkout.com/#tag/Tokens).
 

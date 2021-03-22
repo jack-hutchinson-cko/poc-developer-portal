@@ -3,6 +3,8 @@ id: install
 title: Install
 ---
 
+# Installation
+
 You can use your preferred package manager to install the SDK.
 
 ## Install with Yarn

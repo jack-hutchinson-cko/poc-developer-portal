@@ -3,8 +3,9 @@ id: sources
 title: Sources
 ---
 
-import { Information } from '../../../components/Information';
+import Information from '../../../components/Information';
 
+# Sources
 
 You can find a list of request body parameters and possible outcomes [here](https://api-reference.checkout.com/#tag/Sources).
 
@@ -13,7 +14,7 @@ The SDK will infer the type of the source, if not provided.
 ## Add a SEPA source
 
 
-<Information>SEPA is not enabled by default, so please let your account manager know if you want to use it.</Information>
+<Information type="information">SEPA is not enabled by default, so please let your account manager know if you want to use it.</Information>
 
 
 ```js
@@ -46,11 +47,11 @@ const source = await cko.sources.add({
 
 ## Add a ACH source
 
-:::note
 
-ACH is not enabled by default, so please let your account manager know if you want to use it.
+<Information type="information">
+    ACH is not enabled by default, so please let your account manager know if you want to use it.
+</Information>
 
-:::
 
 ```js
 const source = await cko.sources.add({

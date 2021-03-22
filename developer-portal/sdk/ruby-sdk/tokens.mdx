@@ -3,6 +3,9 @@ id: tokens
 title: Tokens
 ---
 
+import Information from '../../../components/Information';
+
+# Tokens
 
 You can find a list of request body parameters and possible outcomes [here](https://api-reference.checkout.com/#tag/Tokens).
 
@@ -56,11 +59,10 @@ puts(response.body) # => "..."
 
 ## Request a token for <Highlight color="#25c2a0">raw card details</Highlight>
 
-:::warning
 
-If you do not have SAQ-D level PCI Compliance, this interaction can only be done in the Sandbox environment. This is in case you want to unit test your code and need a token to make a payment. In the Production environment, you need to use an integrated solution such as **[Frames](https://docs.checkout.com/quickstart/integrate/frames)** to generate the token for you.
-
-:::
+<Information type="warning">
+    If you do not have SAQ-D level PCI Compliance, this interaction can only be done in the Sandbox environment. This is in case you want to unit test your code and need a token to make a payment. In the Production environment, you need to use an integrated solution such as **[Frames](https://docs.checkout.com/quickstart/integrate/frames)** to generate the token for you.
+</Information>
 
 ```ruby
 token_request_source = CheckoutSdk::RequestToken.new

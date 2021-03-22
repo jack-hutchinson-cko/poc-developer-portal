@@ -3,6 +3,7 @@ id: events
 title: Events
 ---
 
+# Events
 
 You can find a list of request body parameters and possible outcomes [here](https://api-reference.checkout.com/#tag/Events).
 

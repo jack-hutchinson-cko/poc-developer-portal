@@ -1,6 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import ConfirmationIcon from './svgs/Confirmation'; 
 import InformationIcon from './svgs/Information'; 
+import WarningIcon from './svgs/Warning'; 
 
 const StyledWrapper = styled.div`
     border: 1px solid #80E5E9;    
@@ -12,23 +14,42 @@ const StyledWrapper = styled.div`
     font-size: 16px;
     min-height: 90px;
     position: relative;
-    margin: auto;
+    margin: 40px auto;
 `;
 
 const StyledSide  = styled.div`
     margin: auto;
 `;
 
+const StyledText = styled.div`
+  padding: 24px;
+  line-height: 32px;
+`;
 
-export function Information({children}) {
+const Information = ({ children, type = 'information' }) => {
+  const bgMap = {
+    'information': '#80E5E9',
+    'confirmation': '#70C9B7',
+    'caution': '#F3C25D',
+    'warning': '#EE6D5F'
+  };
+  const activeBg = bgMap[type];
+
   return (
-    <StyledWrapper>
-        <div style={{ background: '#80E5E9', display: 'flex'}}>
+    <StyledWrapper style={{border: `1px solid ${activeBg}`}}>
+        <div style={{ background: activeBg, display: 'flex'}}>
             <StyledSide>
-                <InformationIcon />
+               {type === 'confirmation' &&  <ConfirmationIcon />}
+               {type === 'information' &&  <InformationIcon />}
+               {type === 'caution' && <WarningIcon />}
+               {type === 'warning' && <WarningIcon />}
             </StyledSide>
         </div>
-      <div style={{ padding: '24px'}}> {children} </div>
+      <StyledText> 
+        {children}
+      </StyledText>
     </StyledWrapper>
   );
 }
+
+export default Information;

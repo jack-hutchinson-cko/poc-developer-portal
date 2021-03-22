@@ -1,52 +1,58 @@
 training:
   - page: developer-portal/index.md
+  - group: Checkout.com
+    expanded: true
+    pages:
+      - page: openapi/cko-reference.page.yaml/*
   - group: Java SDK
     expanded: false
     pages:
       - label: Getting started
-        page: developer-portal/sdk/java-sdk/getting_started.md
+        page: developer-portal/sdk/java-sdk/getting_started.mdx
       - label: Events
-        page: developer-portal/sdk/java-sdk/events.md
+        page: developer-portal/sdk/java-sdk/events.mdx
       - label: Environment
-        page: developer-portal/sdk/java-sdk/environment.md
+        page: developer-portal/sdk/java-sdk/environment.mdx
       - label: Initialize
-        page: developer-portal/sdk/java-sdk/initialize.md
+        page: developer-portal/sdk/java-sdk/initialize.mdx
       - label: Install
-        page: developer-portal/sdk/java-sdk/install.md
+        page: developer-portal/sdk/java-sdk/install.mdx
       - label: Payments
-        page: developer-portal/sdk/java-sdk/payments.md
+        page: developer-portal/sdk/java-sdk/payments.mdx
       - label: Sources
-        page: developer-portal/sdk/java-sdk/sources.md
+        page: developer-portal/sdk/java-sdk/sources.mdx
       - label: Tokens
-        page: developer-portal/sdk/java-sdk/tokens.md
+        page: developer-portal/sdk/java-sdk/tokens.mdx
   - group: Ruby SDK
     expanded: false
     pages:
       - label: Getting started
-        page: developer-portal/sdk/ruby-sdk/getting_started.md
+        page: developer-portal/sdk/ruby-sdk/getting_started.mdx
       - label: Environment
-        page: developer-portal/sdk/ruby-sdk/environment.md
+        page: developer-portal/sdk/ruby-sdk/environment.mdx
       - label: Initialize
-        page: developer-portal/sdk/ruby-sdk/initialize.md
+        page: developer-portal/sdk/ruby-sdk/initialize.mdx
       - label: Install
-        page: developer-portal/sdk/ruby-sdk/install.md
+        page: developer-portal/sdk/ruby-sdk/install.mdx
       - label: Payments
         page: developer-portal/sdk/ruby-sdk/payments.md
       - label: Sources
-        page: developer-portal/sdk/ruby-sdk/sources.md
+        page: developer-portal/sdk/ruby-sdk/sources.mdx
       - label: Tokens
-        page: developer-portal/sdk/ruby-sdk/tokens.md
+        page: developer-portal/sdk/ruby-sdk/tokens.mdx
   - group: Node SDK
     expanded: false
     pages:
       - label: Getting started
-        page: developer-portal/sdk/node-sdk/getting_started.md
+        page: developer-portal/sdk/node-sdk/getting_started.mdx
+      - label: Errors
+        page: developer-portal/sdk/node-sdk/errors.mdx
       - label: Events
         page: developer-portal/sdk/node-sdk/events.md
       - label: Environment
-        page: developer-portal/sdk/node-sdk/environment.md
+        page: developer-portal/sdk/node-sdk/environment.mdx
       - label: Initialize
-        page: developer-portal/sdk/node-sdk/initialize.md
+        page: developer-portal/sdk/node-sdk/initialize.mdx
       - label: Install
         page: developer-portal/sdk/node-sdk/install.md
       - label: Payments
@@ -63,8 +69,4 @@ training:
         page: developer-portal/sdk/node-sdk/hosted-payments.md
       - label: Payment Links
         page: developer-portal/sdk/node-sdk/payment-links.md
-  - group: Checkout.com
-    expanded: true
-    pages:
-      - page: openapi/cko-reference.page.yaml/*
 

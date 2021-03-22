@@ -16,8 +16,6 @@ Your files should be organized into folders. The folder naming is reflected in t
 
 ```bash
 ├── ./README.md
-├── ./contact.mdx
-├── ./faq.md
 ├── ./favicon.png
 ├── ./images
 │   ├── ./images/book-management.svg

@@ -4,48 +4,48 @@ training:
     expanded: true
     pages:
       - label: Getting started
-        page: developer-portal/java-sdk/getting_started.md
+        page: developer-portal/sdk/java-sdk/getting_started.md
       - label: Events
-        page: developer-portal/java-sdk/events.md
+        page: developer-portal/sdk/java-sdk/events.md
       - label: Environment
-        page: developer-portal/java-sdk/environment.md
+        page: developer-portal/sdk/java-sdk/environment.md
       - label: Initialize
-        page: developer-portal/java-sdk/initialize.md
+        page: developer-portal/sdk/java-sdk/initialize.md
       - label: Install
-        page: developer-portal/java-sdk/install.md
+        page: developer-portal/sdk/java-sdk/install.md
       - label: Payments
-        page: developer-portal/java-sdk/payments.md
+        page: developer-portal/sdk/java-sdk/payments.md
       - label: Sources
-        page: developer-portal/java-sdk/sources.md
+        page: developer-portal/sdk/java-sdk/sources.md
       - label: Tokens
-        page: developer-portal/java-sdk/tokens.md
+        page: developer-portal/sdk/java-sdk/tokens.md
   - group: Node SDK
     expanded: true
     pages:
       - label: Getting started
-        page: developer-portal/node-sdk/getting_started.md
+        page: developer-portal/sdk/node-sdk/getting_started.md
       - label: Events
-        page: developer-portal/node-sdk/events.md
+        page: developer-portal/sdk/node-sdk/events.md
       - label: Environment
-        page: developer-portal/node-sdk/environment.md
+        page: developer-portal/sdk/node-sdk/environment.md
       - label: Initialize
-        page: developer-portal/node-sdk/initialize.md
+        page: developer-portal/sdk/node-sdk/initialize.md
       - label: Install
-        page: developer-portal/node-sdk/install.md
+        page: developer-portal/sdk/node-sdk/install.md
       - label: Payments
-        page: developer-portal/node-sdk/payments.md
+        page: developer-portal/sdk/node-sdk/payments.md
       - label: Sources
-        page: developer-portal/node-sdk/sources.md
+        page: developer-portal/sdk/node-sdk/sources.md
       - label: Tokens
-        page: developer-portal/node-sdk/tokens.md
+        page: developer-portal/sdk/node-sdk/tokens.md
       - label: Customers
-        page: developer-portal/node-sdk/customers.md
+        page: developer-portal/sdk/node-sdk/customers.md
       - label: Files
-        page: developer-portal/node-sdk/files.md
+        page: developer-portal/sdk/node-sdk/files.md
       - label: Hosted Payments
-        page: developer-portal/node-sdk/hosted-payments.md
+        page: developer-portal/sdk/node-sdk/hosted-payments.md
       - label: Payment Links
-        page: developer-portal/node-sdk/payment-links.md
+        page: developer-portal/sdk/node-sdk/payment-links.md
   - group: Petstore reference
     expanded: false
     pages:

@@ -1,0 +1,8 @@
+allOf:
+  - $ref: "./Error.yaml"
+  - type: object
+    properties:
+      details:
+        type: array
+        items:
+          type: string

@@ -1,0 +1,51 @@
+type: object
+description: Payment source
+
+discriminator:
+  propertyName: type
+  mapping:
+    card: './ResponseSources/01_PaymentResponseCardSource.yaml'
+    alipay: './ResponseSources/PaymentResponseAlipaySource.yaml'
+    benefitpay: './ResponseSources/PaymentResponseBenefitPaySource.yaml'
+    baloto: './ResponseSources/PaymentResponseBalotoSource.yaml'
+    boleto: './ResponseSources/PaymentResponseBoletoSource.yaml'
+    eps: './ResponseSources/PaymentResponseEpsSource.yaml'
+    giropay: './ResponseSources/PaymentResponseGiropaySource.yaml'
+    ideal: './ResponseSources/PaymentResponseIdealSource.yaml'
+    klarna: './ResponseSources/PaymentResponseKlarnaSource.yaml'
+    knet: './ResponseSources/PaymentResponseKnetSource.yaml'
+    oxxo: './ResponseSources/PaymentResponseOXXOSource.yaml'
+    p24: './ResponseSources/PaymentResponseP24Source.yaml'
+    pagofacil: './ResponseSources/PaymentResponsePagoFacilSource.yaml'
+    paypal: './ResponseSources/PaymentResponsePayPalSource.yaml'
+    poli: './ResponseSources/PaymentResponsePoliSource.yaml'
+    rapipago: './ResponseSources/PaymentResponseRapiPagoSource.yaml'
+    bancontact: './ResponseSources/PaymentResponseBancontactSource.yaml'
+    fawry: './ResponseSources/PaymentResponseFawrySource.yaml'
+    qpay: './ResponseSources/PaymentResponseQPaySource.yaml'
+    multibanco: './ResponseSources/PaymentResponseMultibancoSource.yaml'
+    sofort: './ResponseSources/PaymentResponseSofortSource.yaml'
+required:
+  - type
+
+properties:
+  type:
+    type: string
+    description: |
+      The payment source type. For any payment request sources that result in a card token (token, source ID, etc.),
+      this will be `card`; otherwise it will be the name of the alternative payment method
+    example: "card"
+  id:
+    type: string
+    description: |
+      The payment source identifier that can be used for subsequent payments.
+      For new sources, this will only be returned if the payment was approved
+    example: "src_nwd3m4in3hkuddfpjsaevunhdy"
+  billing_address:
+    description: The payment source owner's billing address
+    allOf:
+      - $ref: '../Address.yaml'
+  phone:
+    description: The payment source owner's phone number
+    allOf:
+      - $ref: '../PhoneNumber.yaml'

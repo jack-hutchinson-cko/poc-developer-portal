@@ -3,6 +3,8 @@ id: payments
 title: Payments
 ---
 
+import Information from '../../../components/Information'
+
 # Payments
 
 You can find a list of request body parameters and possible outcomes [here](https://api-reference.checkout.com/#tag/Payments).
@@ -47,11 +49,11 @@ puts(response.data) # => {...}
 puts(response.body) # => "..."
 ```
 
-## Request a card payment with a <Highlight color="#25c2a0">full card details</Highlight>
+## Request a card payment with a full card details
 
 
 <Information type="warning">
-  You need to have a high level of PCI Compliance (SAQ-D) to be able to send requests with full card details. Note that unless this payment option is enabled on your account by Checkout.com, the <div style={{color:"#5A522C"}}>request will fail</div>. Contact you account manager to request access for this payment interaction.
+  You need to have a high level of PCI Compliance (SAQ-D) to be able to send requests with full card details. Note that unless this payment option is enabled on your account by Checkout.com, the request will fail. Contact you account manager to request access for this payment interaction.
 </Information>
 
 ```ruby

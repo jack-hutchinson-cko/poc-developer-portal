@@ -48,25 +48,31 @@ training:
       - label: Errors
         page: developer-portal/sdk/node-sdk/errors.mdx
       - label: Events
-        page: developer-portal/sdk/node-sdk/events.md
+        page: developer-portal/sdk/node-sdk/events.mdx
       - label: Environment
         page: developer-portal/sdk/node-sdk/environment.mdx
       - label: Initialize
         page: developer-portal/sdk/node-sdk/initialize.mdx
+      - label: Instruments
+        page: developer-portal/sdk/node-sdk/instruments.mdx
       - label: Install
-        page: developer-portal/sdk/node-sdk/install.md
-      - label: Payments
-        page: developer-portal/sdk/node-sdk/payments.md
+        page: developer-portal/sdk/node-sdk/install.mdx
       - label: Sources
         page: developer-portal/sdk/node-sdk/sources.mdx
       - label: Tokens
-        page: developer-portal/sdk/node-sdk/tokens.md
+        page: developer-portal/sdk/node-sdk/tokens.mdx
       - label: Customers
-        page: developer-portal/sdk/node-sdk/customers.md
+        page: developer-portal/sdk/node-sdk/customers.mdx
       - label: Files
-        page: developer-portal/sdk/node-sdk/files.md
+        page: developer-portal/sdk/node-sdk/files.mdx
       - label: Hosted Payments
-        page: developer-portal/sdk/node-sdk/hosted-payments.md
+        page: developer-portal/sdk/node-sdk/hosted-payments.mdx
+      - label: Payments
+        page: developer-portal/sdk/node-sdk/payments.mdx
       - label: Payment Links
-        page: developer-portal/sdk/node-sdk/payment-links.md
+        page: developer-portal/sdk/node-sdk/payment-links.mdx
+      - label: Reconciliation
+        page: developer-portal/sdk/node-sdk/reconciliation.mdx
+      - label: Disputes
+        page: developer-portal/sdk/node-sdk/disputes.mdx
 

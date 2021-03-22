@@ -3,13 +3,15 @@ id: tokens
 title: Tokens
 ---
 
+import Information from '../../../components/Information'
+
 # Tokens
 
 You can find a list of request body parameters and possible outcomes [here](https://api-reference.checkout.com/#tag/Tokens).
 
 The SDK will infer the type of the payload, if not provided.
 
-## Request a token for <Highlight color="#25c2a0">Apple Pay</Highlight>
+## Request a token for Apple Pay
 
 ```js
 const token = await cko.tokens.request({
@@ -27,7 +29,7 @@ const token = await cko.tokens.request({
 });
 ```
 
-## Request a token for <Highlight color="#25c2a0">Google Pay</Highlight>
+## Request a token for Google Pay
 
 ```js
 const token = await cko.tokens.request({
@@ -40,13 +42,12 @@ const token = await cko.tokens.request({
 });
 ```
 
-## Request a token for <Highlight color="#25c2a0">raw card details</Highlight>
+## Request a token for raw card details
 
-:::warning
+<Information type="warning">
+    If you do not have SEQ-D level of PCI Compliance, this interaction can only be done in the test environment in case you want to unit test your code and you need a token to subsequently do a payment. In the production environment you need to use a solution like **Checkout.Frames** to generate the token for you.
+</Information>
 
-If you do not have SEQ-D level of PCI Compliance, this interaction can only be done in the test environment in case you want to unit test your code and you need a token to subsequently do a payment. In the production environment you need to use a solution like **Checkout.Frames** to generate the token for you.
-
-:::
 
 ```js
 const token = await cko.tokens.request({

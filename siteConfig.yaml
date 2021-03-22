@@ -10,12 +10,12 @@ oasDefinitions:
   # add links to definitions in our API registry by using a fully qualified URL.
 stylesheets:
   - ./assets/theme.css
-#ga:
+ga:
   # you can use any options here from https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/
   # note that GA doesn't work in DEV
-#  trackingId: UA-45997213-1
-#scripts:
-#  - ./static/intercom.js
+ trackingId: UA-83886670-8
+scripts:
+ - ./scripts/headscripts/hotjar.js
 nav:
   - search: true
 

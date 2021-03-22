@@ -3,6 +3,8 @@ id: reconciliation
 title: Reconciliation
 ---
 
+import Information from '../../../components/Information'
+
 # Reconciliation
 
 You can find a list of request body parameters and possible outcomes [here](https://api-reference.checkout.com/#tag/Reconciliation).
@@ -22,12 +24,11 @@ const reconciliation = await cko.reconciliation.getPayments({
 The API response can be paginated, either by you setting the "limit" parameter, or by having more then 500 records in the response.
 Here you have an example of how you would handle the pagination:
 
-:::note
-
-In case the API response contains a<Highlight color="#a45200">next page</Highlight>, the page identifier will be injected in the response object as <Highlight color="#5A522C">"page"</Highlight>.
+<Information type="note">
+In case the API response contains a next page, the page identifier will be injected in the response object as "page".
 You can then use that value in a subsequent call to move to the next page. (by using the "after" parameter)
+</Information>
 
-:::
 
 ```js
 let page;
@@ -61,11 +62,9 @@ const reconciliation = await cko.reconciliation.getPaymentsCsv({
 });
 ```
 
-:::note
-
-This API call returns a Buffer.
-
-:::
+<Information type="note">
+    This API call returns a Buffer.
+</Information>
 
 ## Get JSON statements report
 
@@ -82,11 +81,9 @@ const statements = await cko.reconciliation.getStatements({
 const statement = await cko.reconciliation.getStatementCsv('155613B100981');
 ```
 
-:::note
-
-This API call returns a Buffer.
-
-:::
+<Information type="note">
+    This API call returns a Buffer.
+</Information>
 
 ## Get Payments Actions
 
@@ -112,11 +109,9 @@ const reconciliation = await cko.reconciliation.getPaymentsActionsCsv({
 });
 ```
 
-:::note
-
-This API call returns a Buffer.
-
-:::
+<Information type="note">
+    This API call returns a Buffer.
+</Information>
 
 ## Get Action
 

@@ -5,7 +5,6 @@ title: Demo API Portal
 import { LandingLayout } from '@redocly/ui';
 
 import {
-  Button,
   Box,
   FlexSection,
   Flex,
@@ -17,14 +16,15 @@ import {
   H2,
   SectionHeader,
 } from '@redocly/ui';
+import ButtonLink from './components/ButtonLink'
 
 import { NavBar } from '@redocly/ui';
 
-import icon1 from './images/icon1.png';
-import launchFastIcon from './images/launch-fast.svg';
-import icon3 from './images/icon3.png';
-import bookManagementIcon from './images/book-management.svg';
-import foundOrPrivate from './images/found-or-private.svg';
+import icon1 from './assets/images/icon1.png';
+import launchFastIcon from './assets/images/launch-fast.svg';
+import icon3 from './assets/images/icon3.png';
+import bookManagementIcon from './assets/images/book-management.svg';
+import foundOrPrivate from './assets/images/found-or-private.svg';
 
 export default LandingLayout;
 
@@ -33,9 +33,9 @@ export default LandingLayout;
   <H1>Checkout.com API Reference</H1>
   <H2>All you could ever dream of</H2>
   <Flex p={20} justifyContent="center">
-    <Button inversed transparent large to="developer-portal/index.md">
+    <ButtonLink  href="developer-portal/index.md">
       Get started
-    </Button>
+    </ButtonLink>
   </Flex>
 </Jumbotron>
 <Box my={25}>

@@ -1,21 +1,11 @@
 #!/usr/bin/env node
 'use strict';
-var Path = require('path');
 
 require('shelljs/global');
 set('-e');
-
-// mkdir('-p', 'web_deploy')
-
-// cp('-R', 'web/*', 'web_deploy/');
 
 exec('dotnet build ./OpenApiGenerator/OpenApiGenerator.csproj');
 exec('dotnet run -p ./OpenApiGenerator/OpenApiGenerator.csproj');
 
 cp('-R', 'output/*', './openapi/');
-
-// var SWAGGER_UI_DIST = Path.dirname(require.resolve('swagger-ui'));
-// rm('-rf', 'web_deploy/swagger-ui/')
-// cp('-R', SWAGGER_UI_DIST, 'web_deploy/swagger-ui/')
-// sed('-i', 'http://petstore.swagger.io/v2/swagger.json', '../swagger.json', 'web_deploy/index.html')
-
+rm('-rf', 'output')

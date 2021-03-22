@@ -7,7 +7,7 @@ Make this uniquely yours.
 
 ```yaml
 meta:
-  title: Redocly Training
+  title: Checkout API Reference
   description: The best API documentation generator ever.
   siteUrl: https://portal-demo.redoc.ly
 ```

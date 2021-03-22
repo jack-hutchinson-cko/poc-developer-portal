@@ -1,11 +1,12 @@
 meta:
-  title: Redocly Training
+  title: Checkout API Reference (POC)
   description: The best API documentation generator ever.
   siteUrl: https://portal-demo.redoc.ly
-headerIcon: ./images/logo.png
+headerIcon: ./images/logo.svg
 enableToc: true
 oasDefinitions:
   petstore: ./openapi/petstore.yaml
+  checkout: ./openapi/swagger.yaml
   # add links to definitions in our API registry by using a fully qualified URL.
 stylesheets:
   - https://fonts.googleapis.com/css?family=Roboto:300,400,600,700
@@ -17,30 +18,14 @@ stylesheets:
 #scripts:
 #  - ./static/intercom.js
 nav:
+  - search: true
 
   - label: Training exercises
     page: developer-portal/index.md
 
   - label: External docs
-    icon: ./images/redocly-icon-white.png
-    href: https://docs.redoc.ly/developer-portal/introduction/
+    href: https://docs.checkout.com/test-12345678
 
-  - search: true
 
 footer:
-  copyrightText: Copyright © Redocly 2019-2021. All right reserved.
-  columns:
-    - group: Legal
-      items:
-        - label: Terms of Use
-          href: 'https://redoc.ly/subscription-agreement/'
-        - label: Privacy Notice
-          href: 'https://redoc.ly/privacy-policy/'
-        - label: Cookie Notice
-          href: 'https://redoc.ly/privacy-policy/'
-    - group: Support
-      items:
-        - label: FAQ
-          page: faq.md
-        - label: Contact us
-          page: contact.mdx
+  copyrightText: Pretty footer goes here

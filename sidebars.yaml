@@ -1,7 +1,7 @@
 training:
   - page: developer-portal/index.md
   - group: Java SDK
-    expanded: true
+    expanded: false
     pages:
       - label: Getting started
         page: developer-portal/sdk/java-sdk/getting_started.md
@@ -19,8 +19,25 @@ training:
         page: developer-portal/sdk/java-sdk/sources.md
       - label: Tokens
         page: developer-portal/sdk/java-sdk/tokens.md
+  - group: Ruby SDK
+    expanded: false
+    pages:
+      - label: Getting started
+        page: developer-portal/sdk/ruby-sdk/getting_started.md
+      - label: Environment
+        page: developer-portal/sdk/ruby-sdk/environment.md
+      - label: Initialize
+        page: developer-portal/sdk/ruby-sdk/initialize.md
+      - label: Install
+        page: developer-portal/sdk/ruby-sdk/install.md
+      - label: Payments
+        page: developer-portal/sdk/ruby-sdk/payments.md
+      - label: Sources
+        page: developer-portal/sdk/ruby-sdk/sources.md
+      - label: Tokens
+        page: developer-portal/sdk/ruby-sdk/tokens.md
   - group: Node SDK
-    expanded: true
+    expanded: false
     pages:
       - label: Getting started
         page: developer-portal/sdk/node-sdk/getting_started.md
@@ -46,12 +63,8 @@ training:
         page: developer-portal/sdk/node-sdk/hosted-payments.md
       - label: Payment Links
         page: developer-portal/sdk/node-sdk/payment-links.md
-  - group: Checkout.com reference
-    expanded: false
+  - group: Checkout.com
+    expanded: true
     pages:
-      - page: openapi/swagger.yaml/*
+      - page: openapi/reference.page.yaml/*
 
-
-alternative:
-  - page: developer-portal/sidebar-alternative.md
-    label: Alternative sidebar example

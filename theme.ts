@@ -1,21 +1,21 @@
 import { lighten, darken, readableColor } from 'polished';
 
 export const theme = {
-  // spacing: {
-  //   unit: 5,
-  //   sectionHorizontal: ({ spacing }) => spacing.unit * 8,
-  //   sectionVertical: ({ spacing }) => spacing.unit * 8,
-  // },
-  // breakpoints: {
-  //   xs: 0,
-  //   small: '550px',
-  //   medium: '900px',
-  //   large: '1200px',
-  // },
+  spacing: {
+    unit: 5,
+    // sectionHorizontal: ({ spacing }) => spacing.unit * 8,
+    // sectionVertical: ({ spacing }) => spacing.unit * 8,
+  },
+  breakpoints: {
+    xs: 0,
+    small: '600px',
+    medium: '1024x',
+    large: '1360px',
+  },
   colors: {
     // tonalOffset: 0.2,
     primary: {
-      main: '#227a88',
+      main: '#0C1141',
       // light: ({ colors }) => lighten(colors.tonalOffset, colors.primary.main),
       // dark: ({ colors }) => darken(colors.tonalOffset, colors.primary.main),
       // contrastText: ({ colors }) => readableColor(colors.primary.main),
@@ -93,8 +93,8 @@ export const theme = {
   },
 
   sidebar: {
-    backgroundColor: '#fafafa',
-    width: '260px',
+    backgroundColor: '#fff',
+    width: '360px',
   },
   // tocPanel: {
   //   width: '240px',
@@ -164,7 +164,7 @@ export const theme = {
     // textColor: '#ffffff',
   },
   schema: {
-    nestedBackground: '#fafafa',
+    nestedBackground: '#FFFFFF',
     // linesColor: theme => lighten( theme.colors.tonalOffset, desaturate(theme.colors.tonalOffset, theme.colors.primary.main) ),
     // defaultDetailsWidth: '75%',
     // typeNameColor: theme => theme.colors.text.secondary,

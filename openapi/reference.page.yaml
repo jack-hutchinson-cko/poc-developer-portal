@@ -1,6 +1,9 @@
 type: reference-docs
-definitionId: petstore
+definitionId: checkout
 settings:
+  pagination: section
+  showConsole: true
+  jsonSampleExpandLevel: 'all'  
   generateCodeSamples:
     languages:
       - lang: curl

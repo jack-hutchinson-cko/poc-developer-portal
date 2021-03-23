@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { colours } from './css/tokens';
 import CardArrow from './svgs/CardArrow';
 
 const StyledContainer = styled.a`
     background: transparent;
     border-radius: 8px;
-    border: 1px solid #E6E7EC;
-    color: #0C1142;
+    border: 1px solid ${colours.S05};
+    color: ${colours.S1000};
     display: flex;
     flex-direction: column;
     padding: 32px 32px 40px;

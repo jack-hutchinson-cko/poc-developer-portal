@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { colours } from './css/tokens';
 
 const StyledLink = styled.a`
-    background: #FFFFC8;
+    background: ${colours.S1000};
     border: none;
     border-radius: 8px;
-    color: #0C1142!important;
+    color: #FFFFC8!important;
     display: inline-block;
     font-family: "Graphik LCG Web";
     font-size: 16px;
@@ -16,10 +17,14 @@ const StyledLink = styled.a`
     text-decoration: none;
     transition: background 0.5s, color 0.5s;
     width: max-content;
+
+    :hover {
+        background: ${colours.S1000_hover};
+    }
 `;
 
 interface Props {
-    children: JSX.Element;
+    children: string;
     href: string;
 }
 

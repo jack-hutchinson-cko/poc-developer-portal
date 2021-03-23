@@ -25,11 +25,11 @@ const StyledLink = styled.a`
 
 interface Props {
     children: string;
-    href: string;
+    to: string;
 }
 
-const ButtonLink = ({ children, href }: Props): JSX.Element => (
-    <StyledLink href={href}>
+const ButtonLink = ({ children, to }: Props): JSX.Element => (
+    <StyledLink href={to}>
         {children}
     </StyledLink>
 );

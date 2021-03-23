@@ -8,7 +8,7 @@ oasDefinitions:
   checkout: ./openapi/swagger.json
 
 stylesheets:
-  - ./assets/theme.css
+  - ./assets/global.css
 ga:
  trackingId: UA-83886670-8
 scripts:

@@ -7,4 +7,4 @@ export default {
     component: ButtonLink,
   } as Meta;
 
-export const ButtonLinkStory = () => <ButtonLink href="/">Getting started</ButtonLink>;
+export const ButtonLinkStory = () => <ButtonLink to="/">Getting started</ButtonLink>;

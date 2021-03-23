@@ -30,7 +30,7 @@ const StyledTitle = styled.h3`
 
 const StyledBody = styled.p`
     font-size: 16px;    
-    margin-bottom: 32px;
+    margin-bottom: 16px;
 `;
 
 const StyledBottom = styled.div`

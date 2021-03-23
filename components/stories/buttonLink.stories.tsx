@@ -3,8 +3,8 @@ import React from 'react';
 import ButtonLink from '../ButtonLink';
 
 export default {
-    title: 'ButtonLink',
-    component: ButtonLink,
-  } as Meta;
+	title: 'ButtonLink',
+	component: ButtonLink,
+} as Meta;
 
-export const ButtonLinkStory = () => <ButtonLink to="/">Getting started</ButtonLink>;
+export const ButtonLinkStory = () => <ButtonLink to="#">Getting started</ButtonLink>;

@@ -3,8 +3,8 @@ import React from 'react';
 import ThemeToggle from '../ThemeToggle';
 
 export default {
-    title: 'ThemeToggle',
-    component: ThemeToggle,
-  } as Meta;
+	title: 'ThemeToggle',
+	component: ThemeToggle,
+} as Meta;
 
-export const ThemeToggleStory = () => <ThemeToggle/>;
+export const ThemeToggleStory = () => <ThemeToggle />;

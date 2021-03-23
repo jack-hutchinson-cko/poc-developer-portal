@@ -3,7 +3,7 @@ definitionId: checkout
 settings:
   pagination: section
   showConsole: true
-  jsonSampleExpandLevel: 'all'  
+  jsonSampleExpandLevel: 'all'
   generateCodeSamples:
     languages:
       - lang: curl

@@ -10,9 +10,9 @@ oasDefinitions:
 stylesheets:
   - ./assets/global.css
 ga:
- trackingId: UA-83886670-8
+  trackingId: UA-83886670-8
 scripts:
- - ./scripts/hotjar.js
+  - ./scripts/hotjar.js
 
 nav:
   - search: true

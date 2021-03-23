@@ -3,9 +3,9 @@ info:
   version: '1.0.0'
   title: Checkout.com API Reference
   x-logo:
-    url: "https://assets.checkout.com/docs/logos/logo-checkout-api-dark.svg"
-    backgroundColor: "#E6E7EC"
-    altText: "Checkout.com API logo"
+    url: 'https://assets.checkout.com/docs/logos/logo-checkout-api-dark.svg'
+    backgroundColor: '#E6E7EC'
+    altText: 'Checkout.com API logo'
   contact:
     name: Checkout.com Support
     url: 'https://checkout.com'
@@ -18,7 +18,7 @@ info:
     # Introduction
 
     Checkout.com provides a collection of APIs that enable you to process and manage payments.  
-    
+
 
     Our APIs accept and return JSON in the HTTP body and return HTTP response codes to indicate errors. You can consume the APIs directly using your favorite HTTP/REST library or make use of one of our <a href="https://docs.checkout.com/quickstart/integrate/sdks" target="_blank">SDKs</a>.  
 
@@ -77,5 +77,3 @@ x-tagGroups:
       - Tokens
       - Customers
       - Instruments
-
-

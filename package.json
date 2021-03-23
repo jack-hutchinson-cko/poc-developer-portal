@@ -1,32 +1,44 @@
 {
-  "name": "checkout-com-developer-portal",
-  "private": true,
-  "version": "0.0.1",
-  "description": "Checkout.coms developer portal",
-  "license": "MIT",
-  "scripts": {
-    "start": "node ./scripts/build.js && redocly-portal develop -p 3000",
-    "build": "node ./scripts/build.js && redocly-portal build",
-    "clean": "redocly-portal clean",
-    "test": "swagger-cli validate --no-schema openapi/swagger.yaml",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "dependencies": {
-    "@redocly/developer-portal": "1.0.0-beta.120",
-    "@storybook/addon-controls": "^6.1.21",
-    "@types/styled-components": "^5.1.9",
-    "storybook": "^6.1.21",
-    "styled-components": "^5.2.1",
-    "swagger-cli": "4.0.4",
-    "typescript": "^4.2.3"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@storybook/addon-actions": "^6.1.21",
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addon-links": "^6.1.21",
-    "@storybook/react": "^6.1.21",
-    "babel-loader": "^8.2.2"
-  }
+	"name": "checkout-com-developer-portal",
+	"private": true,
+	"version": "0.0.1",
+	"description": "Checkout.coms developer portal",
+	"license": "MIT",
+	"scripts": {
+		"start": "node ./scripts/build.js && redocly-portal develop -p 3000",
+		"build": "node ./scripts/build.js && redocly-portal build",
+		"clean": "redocly-portal clean",
+		"test": "swagger-cli validate --no-schema openapi/swagger.yaml",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook",
+		"pretty": "prettier --write \"./**/*.{js,jsx,json,yaml}\""
+	},
+	"dependencies": {
+		"@redocly/developer-portal": "1.0.0-beta.120",
+		"@storybook/addon-controls": "^6.1.21",
+		"@types/styled-components": "^5.1.9",
+		"storybook": "^6.1.21",
+		"styled-components": "^5.2.1",
+		"swagger-cli": "4.0.4",
+		"typescript": "^4.2.3"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.13.10",
+		"@storybook/addon-actions": "^6.1.21",
+		"@storybook/addon-essentials": "^6.1.21",
+		"@storybook/addon-links": "^6.1.21",
+		"@storybook/react": "^6.1.21",
+		"babel-loader": "^8.2.2"
+	},
+	"prettier": {
+		"printWidth": 120,
+		"tabWidth": 2,
+		"useTabs": true,
+		"semi": true,
+		"singleQuote": true,
+		"trailingComma": "es5",
+		"bracketSpacing": true,
+		"jsxBracketSameLine": false,
+		"fluid": false
+	}
 }

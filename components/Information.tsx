@@ -34,13 +34,21 @@ const StyledLabel = styled.div`
   font-weight: 500;
 `;
 
-const Information = ({ children, type = 'information' }) => {
+interface Props {
+  children: JSX.Element;
+  header?: string;
+  type?: string;
+}
+
+
+const Information = ({ children, header, type = 'information' }: Props): JSX.Element => {
   const bgMap = {
     'information': '#80E5E9',
     'tip': '#70C9B7',
     'note': '#F3C25D',
     'warning': '#EE6D5F'
   };
+  const headerLabel = header || type;
   const activeBg = bgMap[type];
 
   return (
@@ -55,7 +63,7 @@ const Information = ({ children, type = 'information' }) => {
         </div>
       <StyledText> 
         <StyledLabel>
-          {type.charAt(0).toUpperCase() + type.slice(1)}
+          {headerLabel.charAt(0).toUpperCase() + headerLabel.slice(1)}
         </StyledLabel>
         {children}
       </StyledText>

@@ -1,3 +1,37 @@
 ---
-title: SDKs
+title: Checkout.com Guides
 ---
+
+
+import {
+  Box,
+  FlexSection,
+  Flex,
+  WideTile,
+  Emphasis,
+  H1,
+  H2,
+  SectionHeader,
+} from '@redocly/ui';
+
+import ButtonLink from '../../components/ButtonLink'
+
+<H1>Guides for Checkout.com</H1>
+<H2>Build your perfect payments flow</H2>
+We help you accept more payments, monitor your transactions in real time and build a seamless payments flow.
+
+To get up and running right away, follow our quickstart guide or sign up for a test account.
+
+<Box my={25}>  
+  <FlexSection justifyContent="space-around" flexWrap="wrap">
+    <WideTile to="developer-portal/sdk/node-sdk/getting-started.md"   header="Node">
+     Node, my man. Let's go!
+    </WideTile>
+    <WideTile to="developer-portal/sdk/ruby-sdk/getting-started.md"  header="Ruby">
+      Ruby, ruby guy aye. 
+    </WideTile>
+    <WideTile to="developer-portal/sdk/java-sdk/getting-started.md" header="Java">
+      Java SDKs for weirdos who like Java
+    </WideTile>
+  </FlexSection>
+</Box>

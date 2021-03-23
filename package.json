@@ -8,7 +8,7 @@
     "start": "node ./scripts/build.js && redocly-portal develop -p 3000",
     "build": "node ./scripts/build.js && redocly-portal build",
     "clean": "redocly-portal clean",
-    "test": "swagger-cli validate --no-schema web_deploy/swagger.yaml"
+    "test": "swagger-cli validate --no-schema openapi/swagger.yaml"
   },
   "dependencies": {
     "@redocly/developer-portal": "1.0.0-beta.120",
@@ -16,7 +16,7 @@
     "request": "2.88.0",
     "shelljs": "^0.8.4",
     "styled-components": "^5.2.1",
-    "swagger-ui": "^2.2.10",
+    "swagger-cli": "4.0.4",
     "yamljs": "0.3.0"
   }
 }

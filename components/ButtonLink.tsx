@@ -17,7 +17,12 @@ const StyledLink = styled.a`
     width: max-content;
 `;
 
-const ButtonLink = ({ children, href }) => (
+interface Props {
+    children: JSX.Element;
+    href: string;
+}
+
+const ButtonLink = ({ children, href }: Props): JSX.Element => (
     <StyledLink href={href}>
         {children}
     </StyledLink>

@@ -12,7 +12,7 @@ stylesheets:
 ga:
  trackingId: UA-83886670-8
 scripts:
- - ./scripts/headscripts/hotjar.js
+ - ./scripts/hotjar.js
 
 nav:
   - search: true

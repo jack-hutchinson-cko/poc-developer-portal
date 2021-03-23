@@ -1,5 +1,4 @@
 checkout:
-  - page: developer-portal/index.mdx
   - group: Guides
     page: developer-portal/docs/index.mdx
     expanded: false

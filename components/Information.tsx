@@ -4,11 +4,12 @@ import InformationIcon from './svgs/Information';
 import NoteIcon from './svgs/Note';
 import TipIcon from './svgs/Tip';
 import WarningIcon from './svgs/Warning';
+import { colours } from './css/tokens';
 
 const StyledWrapper = styled.div`
     border: 1px solid ${props => props.activeBg};    
     border-radius: 8px;
-    color: #0C1141;
+    color: ${colours.S1000};
     background: white;
     display: grid;
     grid-template-columns: 60px 1fr;
@@ -43,10 +44,10 @@ interface Props {
 
 const Information = ({ children, header, type = 'information' }: Props): JSX.Element => {
   const bgMap = {
-    'information': '#80E5E9',
-    'tip': '#70C9B7',
-    'note': '#F3C25D',
-    'warning': '#EE6D5F'
+    'information': colours.information,
+    'tip': colours.tip,
+    'note': colours.note,
+    'warning': colours.warning
   };
   const headerLabel = header || type;
   const activeBg = bgMap[type];

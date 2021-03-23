@@ -15,14 +15,11 @@
   "dependencies": {
     "@redocly/developer-portal": "1.0.0-beta.120",
     "@storybook/addon-controls": "^6.1.21",
-    "deploy-to-gh-pages": "^1.1.0",
-    "request": "2.88.0",
-    "shelljs": "^0.8.4",
+    "@types/styled-components": "^5.1.9",
     "storybook": "^6.1.21",
     "styled-components": "^5.2.1",
     "swagger-cli": "4.0.4",
-    "typescript": "^4.2.3",
-    "yamljs": "0.3.0"
+    "typescript": "^4.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",

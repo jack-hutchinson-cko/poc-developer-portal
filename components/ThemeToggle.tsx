@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { colours } from './css/tokens';
 
 const StyledContainer = styled.div`
-    background: ${colours.S500};
+    background: ${(props: { isDarkMode: boolean }) => props.isDarkMode ? colours.S500 : colours.S1000};
     border-radius: 30px;
     cursor: pointer;
     display: flex;
@@ -35,13 +35,13 @@ const StyledSun = styled.div`
 `;
 
 const StyledThumb = styled.div`
-    background: #090C30;
+    background: ${(props: { isDarkMode: boolean }) => props.isDarkMode ? '#090C30' : 'white'};
     border-radius: 50%;
     height: 20px;
     left: 2px;
     position: absolute;
     top: 2px;
-    transition: transform .5s cubic-bezier(.23, 1, .32, 1);
+    transition: all .5s cubic-bezier(.23, 1, .32, 1);
     width: 20px;
     transform: ${(props: { isDarkMode: boolean }) => props.isDarkMode ? 'translateX(26px)' : ''};
 `;
@@ -50,7 +50,7 @@ const ThemeToggle = () => {
     const [isDarkMode, setDarkMode] = useState(false);
 
     return (
-        <StyledContainer onClick={() => setDarkMode(!isDarkMode) }>
+        <StyledContainer isDarkMode={isDarkMode} onClick={() => setDarkMode(!isDarkMode) }>
             <StyledMoon>🌛</StyledMoon>
             <StyledSun>☀️</StyledSun>
             <StyledThumb isDarkMode={isDarkMode}></StyledThumb>

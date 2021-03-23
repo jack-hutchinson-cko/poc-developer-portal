@@ -7,6 +7,7 @@ const StyledContainer = styled.a`
     background: transparent;
     border-radius: 8px;
     border: 1px solid ${colours.S05};
+    box-shadow: rgb(0 18 44 / 15%) 0px 1px 3px;
     color: ${colours.S1000};
     display: flex;
     flex-direction: column;

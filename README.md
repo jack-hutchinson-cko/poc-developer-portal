@@ -7,29 +7,36 @@
 
 ## Install
 
+To run this project or storybook, you first must install node modules.
+`
     yarn install
+`
 
 ## Start development server
 
-    yarn start
-
-    Open localhost:3000
-
+To run this project and view it in the browser. Run the following:
 Note: search isn't functional in the development environment.
+
+```
+    yarn start
+```
 
 ## Troubleshooting
 
 We heavily rely on caching for performance issues so if some changes are not reflected in the resulting portal try cleaning cache by running:
 
+```
     yarn clean
+```
 
 ## Docs
 
 Read the [online documentation](https://redoc.ly/docs/developer-portal/introduction/).
 
-## Training program
+## Storybook
 
-The starter template contains training exercises which will teach you how to build a developer portal.
-After you start the development server, navigate to the app and follow the instructions to get started with your training.
+To build components in isolation or to view existing components. Run the following and open localhost: 6006
 
-
+```
+    yarn storybook
+```

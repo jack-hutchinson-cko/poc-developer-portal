@@ -7,7 +7,7 @@ import WarningIcon from './svgs/Warning';
 import { colours } from './css/tokens';
 
 const StyledWrapper = styled.div`
-    border: 1px solid ${props => props.activeBg};    
+    border: 1px solid ${(props: { activeBg: string }) => props.activeBg};    
     border-radius: 8px;
     color: ${colours.S1000};
     background: white;
@@ -31,7 +31,7 @@ const StyledText = styled.div`
 const StyledLabel = styled.div`
   font-size: 18px;
   line-height: 24px;
-  margin: 8px 0px;
+  margin: 0px 0px 8px 0px;
   font-weight: 500;
 `;
 

@@ -3,7 +3,7 @@ checkout:
     page: developer-portal/docs/index.mdx
     expanded: false
     pages: 
-      - page: developer-portal/docs/integrate.mdx #Integrate appeared twice when I gave it a label and I think it's because I've specified a title on the integrate page
+      - page: developer-portal/docs/integrate.mdx
   - group: API Reference
     expanded: false
     pages:

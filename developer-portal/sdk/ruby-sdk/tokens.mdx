@@ -9,7 +9,7 @@ import Information from '../../../components/Information';
 
 You can find a list of request body parameters and possible outcomes [here](https://api-reference.checkout.com/#tag/Tokens).
 
-## Request a token for <Highlight color="#25c2a0">Apple Pay</Highlight>
+## Request a token for Apple Pay
 
 ```ruby
 header_data = { "ephemeralPublicKey" => "XXX",
@@ -31,7 +31,7 @@ puts(response.data) # => {...}
 puts(response.body) # => "..."
 ```
 
-## Request a token for <Highlight color="#25c2a0">Google Pay</Highlight>
+## Request a token for Google Pay
 
 const token = await cko.tokens.request({
     // type:"googlepay" is inferred
@@ -57,7 +57,7 @@ puts(response.data) # => {...}
 puts(response.body) # => "..."
 ```
 
-## Request a token for <Highlight color="#25c2a0">raw card details</Highlight>
+## Request a token for raw card details
 
 
 <Information type="warning">

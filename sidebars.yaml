@@ -1,5 +1,4 @@
 checkout:
-  - page: developer-portal/index.md
   - group: API Reference
     expanded: true
     pages:

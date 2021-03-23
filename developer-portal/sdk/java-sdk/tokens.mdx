@@ -9,7 +9,7 @@ import Information from '../../../components/Information';
 
 You can find a list of request body parameters and possible outcomes [here](https://api-reference.checkout.com/#tag/Tokens).
 
-## Request a token for <Highlight color="#25c2a0">Apple Pay</Highlight>
+## Request a token for Apple Pay
 
 ```java
 Map<String, Object> headerData = new HashMap<String, Object>();
@@ -38,7 +38,7 @@ try {
 }
 ```
 
-## Request a token for <Highlight color="#25c2a0">Google Pay</Highlight>
+## Request a token for Google Pay
 
 ```java
 Map<String, Object> tokenData = new HashMap<String, Object>();
@@ -62,7 +62,7 @@ try {
 }
 ```
 
-## Request a token for <Highlight color="#25c2a0">raw card details</Highlight>
+## Request a token for raw card details
 
 <Information type="warning">
     If you do not have SAQ-D level PCI Compliance, this interaction can only be done in the Sandbox environment. This is in case you want to unit test your code and need a token to make a payment. In the Production environment, you need to use an integrated solution such as **[Frames](https://docs.checkout.com/quickstart/integrate/frames)** to generate the token for you.

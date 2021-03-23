@@ -65,7 +65,6 @@ tags:
   #     Upload files to be used as input to other APIs
 
 x-tagGroups:
-  - name: 
   - name: Notifications
     description: |
       foo

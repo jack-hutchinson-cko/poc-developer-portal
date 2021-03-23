@@ -1,9 +1,16 @@
 checkout:
+  - page: developer-portal/index.mdx
+  - group: Guides
+    page: developer-portal/docs/index.mdx
+    expanded: false
+    pages: 
+      - page: developer-portal/docs/integrate.mdx #Integrate appeared twice when I gave it a label and I think it's because I've specified a title on the integrate page
   - group: API Reference
-    expanded: true
+    expanded: false
     pages:
       - page: openapi/cko-reference.page.yaml/*
   - group: SDKs
+    page: developer-portal/sdk/index.mdx
     expanded: false
     pages: 
     - group: Java SDK

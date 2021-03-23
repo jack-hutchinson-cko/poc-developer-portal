@@ -17,7 +17,7 @@ scripts:
 nav:
   - search: true
   - label: Training exercises
-    page: developer-portal/index.md
+    page: developer-portal/index.mdx
 
   - label: Get test account
     href: https://checkout.com/get-test-account

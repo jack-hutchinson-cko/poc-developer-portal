@@ -81,3 +81,11 @@ checkout:
         - label: Disputes
           page: developer-portal/sdk/node-sdk/disputes.mdx
 
+fourSidebar:
+  - group: NAS Guides
+    expanded: false
+    pages: 
+    - label: NAS Getting started
+      page: developer-portal/four/index.mdx
+    - label: Second page
+      page: developer-portal/four/secondary.mdx

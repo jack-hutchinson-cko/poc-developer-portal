@@ -1,15 +1,13 @@
 checkout:
   - page: developer-portal/index.md
   - group: API Reference
-    expanded: false
+    expanded: true
     pages:
       - page: openapi/cko-reference.page.yaml/*
-    separator: true
   - group: SDKs
     expanded: false
     pages: 
     - group: Java SDK
-      expanded: false
       pages:
         - label: Getting started
           page: developer-portal/sdk/java-sdk/getting_started.mdx
@@ -28,7 +26,6 @@ checkout:
         - label: Tokens
           page: developer-portal/sdk/java-sdk/tokens.mdx
     - group: Ruby SDK
-      expanded: false
       pages:
         - label: Getting started
           page: developer-portal/sdk/ruby-sdk/getting_started.mdx
@@ -45,7 +42,6 @@ checkout:
         - label: Tokens
           page: developer-portal/sdk/ruby-sdk/tokens.mdx
     - group: Node SDK
-      expanded: false
       pages:
         - label: Getting started
           page: developer-portal/sdk/node-sdk/getting_started.mdx

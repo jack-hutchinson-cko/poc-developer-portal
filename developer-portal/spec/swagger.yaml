@@ -73,7 +73,5 @@ x-tagGroups:
       - Events
   - name: Vault
     tags:
-      - Cards
       - Tokens
-      - Customers
       - Instruments

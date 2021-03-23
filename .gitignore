@@ -6,3 +6,5 @@ public/
 OpenApiGenerator/obj/*
 OpenApiGenerator/bin/*
 OpenApiGenerator/.vs/
+
+yarn-error.log

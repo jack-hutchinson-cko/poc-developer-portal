@@ -10660,7 +10660,7 @@
 		},
 		{
 			"name": "Vault",
-			"tags": ["Cards", "Tokens", "Customers", "Instruments"]
+			"tags": ["Tokens", "Instruments"]
 		}
 	]
 }

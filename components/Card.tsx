@@ -26,7 +26,7 @@ const StyledContainer = styled.a`
 const StyledTitle = styled.h3`
 	font-size: 24px;
 	font-weight: 500;
-	margin: 10px 0 10px;
+	margin: 0px !important;
 `;
 
 const StyledBody = styled.p`

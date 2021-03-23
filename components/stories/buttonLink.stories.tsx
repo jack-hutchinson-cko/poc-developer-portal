@@ -1,10 +1,14 @@
 import { Meta } from '@storybook/react/types-6-0';
-import React from 'react';
 import ButtonLink from '../ButtonLink';
+import Wrapper from './Wrapper';
+
+export const ButtonLinkStory = () => (
+	<Wrapper>
+		<ButtonLink to="#">Getting started</ButtonLink>
+	</Wrapper>
+);
 
 export default {
 	title: 'ButtonLink',
 	component: ButtonLink,
 } as Meta;
-
-export const ButtonLinkStory = () => <ButtonLink to="#">Getting started</ButtonLink>;

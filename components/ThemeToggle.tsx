@@ -3,8 +3,7 @@ import styled, { css } from 'styled-components';
 import { colours } from './css/tokens';
 
 const StyledContainer = styled.div`
-	background: ${(props: { isDarkMode: boolean }) =>
-		props.isDarkMode ? colours.S500 : colours.S1000};
+	background: ${(props: { isDarkMode: boolean }) => (props.isDarkMode ? colours.S500 : colours.S1000)};
 	border-radius: 30px;
 	cursor: pointer;
 	display: flex;
@@ -44,8 +43,7 @@ const StyledThumb = styled.div`
 	top: 2px;
 	transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 	width: 20px;
-	transform: ${(props: { isDarkMode: boolean }) =>
-		props.isDarkMode ? 'translateX(26px)' : ''};
+	transform: ${(props: { isDarkMode: boolean }) => (props.isDarkMode ? 'translateX(26px)' : '')};
 `;
 
 const ThemeToggle = () => {

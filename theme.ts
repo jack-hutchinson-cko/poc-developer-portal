@@ -96,7 +96,7 @@ export const theme = {
 		backgroundColor: '#fff',
 		activeBgColor: '#fff',
 		width: '360px',
-		textColor: '#000000',
+		textColor: '#0C1141',
 		textColorSecondary: '#239b56',
 		activeTextColor: '#0C1141',
 		separatorLineColor: '#e67e22',
@@ -104,7 +104,7 @@ export const theme = {
 		rightLineColor: '#E6E7EC',
 		caretColor: '#0C1141',
 		fontFamily: '"Graphik LCG Web", sans-serif',
-		fontSize: '18px',
+		fontSize: '16px',
 		offsetLeft: 8,
 		spacing: {
 			unit: 10,

@@ -28,8 +28,6 @@ interface Props {
 	to: string;
 }
 
-const ButtonLink = ({ children, to }: Props): JSX.Element => (
-	<StyledLink href={to}>{children}</StyledLink>
-);
+const ButtonLink = ({ children, to }: Props): JSX.Element => <StyledLink href={to}>{children}</StyledLink>;
 
 export default ButtonLink;

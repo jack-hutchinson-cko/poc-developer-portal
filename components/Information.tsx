@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import InformationIcon from './svgs/Information';
-import NoteIcon from './svgs/Note';
-import TipIcon from './svgs/Tip';
-import WarningIcon from './svgs/Warning';
+import { WarningIcon, InformationIcon, NoteIcon, TipIcon } from './svg';
 import { colours } from './css/tokens';
 
 const StyledWrapper = styled.div`

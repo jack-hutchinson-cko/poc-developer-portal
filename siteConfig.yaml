@@ -16,7 +16,7 @@ scripts:
 
 nav:
   - search: true
-  - label: Training exercises
+  - label: Log in
     page: developer-portal/index.mdx
 
   - label: Get test account

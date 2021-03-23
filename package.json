@@ -8,15 +8,27 @@
     "start": "node ./scripts/build.js && redocly-portal develop -p 3000",
     "build": "node ./scripts/build.js && redocly-portal build",
     "clean": "redocly-portal clean",
-    "test": "swagger-cli validate --no-schema openapi/swagger.yaml"
+    "test": "swagger-cli validate --no-schema openapi/swagger.yaml",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@redocly/developer-portal": "1.0.0-beta.120",
     "deploy-to-gh-pages": "^1.1.0",
     "request": "2.88.0",
     "shelljs": "^0.8.4",
+    "storybook": "^6.1.21",
     "styled-components": "^5.2.1",
     "swagger-cli": "4.0.4",
+    "typescript": "^4.2.3",
     "yamljs": "0.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/react": "^6.1.21",
+    "babel-loader": "^8.2.2"
   }
 }

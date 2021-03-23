@@ -24,7 +24,6 @@ const StyledSide  = styled.div`
 
 const StyledText = styled.div`
   padding: 24px;
-  line-height: 32px;
 `;
 
 const StyledLabel = styled.div`
@@ -35,7 +34,7 @@ const StyledLabel = styled.div`
 `;
 
 interface Props {
-  children: JSX.Element;
+  children: string;
   header?: string;
   type?: string;
 }

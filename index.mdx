@@ -17,6 +17,7 @@ import {
   SectionHeader,
 } from '@redocly/ui';
 import ButtonLink from './components/ButtonLink'
+import Card from  './components/Card';
 
 import icon1 from './assets/images/icon1.png';
 import launchFastIcon from './assets/images/launch-fast.svg';
@@ -41,15 +42,15 @@ export default LandingLayout;
     Get integrated with us today!
   </SectionHeader>
   <FlexSection justifyContent="space-around" flexWrap="wrap">
-    <ThinTile to="developer-portal/index.md" icon={icon1} header="Ruby">
+    <Card to="developer-portal/sdk/ruby-sdk/getting_started.mdx" title="Ruby">
        Come check out Checkout.com's Ruby SDK
-    </ThinTile>
-    <ThinTile to="developer-portal/index.md" icon={launchFastIcon} header="Node">
+    </Card>
+    <Card to="developer-portal/sdk/node-sdk/getting_started.mdx" title="Node">
          NodeJS SDK for all you javascript nerds
-    </ThinTile>
-    <ThinTile to="developer-portal/index.md" icon={icon3} header="Java">
+    </Card>
+    <Card to="developer-portal/sdk/java-sdk/getting_started.mdx" title="Java">
        You use Java? Weird but okay... here's the Java SDK
-    </ThinTile>
+    </Card>
   </FlexSection>
   <SectionHeader>
     <Emphasis>Need help? </Emphasis>

@@ -93,8 +93,24 @@ export const theme = {
   },
 
   sidebar: {
-    backgroundColor: '#fff',
+  	backgroundColor: '#fff',
+  	activeBgColor: '#fff',
     width: '360px',
+  	textColor: '#000000',
+  	textColorSecondary: '#239b56',
+  	activeTextColor: '#0C1141',
+  	separatorLineColor: '#e67e22',
+  	separatorLabelColor: '#e67e22',
+  	rightLineColor: '#E6E7EC',
+  	caretColor: '#0C1141',
+  	fontFamily: '"Graphik LCG Web", sans-serif',
+  	fontSize: '18px',
+    offsetLeft: 8,
+  	spacing: {
+  	  unit: 10,
+  	  paddingHorizontal: 16,
+  	  paddingVertical: 8
+  	},
   },
   // tocPanel: {
   //   width: '240px',

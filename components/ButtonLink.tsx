@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { colours } from './css/tokens';
 
@@ -28,8 +27,6 @@ interface Props {
 	to: string;
 }
 
-const ButtonLink = ({ children, to }: Props): JSX.Element => (
-	<StyledLink href={to}>{children}</StyledLink>
-);
+const ButtonLink = ({ children, to }: Props): JSX.Element => <StyledLink href={to}>{children}</StyledLink>;
 
 export default ButtonLink;

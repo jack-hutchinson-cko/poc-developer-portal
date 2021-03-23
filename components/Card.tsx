@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 import { colours } from './css/tokens';
-import CardArrow from './svgs/CardArrow';
+import { CardArrow } from './svg';
 
 const StyledContainer = styled.a`
 	background: transparent;
@@ -18,15 +17,15 @@ const StyledContainer = styled.a`
 	font-family: 'Graphik LCG Web';
 
 	:hover {
-		border: 1px solid #2bd4db;
+		border: 1px solid ${colours.primaryTurqoise};
 		text-decoration: none;
 	}
 `;
 
-const StyledTitle = styled.h3`
+const StyledTitle = styled.div`
 	font-size: 24px;
 	font-weight: 500;
-	margin: 0px !important;
+	margin: 0px;
 `;
 
 const StyledBody = styled.p`

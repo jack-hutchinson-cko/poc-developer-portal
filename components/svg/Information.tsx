@@ -1,6 +1,4 @@
-import React from 'react';
-
-const InformationIcon = (): JSX.Element => (
+export const InformationIcon = (): JSX.Element => (
 	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path
 			fillRule="evenodd"
@@ -10,5 +8,3 @@ const InformationIcon = (): JSX.Element => (
 		/>
 	</svg>
 );
-
-export default InformationIcon;

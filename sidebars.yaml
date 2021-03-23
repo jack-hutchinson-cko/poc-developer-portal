@@ -8,7 +8,7 @@ checkout:
   - group: API Reference
     expanded: false
     pages:
-      - page: openapi/cko-reference.page.yaml/*
+      - page: openapi/swagger-reference.page.yaml
   - group: SDKs
     page: developer-portal/sdk/index.mdx
     expanded: false

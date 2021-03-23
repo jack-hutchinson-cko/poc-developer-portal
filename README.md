@@ -1,4 +1,4 @@
-# Redocly API developer portal
+# Checkout.com API developer portal
 
 ## Prerequisites
 

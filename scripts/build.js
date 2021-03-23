@@ -6,3 +6,5 @@ set('-e');
 
 exec('dotnet build ./OpenApiGenerator/OpenApiGenerator.csproj');
 exec('dotnet run -p ./OpenApiGenerator/OpenApiGenerator.csproj');
+
+rm('-rf', 'output')

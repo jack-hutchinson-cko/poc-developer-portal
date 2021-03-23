@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import InformationIcon from './svgs/Information';
 import NoteIcon from './svgs/Note';
-import TipIcon from './svgs/Tip'; 
-import InformationIcon from './svgs/Information'; 
-import WarningIcon from './svgs/Warning'; 
+import TipIcon from './svgs/Tip';
+import WarningIcon from './svgs/Warning';
 
 const StyledWrapper = styled.div`
-    border: 1px solid #80E5E9;    
+    border: 1px solid ${props => props.activeBg};    
     border-radius: 8px;
     color: #0C1141;
     background: white;
@@ -31,6 +31,7 @@ const StyledLabel = styled.div`
   font-size: 18px;
   line-height:24px
   margin: 8px 0px;
+  font-weight: 500;
 `;
 
 const Information = ({ children, type = 'information' }) => {
@@ -43,7 +44,7 @@ const Information = ({ children, type = 'information' }) => {
   const activeBg = bgMap[type];
 
   return (
-    <StyledWrapper style={{border: `1px solid ${activeBg}`}}>
+    <StyledWrapper activeBg={activeBg}>
         <div style={{ background: activeBg, display: 'flex'}}>
             <StyledSide>
                {type === 'tip' &&  <TipIcon />}

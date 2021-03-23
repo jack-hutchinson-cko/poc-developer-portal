@@ -13,6 +13,7 @@ const StyledWrapper = styled.div`
     display: grid;
     grid-template-columns: 60px 1fr;
     font-size: 16px;
+    font-family: "Graphik LCG Web";
     min-height: 90px;
     position: relative;
     margin: 40px auto;
@@ -28,7 +29,7 @@ const StyledText = styled.div`
 
 const StyledLabel = styled.div`
   font-size: 18px;
-  line-height:24px
+  line-height: 24px;
   margin: 8px 0px;
   font-weight: 500;
 `;

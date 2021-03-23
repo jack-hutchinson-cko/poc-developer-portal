@@ -12,6 +12,8 @@ const StyledContainer = styled.a`
     padding: 32px 32px 40px;
     margin: 24px 0px;
     text-decoration: none;
+
+    font-family: "Graphik LCG Web";
     
     :hover {
         border: 1px solid #2BD4DB;

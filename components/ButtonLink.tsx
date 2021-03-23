@@ -7,6 +7,7 @@ const StyledLink = styled.a`
     border-radius: 8px;
     color: #0C1142!important;
     display: inline-block;
+    font-family: "Graphik LCG Web";
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;

@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react/types-6-0';
 import React from 'react';
-import Information from '../components/Information';
+import Information from '../Information';
 
 export default {
     title: 'Information',

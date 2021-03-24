@@ -6,10 +6,7 @@ checkout:
       - page: developer-portal/docs/integrate.mdx
         separator: Payments
       - page: developer-portal/docs/request-payments.mdx
-  - group: API Reference
-    expanded: false
-    pages:
-      - page: openapi/swagger-reference.page.yaml
+  - page: openapi/swagger-reference.page.yaml
   - group: SDKs
     page: developer-portal/sdk/index.mdx
     expanded: false

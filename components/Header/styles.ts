@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colours } from '../css/tokens';
+import { colours, device } from '../css/tokens';
 import { CheckoutLogoIcon } from '../svg';
 
 export const StyledLogoIcon = styled(CheckoutLogoIcon)`
@@ -43,6 +43,10 @@ export const StyledLink = styled.a`
 export const StyledLeftHeader = styled.div`
 	display: flex;
 	gap: 136px;
+
+	${device.fromTablet} {
+		gap: 40px;
+	}
 `;
 
 export const StyledRightHeader = styled.div`

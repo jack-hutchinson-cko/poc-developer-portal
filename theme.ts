@@ -86,10 +86,6 @@ export const theme = {
 		//   gradient: ({ colors }) => darken(colors.tonalOffset / 2, colors.navbar.main),
 		//   contrastText: 'white'
 		// },
-		// footer: {
-		// main: ({ colors }) => colors.primary.main,
-		// contrastText: 'white'
-		// },
 	},
 
 	sidebar: {
@@ -101,7 +97,6 @@ export const theme = {
 		activeTextColor: '#0C1141',
 		separatorLineColor: '#e67e22',
 		separatorLabelColor: '#e67e22',
-		rightLineColor: '#E6E7EC',
 		caretColor: '#0C1141',
 		fontFamily: '"Graphik LCG Web", sans-serif',
 		fontSize: '16px',
@@ -180,9 +175,9 @@ export const theme = {
 		},
 	},
 	rightPanel: {
-		backgroundColor: '#263238',
+		backgroundColor: '#E6E7EC',
 		width: '40%',
-		// textColor: '#ffffff',
+		textColor: '#0C1141',
 	},
 	schema: {
 		nestedBackground: '#FFFFFF',
@@ -198,8 +193,9 @@ export const theme = {
 		//   color: theme => theme.colors.text.secondary,
 		// },
 	},
-	// codeBlock: {
-	//   backgroundColor: ({ rightPanel }) => darken(0.1, rightPanel.backgroundColor),
-	//   tokens: {},
-	// },
+	codeBlock: {
+		backgroundColor: ({ rightPanel }) => darken(0.1, rightPanel.backgroundColor),
+		tokens: {},
+		textColor: '#0C1141',
+	},
 };

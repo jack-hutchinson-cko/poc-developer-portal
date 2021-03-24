@@ -4,6 +4,8 @@ checkout:
     expanded: false
     pages:
       - page: developer-portal/docs/integrate.mdx
+        separator: Payments
+      - page: developer-portal/docs/request-payments.mdx
   - group: API Reference
     expanded: false
     pages:

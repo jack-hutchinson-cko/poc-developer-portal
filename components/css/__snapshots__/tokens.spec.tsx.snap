@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tokens ButtonLink 1`] = `[Function]`;
+
+exports[`tokens Card 1`] = `[Function]`;
+
+exports[`tokens Information 1`] = `[Function]`;
+
+exports[`tokens Link 1`] = `[Function]`;
+
+exports[`tokens ThemeToggle 1`] = `[Function]`;

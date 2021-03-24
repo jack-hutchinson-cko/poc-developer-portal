@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonLink component component matches snapshot 1`] = `
+<styled.a
+  hierarchy="primary"
+  href="/"
+>
+  Getting started
+</styled.a>
+`;
+
+exports[`ButtonLink component component matches snapshot 2`] = `
+<styled.a
+  hierarchy="secondary"
+  href="/"
+>
+  Getting started
+</styled.a>
+`;
+
+exports[`ButtonLink component component matches snapshot 3`] = `
+<styled.a
+  hierarchy={null}
+  href="/"
+>
+  Getting started
+</styled.a>
+`;

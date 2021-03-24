@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component component matches snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.a
+      href="/"
+    >
+      <Styled(CheckoutLogoIcon) />
+      <styled.h3>
+        Documentation
+      </styled.h3>
+    </styled.a>
+    <MenuLink />
+  </styled.div>
+  <styled.div>
+    <LoginLink />
+    <styled.a>
+      Get test account
+    </styled.a>
+    <ThemeToggle />
+  </styled.div>
+</styled.div>
+`;

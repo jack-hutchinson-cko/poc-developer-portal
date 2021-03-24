@@ -59,3 +59,4 @@ export const ThemeToggle = (): JSX.Element => {
 };
 
 export default ThemeToggle;
+export { StyledContainer, StyledThumb };

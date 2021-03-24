@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuDropdown component component matches snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <ApiRef />
+      Guides
+    </styled.div>
+    <styled.p>
+      Hey, come look at the guides
+      <ArrowRight />
+    </styled.p>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      <FAQ />
+      FAQ
+    </styled.div>
+    <styled.p>
+      Find answers to our most frequently asked questions
+      <ArrowRight />
+    </styled.p>
+  </styled.div>
+</styled.div>
+`;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuLink component component matches snapshot with dropdown closed 1`] = `
+<styled.div>
+  <styled.div
+    onClick={[Function]}
+  >
+    <styled.a>
+      API Reference
+    </styled.a>
+    <styled.div
+      isOpen={false}
+    >
+      <Chevron />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`MenuLink component component matches snapshot with dropdown open 1`] = `
+<styled.div>
+  <styled.div
+    onClick={[Function]}
+  >
+    <styled.a>
+      API Reference
+    </styled.a>
+    <styled.div
+      isOpen={true}
+    >
+      <Chevron />
+    </styled.div>
+  </styled.div>
+  <MenuDropdown />
+</styled.div>
+`;

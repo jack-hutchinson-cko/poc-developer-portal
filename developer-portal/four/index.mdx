@@ -2,7 +2,6 @@
 title: Checkout.com Guides
 ---
 
-
 import {
   Box,
   FlexSection,
@@ -15,6 +14,7 @@ import {
 } from '@redocly/ui';
 
 import ButtonLink from '../../components/ButtonLink'
+import Card from '../../components/Card'
 
 <H1>NAS Guides for Checkout.com</H1>
 <H2>Build your perfect payments flow</H2>
@@ -26,17 +26,16 @@ To get up and running right away, follow our quickstart guide or sign up for a t
 Get started
 </ButtonLink>
 <Box my={25}>
-  
-  <FlexSection justifyContent="space-around" flexWrap="wrap">
-    <WideTile to="developer-portal/index.md"  header="Integrate">
+    <FlexSection justifyContent="space-around" flexWrap="wrap">
+    <Card to="developer-portal/index.md"  header="Integrate">
      Choose from all our integration tools
-    </WideTile>
-    <WideTile to="developer-portal/index.md" header="Payments">
+    </Card>
+    <Card to="developer-portal/index.md" header="Payments">
       We help you make payments super easy
-    </WideTile>
-    <WideTile to="developer-portal/index.md" header="Webhooks">
+    </Card>
+    <Card to="developer-portal/index.md" header="Webhooks">
       Get notified on all the cool stuff
-    </WideTile>
+    </Card>
   </FlexSection>
   <SectionHeader>
     <Emphasis>Need help? </Emphasis>

@@ -66,8 +66,6 @@ tags:
 
 x-tagGroups:
   - name: Notifications
-    description: |
-      foo
     tags:
       - Webhooks
       - Events
@@ -75,3 +73,4 @@ x-tagGroups:
     tags:
       - Tokens
       - Instruments
+      - Customers

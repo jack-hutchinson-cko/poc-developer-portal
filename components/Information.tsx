@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { WarningIcon, InformationIcon, NoteIcon, TipIcon } from './svg';
 import { colours } from './css/tokens';

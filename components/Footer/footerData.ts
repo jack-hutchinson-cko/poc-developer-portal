@@ -1,4 +1,4 @@
-export const dataFooter = {
+export const footerData = {
 	body: [
 		{
 			slice_type: 'links_section',

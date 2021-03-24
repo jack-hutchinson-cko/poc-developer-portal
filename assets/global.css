@@ -71,14 +71,9 @@
     font-stretch: normal;
 }
 
-a:hover {
-    color: var(--S1000)!important;
-}
-
-
 /* Code overrides */
 
-.token.property.string, .tab-error {
+.token.property.string, .tab-error, .collapser {
     color: var(--S1000)!important;
 }
 
@@ -95,7 +90,7 @@ a:hover {
 }
 
 .tab-success, .react-tabs__tab--selected {
-    color: #ffffc8!important;
+    color: var(--Y80)!important;
 }
 
 .boFvsO {
@@ -104,6 +99,6 @@ a:hover {
 }
 
 .kzHWse {
-    color: #ffffc8;
+    color: var(--Y80);
     font-weight: 500;
 }

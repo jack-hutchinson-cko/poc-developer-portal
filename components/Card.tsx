@@ -46,7 +46,7 @@ interface Props {
 	to: string;
 }
 
-const Card = ({ children, title, to }: Props): JSX.Element => (
+export const Card = ({ children, title, to }: Props): JSX.Element => (
 	<StyledContainer href={to}>
 		<StyledTitle>{title}</StyledTitle>
 		<StyledBody>{children}</StyledBody>

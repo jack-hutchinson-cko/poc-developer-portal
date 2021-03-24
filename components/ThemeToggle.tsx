@@ -46,7 +46,7 @@ const StyledThumb = styled.div`
 	transform: ${(props: { isDarkMode: boolean }) => (props.isDarkMode ? 'translateX(26px)' : '')};
 `;
 
-const ThemeToggle = () => {
+export const ThemeToggle = () => {
 	const [isDarkMode, setDarkMode] = useState(false);
 
 	return (

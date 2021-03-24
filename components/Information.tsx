@@ -38,7 +38,7 @@ interface Props {
 	type?: string;
 }
 
-const Information = ({ children, header, type = 'information' }: Props): JSX.Element => {
+export const Information = ({ children, header, type = 'information' }: Props): JSX.Element => {
 	const bgMap = {
 		information: colours.information,
 		tip: colours.tip,

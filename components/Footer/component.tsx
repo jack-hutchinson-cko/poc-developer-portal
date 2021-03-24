@@ -4,7 +4,7 @@ import { Background, LogoContainer, LogoWrapper, LineSeparator } from './styles'
 import { CheckoutLogo } from '../svg/CheckoutLogo';
 import FooterLinkList from './FooterLinkList';
 import SubFooter from './SubFooter';
-import { dataFooter } from './footerData';
+import { footerData } from './footerData';
 
 const Footer = () => (
 	<Background>
@@ -15,7 +15,7 @@ const Footer = () => (
 				</LogoWrapper>
 			</LogoContainer>
 
-			<FooterLinkList links={dataFooter.body} />
+			<FooterLinkList links={footerData.body} />
 
 			<LineSeparator />
 

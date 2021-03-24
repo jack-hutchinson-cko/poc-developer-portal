@@ -86,7 +86,7 @@ a:hover {
     color: var(--G500)!important;
 }
 
-.token.keyword {
+.token.keyword, .token.class-name {
     color: var(--R800)!important;
 }
 

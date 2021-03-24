@@ -14,24 +14,24 @@ checkout:
     page: developer-portal/sdk/index.mdx
     expanded: false
     pages:
-      - group: Java SDK
+      - group: Java SDK #testing out just indicating whole directory
         pages:
-          - label: Getting started
-            page: developer-portal/sdk/java-sdk/getting_started.mdx
-          - label: Events
-            page: developer-portal/sdk/java-sdk/events.mdx
-          - label: Environment
-            page: developer-portal/sdk/java-sdk/environment.mdx
-          - label: Initialize
-            page: developer-portal/sdk/java-sdk/initialize.mdx
-          - label: Install
-            page: developer-portal/sdk/java-sdk/install.mdx
-          - label: Payments
-            page: developer-portal/sdk/java-sdk/payments.mdx
-          - label: Sources
-            page: developer-portal/sdk/java-sdk/sources.mdx
-          - label: Tokens
-            page: developer-portal/sdk/java-sdk/tokens.mdx
+          # - label: Getting started
+          - page: developer-portal/sdk/java-sdk/*
+          # - label: Events
+          #   page: developer-portal/sdk/java-sdk/events.mdx
+          # - label: Environment
+          #   page: developer-portal/sdk/java-sdk/environment.mdx
+          # - label: Initialize
+          #   page: developer-portal/sdk/java-sdk/initialize.mdx
+          # - label: Install
+          #   page: developer-portal/sdk/java-sdk/install.mdx
+          # - label: Payments
+          #   page: developer-portal/sdk/java-sdk/payments.mdx
+          # - label: Sources
+          #   page: developer-portal/sdk/java-sdk/sources.mdx
+          # - label: Tokens
+          #   page: developer-portal/sdk/java-sdk/tokens.mdx
       - group: Ruby SDK
         pages:
           - label: Getting started

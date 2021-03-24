@@ -60,14 +60,19 @@ tags:
     description: Use events to monitor and get insights into your transactions.
   - name: Disputes
     description: Keep track of and act on your open disputes (also known as chargebacks) to submit the best possible response.
+  - name: Reconciliation
+    description: Quickly find all fees associated with each of your payments, allowing you to concentrate on the important stuff while streamlining your financial reporting.
   # - name: Files
   #   description: |
   #     Upload files to be used as input to other APIs
 
 x-tagGroups:
+  - name: Gateway
+    tags:
+      - Payments
+      - Payment Links
+      - Hosted Payments
   - name: Notifications
-    description: |
-      foo
     tags:
       - Webhooks
       - Events
@@ -75,6 +80,14 @@ x-tagGroups:
     tags:
       - Tokens
       - Instruments
+      - Customers
+      - Sources
+  - name: Disputes
+    tags:
+      - Disputes
+  - name: Reconciliation
+    tags:
+      - Reconciliation
 
 paths:
   /customers/{id}:

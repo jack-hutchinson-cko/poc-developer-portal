@@ -66,26 +66,3 @@ tags:
   # - name: Files
   #   description: |
   #     Upload files to be used as input to other APIs
-
-x-tagGroups:
-  - name: Gateway
-    tags:
-      - Payments
-      - Payment Links
-      - Hosted Payments
-  - name: Notifications
-    tags:
-      - Webhooks
-      - Events
-  - name: Vault
-    tags:
-      - Tokens
-      - Instruments
-      - Customers
-      - Sources
-  - name: Disputes
-    tags:
-      - Disputes
-  - name: Reconciliation
-    tags:
-      - Reconciliation

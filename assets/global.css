@@ -41,7 +41,7 @@
     --note: #F3C25D;
     --information: #80E5E9;
     --tip: #70C9B7;
-    --warning: #EE6D5F!important;
+    --warning: #EE6D5F;
   }
 
 @font-face {
@@ -72,6 +72,38 @@
 }
 
 a:hover {
-    color: #0C1142!important;
+    color: var(--S1000)!important;
 }
 
+
+/* Code overrides */
+
+.token.property.string, .tab-error {
+    color: var(--S1000)!important;
+}
+
+.token.boolean {
+    color: var(--G500)!important;
+}
+
+.token.keyword {
+    color: var(--R800)!important;
+}
+
+.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted, .token.string + a {
+    color: var(--P600)!important;
+}
+
+.tab-success, .react-tabs__tab--selected {
+    color: #ffffc8!important;
+}
+
+.boFvsO {
+    color: var(--S1000);
+    font-weight: 500;
+}
+
+.kzHWse {
+    color: #ffffc8;
+    font-weight: 500;
+}

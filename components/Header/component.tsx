@@ -15,7 +15,7 @@ import {
 const Header = (): JSX.Element => (
 	<StyledContainer>
 		<StyledLeftHeader>
-			<StyledLogo>
+			<StyledLogo href="/">
 				<StyledLogoIcon />
 				<StyledLogoText>Documentation</StyledLogoText>
 			</StyledLogo>

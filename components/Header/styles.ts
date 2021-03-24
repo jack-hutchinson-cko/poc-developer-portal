@@ -16,10 +16,17 @@ export const StyledContainer = styled.div`
 	width: 100%;
 `;
 
-export const StyledLogo = styled.div`
+export const StyledLogo = styled.a`
 	align-items: center;
 	display: flex;
 	gap: 12px;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+
+	:hover {
+		text-decoration: none;
+	}
 `;
 
 export const StyledLogoText = styled.h3`

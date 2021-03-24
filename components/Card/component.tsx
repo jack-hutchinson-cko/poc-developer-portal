@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colours } from './css/tokens';
-import { CardArrow } from './svg';
+import { colours } from '../css/tokens';
+import { CardArrow } from '../svg';
 
 const StyledContainer = styled.a`
 	background: transparent;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colours } from './css/tokens';
+import { colours } from '../css/tokens';
 
 const StyledLink = styled.a`
 	background: ${(props: { hierarchy: Hierarchy }) =>

@@ -8,17 +8,28 @@
 		"start": "node ./scripts/build.js && redocly-portal develop -p 3000",
 		"build": "node ./scripts/build.js && redocly-portal build",
 		"clean": "redocly-portal clean",
-		"test": "swagger-cli validate --no-schema openapi/swagger.yaml",
 		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook"
+		"build-storybook": "build-storybook",
+		"test": "swagger-cli validate --no-schema openapi/swagger.yaml",
+		"unit-test": "jest"
 	},
 	"dependencies": {
 		"@redocly/developer-portal": "1.0.0-beta.120",
 		"@storybook/addon-controls": "^6.1.21",
+		"@types/enzyme": "^3.10.6",
+		"@types/enzyme-adapter-react-16": "^1.0.3",
+		"@types/enzyme-to-json": "^1.5.3",
+		"@types/jest": "^26.0.13",
 		"@types/styled-components": "^5.1.9",
+		"enzyme": "^3.11.0",
+		"enzyme-adapter-react-16": "^1.15.4",
+		"enzyme-to-json": "^3.5.0",
+		"jest": "^26.6.3",
+		"jest-styled-components": "^7.0.3",
 		"storybook": "^6.1.21",
 		"styled-components": "^5.2.1",
 		"swagger-cli": "4.0.4",
+		"ts-jest": "^26.5.4",
 		"typescript": "^4.2.3"
 	},
 	"devDependencies": {
@@ -35,6 +46,11 @@
 		"hooks": {
 			"pre-commit": "lint-staged"
 		}
+	},
+	"jest": {
+		"snapshotSerializers": [
+			"enzyme-to-json/serializer"
+		]
 	},
 	"lint-staged": {
 		"*.{js,ts,tsx,yaml}": [

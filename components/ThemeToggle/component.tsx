@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import { colours } from './css/tokens';
+import { colours } from '../css/tokens';
 
 const StyledContainer = styled.div`
 	background: ${(props: { isDarkMode: boolean }) => (props.isDarkMode ? colours.S500 : colours.S1000)};

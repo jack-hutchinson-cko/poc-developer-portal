@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { WarningIcon, InformationIcon, NoteIcon, TipIcon } from './svg';
-import { colours } from './css/tokens';
+import { colours } from '../css/tokens';
+import { InformationIcon, NoteIcon, TipIcon, WarningIcon } from '../svg';
 
 const StyledWrapper = styled.div`
 	border: 1px solid ${(props: { activeBg: string }) => props.activeBg};

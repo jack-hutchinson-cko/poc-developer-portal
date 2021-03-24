@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { colours } from './css/tokens';
 
 const StyledLink = styled.a`
-	background: ${colours.S1000};
+	background: ${(props: { hierarchy: Hierarchy }) =>
+		props.hierarchy === 'primary' ? colours.S1000 : colours.primaryTurqoise};
 	border: none;
 	border-radius: 8px;
-	color: ${colours.Y80}!important;
+	color: ${(props: { hierarchy: Hierarchy }) =>
+		props.hierarchy === 'primary' ? colours.Y80 : colours.S1000}!important;
 	display: inline-block;
 	font-family: 'Graphik LCG Web';
 	font-size: 16px;
@@ -23,11 +25,18 @@ const StyledLink = styled.a`
 	}
 `;
 
+type Hierarchy = 'primary' | 'secondary';
+
 interface Props {
 	children: string;
+	hierarchy?: Hierarchy;
 	to: string;
 }
 
-export const ButtonLink = ({ children, to }: Props): JSX.Element => <StyledLink href={to}>{children}</StyledLink>;
+export const ButtonLink = ({ children, hierarchy = 'primary', to }: Props): JSX.Element => (
+	<StyledLink href={to} hierarchy={hierarchy}>
+		{children}
+	</StyledLink>
+);
 
 export default ButtonLink;

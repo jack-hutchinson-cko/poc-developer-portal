@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { colours } from './css/tokens';
 
@@ -8,7 +8,7 @@ const StyledContainer = styled.div`
 	cursor: pointer;
 	display: flex;
 	height: 24px;
-	margin-top: 19px !important;
+	margin: auto 0;
 	position: relative;
 	top: -1px;
 	transition: background 0.5s;
@@ -46,8 +46,8 @@ const StyledThumb = styled.div`
 	transform: ${(props: { isDarkMode: boolean }) => (props.isDarkMode ? 'translateX(26px)' : '')};
 `;
 
-export const ThemeToggle = () => {
-	const [isDarkMode, setDarkMode] = useState(false);
+export const ThemeToggle = (): JSX.Element => {
+	const [isDarkMode, setDarkMode] = useState<boolean>(false);
 
 	return (
 		<StyledContainer isDarkMode={isDarkMode} onClick={() => setDarkMode(!isDarkMode)}>

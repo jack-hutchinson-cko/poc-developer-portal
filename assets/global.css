@@ -102,3 +102,7 @@
     color: var(--Y80);
     font-weight: 500;
 }
+
+[data-cy="try-it"] {
+    color: var(--Y80);
+}

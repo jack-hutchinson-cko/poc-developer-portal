@@ -1,7 +1,7 @@
 openapi: '3.0.1'
 info:
   version: '1.0.0'
-  title: Checkout.com API Reference
+  title: API Reference
   x-logo:
     url: 'https://assets.checkout.com/docs/logos/logo-checkout-api-dark.svg'
     backgroundColor: '#E6E7EC'
@@ -62,33 +62,10 @@ tags:
     description: Keep track of and act on your open disputes (also known as chargebacks) to submit the best possible response.
   - name: Reconciliation
     description: Quickly find all fees associated with each of your payments, allowing you to concentrate on the important stuff while streamlining your financial reporting.
+
   # - name: Files
   #   description: |
   #     Upload files to be used as input to other APIs
-
-x-tagGroups:
-  - name: Gateway
-    tags:
-      - Payments
-      - Payment Links
-      - Hosted Payments
-  - name: Notifications
-    tags:
-      - Webhooks
-      - Events
-  - name: Vault
-    tags:
-      - Tokens
-      - Instruments
-      - Customers
-      - Sources
-  - name: Disputes
-    tags:
-      - Disputes
-  - name: Reconciliation
-    tags:
-      - Reconciliation
-
 paths:
   /customers/{id}:
     patch:
@@ -226,7 +203,7 @@ paths:
         - lang: C#
           source: "var api = CheckoutApi.Create(\"your secret key\");\n\nvar getDisputesRequest = new GetDisputesRequest(limit: 5);\nvar getDisputesResponse = await api.Disputes.GetDisputesAsync(getDisputesRequest: getDisputesRequest);"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst disputes = await cko.disputes.get({\n  limit: 5,\n  id: \"dsp_bc94ebda8d275i461229\",\n});"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst disputes = await cko.disputes.get({\n	limit: 5,\n	id: 'dsp_bc94ebda8d275i461229',\n});"
   /disputes/{dispute_id}:
     get:
       security:
@@ -259,7 +236,7 @@ paths:
         - lang: C#
           source: "var api = CheckoutApi.Create(\"your secret key\");\n\nvar getDisputeResponse = await api.Disputes.GetDisputeAsync(id: \"dsp_bc94ebda8d275i461229\");"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst disputeDetails = await cko.disputes.getDetails(\n  \"dsp_bc94ebda8d275i461229\"\n);"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst disputeDetails = await cko.disputes.getDetails('dsp_bc94ebda8d275i461229');"
   /disputes/{dispute_id}/accept:
     post:
       security:
@@ -288,7 +265,7 @@ paths:
         - lang: C#
           source: "var api = CheckoutApi.Create(\"your secret key\");\n\nawait api.Disputes.AcceptDisputeAsync(id: \"dsp_bc94ebda8d275i461229\");"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst accept = await cko.disputes.accept(\"dsp_bc94ebda8d275i461229\");"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst accept = await cko.disputes.accept('dsp_bc94ebda8d275i461229');"
   /disputes/{dispute_id}/evidence:
     put:
       security:
@@ -331,7 +308,7 @@ paths:
         - lang: C#
           source: "var api = CheckoutApi.Create(\"your secret key\");\n\nvar disputeEvidence = new DisputeEvidence()\n{\n    {\"additional_evidence_file\", \"file_jmbfgkjromvcrn9t4qu4\" },\n    {\"additional_evidence_text\", \"provide dispute evidence test\" }\n};\n\nawait api.Disputes.ProvideDisputeEvidenceAsync(\n                    id: \"dsp_bc94ebda8d275i461229\",\n                    disputeEvidence: disputeEvidence\n                );"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst evidence = await cko.disputes.provideEvidence(\n  \"dsp_bc94ebda8d275i461229\",\n  {\n    proof_of_delivery_or_service_text: \"http://checkout.com/document.pdf\",\n  }\n);"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst evidence = await cko.disputes.provideEvidence('dsp_bc94ebda8d275i461229', {\n	proof_of_delivery_or_service_text: 'http://checkout.com/document.pdf',\n});"
     get:
       security:
         - ApiSecretKey: []
@@ -365,7 +342,7 @@ paths:
         - lang: C#
           source: "var api = CheckoutApi.Create(\"your secret key\");\n\nvar getDisputeEvidenceResponse = await api.Disputes.GetDisputeEvidenceAsync(id: \"dsp_bc94ebda8d275i461229\");"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst getEvidence = await cko.disputes.getEvidence(\"dsp_bc94ebda8d275i461229\");"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst getEvidence = await cko.disputes.getEvidence('dsp_bc94ebda8d275i461229');"
     post:
       security:
         - ApiSecretKey: []
@@ -395,7 +372,7 @@ paths:
         - lang: C#
           source: "var api = CheckoutApi.Create(\"your secret key\");\n\nawait api.Disputes.SubmitDisputeEvidenceAsync(id: \"dsp_bc94ebda8d275i461229\");"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst submitEvidence = await cko.disputes.submit(\"dsp_bc94ebda8d275i461229\");"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst submitEvidence = await cko.disputes.submit('dsp_bc94ebda8d275i461229');"
   /event-types:
     get:
       security:
@@ -432,7 +409,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);\n\nList<EventTypesResponse> allEventTypesResponses = api.eventsClient().retrieveAllEventTypes(null).get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst events = await cko.events.retrieveEventTypes();"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst events = await cko.events.retrieveEventTypes();"
   /events/{eventId}:
     get:
       security:
@@ -471,7 +448,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);\n\nEventResponse event = api.eventsClient().retrieveEvent(\"evt_c2qelfixai2u3es3ksovngkx3e\").get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst event = await cko.events.retrieveEvent(\"evt_c2qelfixai2u3es3ksovngkx3e\");"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst event = await cko.events.retrieveEvent('evt_c2qelfixai2u3es3ksovngkx3e');"
   /events/{eventId}/notifications/{notificationId}:
     get:
       security:
@@ -516,7 +493,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);\n\nEventNotificationResponse notification = api.eventsClient().retrieveEventNotification(\"evt_c2qelfixai2u3es3ksovngkx3e\", \"ntf_wqjkqpgjy33uxoywcej4fnw6qm\").get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst notification = await cko.events.retrieveEventNotification({\n  eventId: \"evt_c2qelfixai2u3es3ksovngkx3e\",\n  notificationId: \"ntf_wqjkqpgjy33uxoywcej4fnw6qm\",\n});"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst notification = await cko.events.retrieveEventNotification({\n	eventId: 'evt_c2qelfixai2u3es3ksovngkx3e',\n	notificationId: 'ntf_wqjkqpgjy33uxoywcej4fnw6qm',\n});"
   /events/{eventId}/webhooks/{webhookId}/retry:
     post:
       security:
@@ -558,7 +535,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);\n\napi.eventsClient().retryWebhook(\"evt_c2qelfixai2u3es3ksovngkx3e\", \"wh_mpkyioafmajulnhjvwmrklenb4\").get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst retry = await cko.events.retry({\n  eventId: \"evt_c2qelfixai2u3es3ksovngkx3e\",\n  webhookId: \"wh_mpkyioafmajulnhjvwmrklenb4\",\n});"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst retry = await cko.events.retry({\n	eventId: 'evt_c2qelfixai2u3es3ksovngkx3e',\n	webhookId: 'wh_mpkyioafmajulnhjvwmrklenb4',\n});"
   /events/{eventId}/webhooks/retry:
     post:
       security:
@@ -592,7 +569,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);\n\napi.eventsClient().retryAllWebhooks(\"evt_c2qelfixai2u3es3ksovngkx3e\").get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst retryAll = await cko.events.retryAll(\"evt_c2qelfixai2u3es3ksovngkx3e\");"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst retryAll = await cko.events.retryAll('evt_c2qelfixai2u3es3ksovngkx3e');"
   /files:
     post:
       security:
@@ -629,7 +606,7 @@ paths:
         - lang: C#
           source: "var api = CheckoutApi.Create(\"your secret key\");\n\nvar pathToFile = @\"test_file.png\";\n\nvar uploadFileResponse = await api.Files.UploadFileAsync(\n                                          pathToFile: pathToFile,\n                                          purpose: \"dispute_evidence\"\n                                        );"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst file = await cko.files.upload({\n  path: fs.createReadStream(\"./test/files/evidence.jpg\"),\n  purpose: \"dispute_evidence\",\n});"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst file = await cko.files.upload({\n	path: fs.createReadStream('./test/files/evidence.jpg'),\n	purpose: 'dispute_evidence',\n});"
   /files/{file_id}:
     get:
       security:
@@ -668,7 +645,7 @@ paths:
         - lang: C#
           source: "var api = CheckoutApi.Create(\"your secret key\");\n\nvar getFileResponse = await api.Files.GetFileAsync(id: \"file_zna32sccqbwevd3ldmejtplbhu\");"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst getFile = await cko.files.getFile(\"file_zna32sccqbwevd3ldmejtplbhu\");"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst getFile = await cko.files.getFile('file_zna32sccqbwevd3ldmejtplbhu');"
   /hosted-payments:
     post:
       security:
@@ -737,7 +714,7 @@ paths:
           description: Internal Error
       x-code-samples:
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\ntry {\n  const instrument = await cko.instruments.create({\n    // infered type \"token\",\n    token: \"tok_bzi43qc6jeee5mmnfo4gnsnera\", // Generated by Checkout.Frames\n  });\n} catch (err) {\n  console.log(err.name);\n}"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\ntry {\n	const instrument = await cko.instruments.create({\n		// infered type \"token\",\n		token: 'tok_bzi43qc6jeee5mmnfo4gnsnera', // Generated by Checkout.Frames\n	});\n} catch (err) {\n	console.log(err.name);\n}"
   /instruments/{id}:
     get:
       security:
@@ -1017,7 +994,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(\"your secret key\", false, \"your public key\");\nTokenSource tokenSource = new TokenSource(\"tok_ubfj2q76miwundwlk72vxt2i7q\");\nPaymentRequest<TokenSource> paymentRequest = PaymentRequest.fromSource(tokenSource, Currency.USD, 5600);\npaymentRequest.setReference(\"ORD-090857\");\npaymentRequest.setCapture(false);\npaymentRequest.setThreeDS(ThreeDSRequest.from(true));\n\ntry {\n    PaymentResponse response = api.paymentsClient().requestAsync(paymentRequest).get();\n\n    if (response.isPending() && response.getPending().requiresRedirect()) {\n        return redirect(response.getPending().getRedirectLink().getHref());\n    }\n\n    if (response.getPayment().isApproved())\n        return paymentSucessful(response.getPayment());\n\n    return paymentDeclined(response.getPayment());\n} catch (CheckoutValidationException e) {\n    return validationError(e.getError());\n} catch (CheckoutApiException e) {\n    LOG.severe(\"Payment request failed with status code \" + e.getHttpStatusCode());\n    throw e;\n}"
         - lang: Node
-          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\ntry {\n    const payment = await cko.payments.request({\n        source: {\n            // infered type: \"token\"\n            token: 'tok_bzi43qc6jeee5mmnfo4gnsnera' // Generated by Checkout.Frames\n            billing_address: {\n                address_line1: 'Wall Street',\n                address_line2: 'Dollar Avenue',\n                city: 'London',\n                state: 'London',\n                zip: 'W1W W1W',\n                country: 'GB'\n            },\n            phone: {\n                country_code: '44',\n                number: '7123456789'\n            }\n        },\n        currency: 'USD',\n        amount: 1000,\n        payment_type: 'Regular',\n        reference: 'ORDER 1234',\n        description: 'Mint Tea',\n        customer: {\n            email: 'new_user@email.com',\n            name: 'John Smith'\n        },\n        metadata: {\n            myCustomProp: {\n                value: 1\n            }\n        }\n    });\n\n} catch (err) {\n    console.log(err.name)\n}"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\ntry {\n	const payment = await cko.payments.request({\n		source: {\n			// infered type: \"token\"\n			token: 'tok_bzi43qc6jeee5mmnfo4gnsnera', // Generated by Checkout.Frames\n			billing_address: {\n				address_line1: 'Wall Street',\n				address_line2: 'Dollar Avenue',\n				city: 'London',\n				state: 'London',\n				zip: 'W1W W1W',\n				country: 'GB',\n			},\n			phone: {\n				country_code: '44',\n				number: '7123456789',\n			},\n		},\n		currency: 'USD',\n		amount: 1000,\n		payment_type: 'Regular',\n		reference: 'ORDER 1234',\n		description: 'Mint Tea',\n		customer: {\n			email: 'new_user@email.com',\n			name: 'John Smith',\n		},\n		metadata: {\n			myCustomProp: {\n				value: 1,\n			},\n		},\n	});\n} catch (err) {\n	console.log(err.name);\n}"
         - lang: PHP
           source: "<?php\n\n$checkout = new CheckoutApi('your secret key');\n\n$method = new TokenSource('tok_ubfj2q76miwundwlk72vxt2i7q');\n$payment = new Payment($method, 'USD');\n\n$customer = new Customer();\n$customer->email = 'john.smith@email.com';\n$customer->name = 'John Smith';\n\n$address = new Address();\n$address->address_line1 = '14-17 Wells Mews';\n$address->address_line2 = 'Fitzrovia';\n$address->city = 'London';\n$address->state = 'London';\n$address->zip = 'W1T 3HF';\n$address->country = 'UK';\n\n$phone = new Phone();\n$phone->country_code = '0044';\n$phone->number = '02073233888';\n\n$payment->shipping = new Shipping($address, $phone);\n$payment->billing_descriptor = new BillingDescriptor(\"Dynamic desc charge\", \"City charge\");\n$payment->amount = 5600;\n$payment->capture = false;\n$payment->reference = 'ORD-090857';\n$payment->threeDs = new ThreeDs(true);\n$payment->risk = new Risk(true);\n$payment->setIdempotencyKey(createMyUniqueKeyForThis());\n\ntry {\n    $details = $checkout->payments()->request($payment);\n\n    $redirection = $details->getRedirection();\n    if ($redirection) {\n        return $redirection;\n    }\n\n    return $details;\n} catch (CheckoutModelException $ex) {\n    return $ex->getErrors();\n} catch (CheckoutHttpException $ex) {\n    return $ex->getErrors();\n}"
         - lang: Python
@@ -1068,7 +1045,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(\"your secret key\", false, \"your public key\");\nString sessionId = \"sid_y3oqhf46pyzuxjbcn2giaqnb44\";\nGetPaymentResponse payment = api.paymentsClient().getAsync(sessionId).get();\n\nif (payment.isApproved()) {\n    String cardSourceId = ((CardSourceResponse)payment.getSource()).getId();\n}"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst payment = await cko.payments.get(\"pay_je5hbbb4u3oe7k4u3lbwlu3zkq\");"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst payment = await cko.payments.get('pay_je5hbbb4u3oe7k4u3lbwlu3zkq');"
         - lang: PHP
           source: "<?php\n\n$checkout = new CheckoutApi('your secret key');\n$threeDsSessionId = 'sid_y3oqhf46pyzuxjbcn2giaqnb44';\n\ntry {\n\n	$details = $checkout->payments()->details($threeDsSessionId);\n	return $details->getSourceId();\n\n} catch(CheckoutHttpException $ex) {\n	return $ex->getErrors();\n}"
         - lang: Python
@@ -1113,7 +1090,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(\"your secret key\", false, \"your public key\");\nString paymentId = \"pay_y3oqhf46pyzuxjbcn2giaqnb44\";\n\nList<PaymentAction> paymentActions = api.paymentsClient().getActionsAsync(paymentId).get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst payment = await cko.payments.getActions(\"pay_je5hbbb4u3oe7k4u3lbwlu3zkq\");"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst payment = await cko.payments.getActions('pay_je5hbbb4u3oe7k4u3lbwlu3zkq');"
         - lang: PHP
           source: "<?php\n\n$checkout = new CheckoutApi('your secret key');\n$paymentID = 'pay_y3oqhf46pyzuxjbcn2giaqnb44';\n\nreturn $checkout->payments()->actions($paymentID);"
         - lang: Python
@@ -1176,7 +1153,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(\"your secret key\", false, \"your public key\");\nString paymentId = \"pay_y3oqhf46pyzuxjbcn2giaqnb44\";\n\n// Full capture\napi.paymentsClient().captureAsync(paymentId).get();\n\n// Or partial capture\nCaptureRequest captureRequest = CaptureRequest.builder()\n    .reference(\"your reference\")\n    .amount(100)\n    .build();\n\napi.paymentsClient().captureAsync(paymentId, captureRequest).get();"
         - lang: Node
-          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst payment = await cko.payments.capture('pay_je5hbbb4u3oe7k4u3lbwlu3zkq', {\n    amount: 1000,\n    reference: 'CAPTURE ORDER 1234',\n    metadata: {\n        value: 'my value'\n    }\n});"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst payment = await cko.payments.capture('pay_je5hbbb4u3oe7k4u3lbwlu3zkq', {\n	amount: 1000,\n	reference: 'CAPTURE ORDER 1234',\n	metadata: {\n		value: 'my value',\n	},\n});"
         - lang: PHP
           source: "<?php\n\n$checkout = new CheckoutApi('your secret key');\n$paymentID = 'pay_y3oqhf46pyzuxjbcn2giaqnb44';\n\n// Full capture\n$capture = new Capture($paymentID);\n\n// Or partial capture\n$capture = new Capture($paymentID);\n$capture->reference = 'your reference';\n$capture->amount = 100;\n\nreturn $checkout->payments()->capture($capture);"
         - lang: Python
@@ -1239,7 +1216,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(\"your secret key\", false, \"your public key\");\nString paymentId = \"pay_y3oqhf46pyzuxjbcn2giaqnb44\";\n\n// Full refund\napi.paymentsClient().refundAsync(paymentId).get();\n\n// Or partial refund\nRefundRequest refundRequest = RefundRequest.builder()\n    .reference(\"your reference\")\n    .amount(100)\n    .build();\n\napi.paymentsClient().refundAsync(paymentId, refundRequest).get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst payment = await cko.payments.refund(\"pay_je5hbbb4u3oe7k4u3lbwlu3zkq\", {\n  amount: 1000,\n  reference: \"REFUND ORDER 1234\",\n  metadata: {\n    value: \"my value\"\n  }\n});"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst payment = await cko.payments.refund('pay_je5hbbb4u3oe7k4u3lbwlu3zkq', {\n	amount: 1000,\n	reference: 'REFUND ORDER 1234',\n	metadata: {\n		value: 'my value',\n	},\n});"
         - lang: PHP
           source: "<?php\n\n$checkout = new CheckoutApi('your secret key');\n$paymentID = 'pay_y3oqhf46pyzuxjbcn2giaqnb44';\n\n// Full refund\n$refund = new Refund($paymentID);\n\n// Or partial refund\n$refund = new Refund($paymentID);\n$refund->reference = 'your reference';\n$refund->amount = 100;\n\nreturn $checkout->payments()->refund($refund);"
         - lang: Python
@@ -1302,7 +1279,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(\"your secret key\", false, \"your public key\");\nString paymentId = \"pay_y3oqhf46pyzuxjbcn2giaqnb44\";\n\napi.paymentsClient().voidAsync(paymentId).get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst payment = await cko.payments.void(\"pay_je5hbbb4u3oe7k4u3lbwlu3zkq\", {\n  amount: 1000,\n  reference: \"VOID ORDER 1234\",\n  metadata: {\n    value: \"my value\"\n  }\n});"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst payment = await cko.payments.void('pay_je5hbbb4u3oe7k4u3lbwlu3zkq', {\n	amount: 1000,\n	reference: 'VOID ORDER 1234',\n	metadata: {\n		value: 'my value',\n	},\n});"
         - lang: PHP
           source: "<?php\n\n$checkout = new CheckoutApi('your secret key');\n$paymentID = 'pay_y3oqhf46pyzuxjbcn2giaqnb44';\n\nreturn $checkout->payments()->void(new Voids($paymentID));"
         - lang: Python
@@ -1586,7 +1563,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);\n\nAddress billingAddress = new Address();\nbillingAddress.setAddressLine1(\"Checkout.com\");\nbillingAddress.setAddressLine2(\"90 Tottenham Court Road\");\nbillingAddress.setCity(\"London\");\nbillingAddress.setState(\"London\");\nbillingAddress.setZip(\"W1T 4TJ\");\nbillingAddress.setCountry(\"GB\");\n\nPhone phone = new Phone();\nphone.setCountryCode(\"+1\");\nphone.setNumber(\"415 555 2671\");\n\nSourceData sourceData = new SourceData();\nsourceData.put(\"first_name\", \"Marcus\");\nsourceData.put(\"last_name\", \"Barrilius Maximus\");\nsourceData.put(\"account_iban\", \"DE68100100101234567895\");\nsourceData.put(\"bic\", \"PBNKDEFFXXX\");\nsourceData.put(\"billing_descriptor\", \"Java SDK test\");\nsourceData.put(\"mandate_type\", \"single\");\n\nSourceRequest sourceRequest = new SourceRequest(\"sepa\", billingAddress);\nsourceRequest.setPhone(phone);\nsourceRequest.setReference(\"Java SDK test\");\nsourceRequest.setSourceData(sourceData);\nSourceResponse sourceResponse = api.sourcesClient().requestAsync(sourceRequest).get();\n\nSourceProcessed source = sourceResponse.getSource();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\ntry {\n  const payment = await cko.sources.add({\n    // infered type: \"sepa\"\n    reference: \"X-080957-N34\",\n    source_data: {\n      first_name: \"Sophie\",\n      last_name: \"Bonneville\",\n      account_iban: \"DE25100100101234567893\",\n      bic: \"PBNKDEFFXXX\",\n      billing_descriptor: \"Thanks for shopping\",\n      mandate_type: \"recurring\",\n    },\n    billing_address: {\n      address_line1: \"101 Avenue de Gaulle\",\n      city: \"Paris\",\n      zip: \"75013\",\n      country: \"FR\",\n    },\n    phone: {\n      country_code: \"+33\",\n      number: \"6 78 91 01 11\",\n    },\n    customer: {\n      email: \"sophie.bonneville@ckomail.com\",\n    },\n  });\n} catch (err) {\n  console.log(err.name);\n}"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\ntry {\n	const payment = await cko.sources.add({\n		// infered type: \"sepa\"\n		reference: 'X-080957-N34',\n		source_data: {\n			first_name: 'Sophie',\n			last_name: 'Bonneville',\n			account_iban: 'DE25100100101234567893',\n			bic: 'PBNKDEFFXXX',\n			billing_descriptor: 'Thanks for shopping',\n			mandate_type: 'recurring',\n		},\n		billing_address: {\n			address_line1: '101 Avenue de Gaulle',\n			city: 'Paris',\n			zip: '75013',\n			country: 'FR',\n		},\n		phone: {\n			country_code: '+33',\n			number: '6 78 91 01 11',\n		},\n		customer: {\n			email: 'sophie.bonneville@ckomail.com',\n		},\n	});\n} catch (err) {\n	console.log(err.name);\n}"
   /tokens:
     post:
       security:
@@ -1632,7 +1609,7 @@ paths:
         - lang: Java
           source: "WalletTokenRequest walletTokenRequest = new WalletTokenRequest('applepay', tokenData);\n// infered type: \"applepay\"\ntry {\n    TokenResponse tokenRequest = api.tokensClient().requestAsync(walletTokenRequest).get();\n    String token  = tokenRequest.getToken();\n    return token;\n} catch (CheckoutValidationException e) {\n    return validationError(e.getError());\n} catch (CheckoutApiException e) {\n    LOG.severe(\"Payment request failed with status code \" + e.getHttpStatusCode());\n    throw e;\n}"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\", { pk: \"pk_YYYY\" });\n\ntry {\n  const token = await cko.tokens.request({\n    // infered type: \"applepay\"\n    token_data: {\n      version: \"EC_v1\",\n      data: \"t7GeajLB9skXB6QSWfEpPA4WPhDqB7ekdd+F7588arLzve...\",\n      signature: \"MIAGCSqGbGUg...\",\n      header: {\n        ephemeralPublicKey: \"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgA...\",\n        publicKeyHash: \"tqYV+tmG9aMh+l/K6cicUnPqkb1gUiLjSTM9gEz6...\",\n        transactionId: \"3cee89679130a4b...\",\n      },\n    },\n  });\n} catch (err) {\n  console.log(err.name);\n}"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX', { pk: 'pk_YYYY' });\n\ntry {\n	const token = await cko.tokens.request({\n		// infered type: \"applepay\"\n		token_data: {\n			version: 'EC_v1',\n			data: 't7GeajLB9skXB6QSWfEpPA4WPhDqB7ekdd+F7588arLzve...',\n			signature: 'MIAGCSqGbGUg...',\n			header: {\n				ephemeralPublicKey: 'MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgA...',\n				publicKeyHash: 'tqYV+tmG9aMh+l/K6cicUnPqkb1gUiLjSTM9gEz6...',\n				transactionId: '3cee89679130a4b...',\n			},\n		},\n	});\n} catch (err) {\n	console.log(err.name);\n}"
   /webhooks:
     get:
       security:
@@ -1669,7 +1646,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);\n\nList < WebhookResponse > response = api.webhooksClient().retrieveWebhooks().get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst webhooks = await cko.webhooks.retrieveWebhooks();"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst webhooks = await cko.webhooks.retrieveWebhooks();"
     post:
       security:
         - ApiSecretKey: []
@@ -1712,7 +1689,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);\n\nList < String > eventTypes = Arrays.asList(\"payment_captured\", \"payment_approved\", \"payment_declined\");\n\nWebhookRequest webhookRequest = WebhookRequest.builder()\n  .url(\"https://example.com/webhook\")\n  .eventTypes(eventTypes)\n  .build();\nWebhookResponse webhookResponse = api.webhooksClient().registerWebhook(webhookRequest).get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst webhook = await cko.webhooks.registerWebhook({\n  url: \"https://example.com/webhook\",\n  active: true,\n  headers: {\n    authorization: \"1234\",\n  },\n  content_type: \"json\",\n  event_types: [\"payment_approved\", \"payment_captured\"],\n});"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst webhook = await cko.webhooks.registerWebhook({\n	url: 'https://example.com/webhook',\n	active: true,\n	headers: {\n		authorization: '1234',\n	},\n	content_type: 'json',\n	event_types: ['payment_approved', 'payment_captured'],\n});"
   /webhooks/{id}:
     get:
       security:
@@ -1755,7 +1732,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);\n\nWebhookResponse webhook = api.webhooksClient().retrieveWebhook(\"wh_tdt72zlbe7cudogxdgit6nwk6i\").get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst webhook = await cko.webhooks.retrieveWebhook(\n  \"wh_tdt72zlbe7cudogxdgit6nwk6i\"\n);"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst webhook = await cko.webhooks.retrieveWebhook('wh_tdt72zlbe7cudogxdgit6nwk6i');"
     put:
       security:
         - ApiSecretKey: []
@@ -1806,7 +1783,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);\n\nList < String > eventTypes = Arrays.asList(\"payment_captured\", \"payment_approved\", \"payment_declined\");\n\nWebhookRequest webhookRequest = WebhookRequest.builder()\n  .url(\"https://example.com/webhooks/updated\")\n  .eventTypes(eventTypes)\n  .build();\n\nWebhookResponse webhook = api.webhooksClient().updateWebhook(\"wh_ahun3lg7bf4e3lohbhni65335u\", webhookRequest).get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst webhook = await cko.webhooks.updateWebhook(\n  \"wh_ahun3lg7bf4e3lohbhni65335u\",\n  {\n    url: \"https://example.com/webhooks/updated\",\n    active: true,\n    headers: {\n      authorization: \"1234\",\n    },\n    content_type: \"json\",\n    event_types: [\"payment_approved\", \"payment_captured\"],\n  }\n);"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst webhook = await cko.webhooks.updateWebhook('wh_ahun3lg7bf4e3lohbhni65335u', {\n	url: 'https://example.com/webhooks/updated',\n	active: true,\n	headers: {\n		authorization: '1234',\n	},\n	content_type: 'json',\n	event_types: ['payment_approved', 'payment_captured'],\n});"
     patch:
       security:
         - ApiSecretKey: []
@@ -1861,7 +1838,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);\n\nWebhookResponse oldWebhook = api.webhooksClient().retrieveWebhook(\"wh_ahun3lg7bf4e3lohbhni65335u\").get();\nWebhookRequest webhookRequest = oldWebhook.toRequest();\nwebhookRequest.setUrl(\"https://example.com/webhooks/updated\");\n\nWebhookResponse newWebhook = api.webhooksClient().updateWebhook(id, webhookRequest).get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst webhook = await cko.webhooks.partiallyUpdateWebhook(\n  \"wh_ahun3lg7bf4e3lohbhni65335u\",\n  {\n    url: \"https://example.com/webhooks/updated\",\n  }\n);"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst webhook = await cko.webhooks.partiallyUpdateWebhook('wh_ahun3lg7bf4e3lohbhni65335u', {\n	url: 'https://example.com/webhooks/updated',\n});"
     delete:
       security:
         - ApiSecretKey: []
@@ -1893,7 +1870,7 @@ paths:
         - lang: Java
           source: "CheckoutApi api = CheckoutApiImpl.create(sk_XXXX, true, pk_XXXX);\n\napi.webhooksClient().removeWebhook(\"wh_ahun3lg7bf4e3lohbhni65335u\").get();"
         - lang: Node
-          source: "import { Checkout } from \"checkout-node-sdk\";\n\nconst cko = new Checkout(\"sk_XXXX\");\n\nconst webhook = await cko.webhooks.removeWebhook(\n  \"wh_ahun3lg7bf4e3lohbhni65335u\"\n);"
+          source: "import { Checkout } from 'checkout-node-sdk';\n\nconst cko = new Checkout('sk_XXXX');\n\nconst webhook = await cko.webhooks.removeWebhook('wh_ahun3lg7bf4e3lohbhni65335u');"
 components:
   schemas:
     01_SepaAddress:
@@ -2337,7 +2314,6 @@ components:
           type: string
           description: The purpose of the file upload. You must set this to `dispute_evidence`
           example: 'dispute_evidence'
-
     FilePurpose:
       type: string
       description: The list of file upload purposes. Currently this is only `dispute_evidence`
@@ -3735,7 +3711,6 @@ components:
                 href: 'https://api.checkout.com/redirect/act_y3oqhf46pyzuxjbcn2giaqnb44'
           required:
             - payment
-
     CaptureRequest:
       type: object
       properties:
@@ -4041,7 +4016,6 @@ components:
                 href: 'https://api.checkout.com/3ds/pay_mbabizu24mvu3mela5njyhpit4'
           required:
             - self
-
     PaymentAction:
       type: object
       required:
@@ -4112,7 +4086,6 @@ components:
         metadata:
           type: object
           description: A set of key-value pairs that you can attach to an action
-
     PaymentActionsResponse:
       type: array
       items:
@@ -4180,7 +4153,6 @@ components:
           type: string
           description: The Gateway response summary
           example: 'Approved'
-
     PaymentDestination:
       type: object
       description: |
@@ -4924,7 +4896,6 @@ components:
                 href: 'https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44'
           required:
             - payment
-
     RefundRequest:
       type: object
       properties:
@@ -4977,7 +4948,6 @@ components:
               description: The payout destination owner's phone number. This will override the phone number specified during tokenization
               allOf:
                 - $ref: '#/components/schemas/PhoneNumber'
-
     02_PaymentRequestIdDestination:
       type: object
       description: An existing payment source
@@ -5074,7 +5044,6 @@ components:
               description: The customer's phone number. This will override the phone number specified during tokenization
               allOf:
                 - $ref: '#/components/schemas/PhoneNumber'
-
     02_PaymentRequestIdSource:
       type: object
       description: An existing payment source
@@ -5163,7 +5132,6 @@ components:
               pattern: "^(cus)_(\\w{26})$"
               description: The customer's identifier.
               example: 'cus_y3oqhf46pyzuxjbcn2giaqnb44'
-
     05_PaymentRequestNetworkTokenSource:
       type: object
       description: A network token payment source
@@ -5250,7 +5218,6 @@ components:
               type: string
               description: The LATAM local card scheme card number (without separators)
               example: '4543474002249996'
-
     PaymentRequestAlipaySource:
       type: object
       description: Alipay Source
@@ -7070,7 +7037,6 @@ components:
                 href: 'https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44'
           required:
             - payment
-
     VoidRequest:
       type: object
       properties:
@@ -7150,7 +7116,6 @@ components:
                 href: 'https://api.checkout.com/payments/pay_y3oqhf46pyzuxjbcn2giaqnb44'
           required:
             - payment
-
     PhoneNumber:
       type: object
       description: A phone number

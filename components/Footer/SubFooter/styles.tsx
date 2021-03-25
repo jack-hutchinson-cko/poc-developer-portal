@@ -16,7 +16,6 @@ export const GridItem = styled.div`
 `;
 
 export const Title = styled.p`
-	font-family: 'Graphik LCG Web', 'sans-serif';
 	font-style: normal;
 	font-weight: 500;
 	font-size: 11px;
@@ -31,7 +30,6 @@ export const Title = styled.p`
 `;
 
 export const Description = styled.div`
-	font-family: 'Graphik LCG Web', 'sans-serif';
 	font-style: normal;
 	font-weight: normal;
 	font-size: 10px;
@@ -63,7 +61,6 @@ export const WrapperItems = styled.div`
 `;
 
 export const LinkItem = styled.a`
-	font-family: 'Graphik LCG Web', 'sans-serif';
 	font-style: normal;
 	font-weight: normal;
 	font-size: 11px;

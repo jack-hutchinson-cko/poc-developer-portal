@@ -5,7 +5,6 @@ import { colours } from '../css/tokens';
 const StyledLink = styled.a`
 	color: ${colours.S1000};
 	display: inline-block;
-	font-family: 'Graphik LCG Web';
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 1em;

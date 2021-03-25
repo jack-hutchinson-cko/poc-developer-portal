@@ -7,7 +7,6 @@ export const StyledContainer = styled.div`
 	box-shadow: 0px 2px 5px rgba(12, 17, 66, 0.15);
 	display: flex;
 	flex-direction: column;
-	font-family: 'Graphik LCG Web';
 	position: relative;
 	gap: 16px;
 	padding: 32px;

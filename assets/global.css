@@ -71,8 +71,20 @@
     font-stretch: normal;
 }
 
+html {
+    font-family: "Graphik LCG Web", Arial, sans-serif;
+}
+
 a {
+    color: var(--S1000);
+}
+
+header a {
     color: var(--S1000)!important;
+}
+
+footer a {
+    color: var(--S20)!important;
 }
 
 pre {

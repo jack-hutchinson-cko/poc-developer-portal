@@ -15,8 +15,6 @@ const StyledContainer = styled.a`
 	margin: 24px 0px;
 	text-decoration: none;
 
-	font-family: 'Graphik LCG Web';
-
 	:hover {
 		border: 1px solid ${colours.primaryTurqoise};
 		text-decoration: none;

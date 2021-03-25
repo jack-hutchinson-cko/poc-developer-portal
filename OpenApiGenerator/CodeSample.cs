@@ -1,4 +1,4 @@
-namespace OpenApiGenerator
+namespace openApiGenerator
 {
     public class CodeSample
     {

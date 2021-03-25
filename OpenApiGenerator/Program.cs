@@ -6,7 +6,7 @@ using Microsoft.OpenApi.Readers;
 using Microsoft.OpenApi.Writers;
 using System.Text;
 
-namespace OpenApiGenerator
+namespace openApiGenerator
 {
     class Program
     {

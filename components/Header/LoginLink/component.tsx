@@ -21,3 +21,4 @@ const LoginLink = (): JSX.Element => {
 };
 
 export default LoginLink;
+export { StyledContainer };

@@ -21,3 +21,4 @@ const MenuLink = (): JSX.Element => {
 };
 
 export default MenuLink;
+export { StyledContainer };

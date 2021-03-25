@@ -8,3 +8,5 @@ OpenApiGenerator/bin/*
 OpenApiGenerator/.vs/
 
 yarn-error.log
+
+coverage

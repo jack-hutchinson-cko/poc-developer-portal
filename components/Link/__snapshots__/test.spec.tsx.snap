@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link component component matches snapshot 1`] = `
+<styled.a
+  href="/"
+>
+  Getting started
+</styled.a>
+`;

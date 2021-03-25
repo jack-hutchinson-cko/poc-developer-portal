@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Information component component matches snapshot with type information 1`] = `
+<styled.div
+  activeBg="#80E5E9"
+>
+  <div
+    style={
+      Object {
+        "background": "#80E5E9",
+        "display": "flex",
+      }
+    }
+  >
+    <styled.div>
+      <InformationIcon />
+    </styled.div>
+  </div>
+  <styled.div>
+    <styled.div>
+      Information
+    </styled.div>
+    Lorem Ipsum
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Information component component matches snapshot with type note 1`] = `
+<styled.div
+  activeBg="#F3C25D"
+>
+  <div
+    style={
+      Object {
+        "background": "#F3C25D",
+        "display": "flex",
+      }
+    }
+  >
+    <styled.div>
+      <NoteIcon />
+    </styled.div>
+  </div>
+  <styled.div>
+    <styled.div>
+      Note
+    </styled.div>
+    Lorem Ipsum
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Information component component matches snapshot with type tip 1`] = `
+<styled.div
+  activeBg="#70C9B7"
+>
+  <div
+    style={
+      Object {
+        "background": "#70C9B7",
+        "display": "flex",
+      }
+    }
+  >
+    <styled.div>
+      <TipIcon />
+    </styled.div>
+  </div>
+  <styled.div>
+    <styled.div>
+      Tip
+    </styled.div>
+    Lorem Ipsum
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Information component component matches snapshot with type warning 1`] = `
+<styled.div
+  activeBg="#EE6D5F"
+>
+  <div
+    style={
+      Object {
+        "background": "#EE6D5F",
+        "display": "flex",
+      }
+    }
+  >
+    <styled.div>
+      <WarningIcon />
+    </styled.div>
+  </div>
+  <styled.div>
+    <styled.div>
+      Warning
+    </styled.div>
+    Lorem Ipsum
+  </styled.div>
+</styled.div>
+`;

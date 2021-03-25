@@ -6,12 +6,18 @@ exports[`FooterLinkList component component matches snapshot 2`] = `
 <styled.div>
   <styled.div
     key="0"
+    onClick={[Function]}
   >
     <styled.p>
       Solution
+      <styled.div>
+        <Chevron />
+      </styled.div>
     </styled.p>
     <styled.div>
-      <styled.div>
+      <styled.div
+        isDisplayed={false}
+      >
         <styled.a
           href="/solutions"
           key="0"
@@ -69,7 +75,7 @@ exports[`FooterLinkList component component matches snapshot 2`] = `
         </styled.a>
       </styled.div>
       <styled.div
-        className="solutions-second-col"
+        isDisplayed={false}
       >
         <styled.a
           href="/solutions/fraud"
@@ -120,11 +126,17 @@ exports[`FooterLinkList component component matches snapshot 2`] = `
   </styled.div>
   <styled.div
     key="1"
+    onClick={[Function]}
   >
     <styled.p>
       Company
+      <styled.div>
+        <Chevron />
+      </styled.div>
     </styled.p>
-    <styled.div>
+    <styled.div
+      isDisplayed={false}
+    >
       <styled.a
         href="/about-us"
         key="0"
@@ -184,11 +196,17 @@ exports[`FooterLinkList component component matches snapshot 2`] = `
   </styled.div>
   <styled.div
     key="2"
+    onClick={[Function]}
   >
     <styled.p>
       Insights
+      <styled.div>
+        <Chevron />
+      </styled.div>
     </styled.p>
-    <styled.div>
+    <styled.div
+      isDisplayed={false}
+    >
       <styled.a
         href="/blog"
         key="0"
@@ -215,11 +233,17 @@ exports[`FooterLinkList component component matches snapshot 2`] = `
   </styled.div>
   <styled.div
     key="3"
+    onClick={[Function]}
   >
     <styled.p>
       Resources
+      <styled.div>
+        <Chevron />
+      </styled.div>
     </styled.p>
-    <styled.div>
+    <styled.div
+      isDisplayed={false}
+    >
       <styled.a
         href="https://docs.checkout.com/"
         key="0"

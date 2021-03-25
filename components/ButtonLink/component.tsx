@@ -10,7 +10,6 @@ const StyledLink = styled.a`
 	color: ${(props: { hierarchy: Hierarchy }) =>
 		props.hierarchy === 'primary' ? colours.Y80 : colours.S1000}!important;
 	display: inline-block;
-	font-family: 'Graphik LCG Web';
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 24px;

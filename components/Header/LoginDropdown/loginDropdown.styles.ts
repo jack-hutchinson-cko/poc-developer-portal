@@ -8,7 +8,6 @@ export const StyledContainer = styled.div`
 	color: ${colours.S1000};
 	display: flex;
 	flex-direction: column;
-	font-family: 'Graphik LCG Web';
 	position: relative;
 	width: 434px;
 	position: absolute;

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const StyledContainer = styled.div`
 	display: flex;
 	gap: 12px;
-	font-family: 'Graphik LCG Web';
 `;
 
 export const StyledLoginLink = styled.div`

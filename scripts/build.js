@@ -4,7 +4,7 @@
 require('shelljs/global');
 set('-e');
 
-exec('dotnet build ./openApiGenerator/openApiGenerator.csproj');
-exec('dotnet run -p ./openApiGenerator/openApiGenerator.csproj');
+exec('dotnet build ./openApiGenerator/OpenApiGenerator.csproj');
+exec('dotnet run -p ./openApiGenerator/OpenApiGenerator.csproj');
 
 rm('-rf', 'output');

@@ -6,12 +6,11 @@ export const StyledLogoIcon = styled(CheckoutLogoIcon)`
 	padding-top: 6px;
 `;
 
-export const StyledContainer = styled.div`
+export const StyledContainer = styled.header`
 	background: white;
 	border-bottom: 1px solid ${colours.S05};
 	display: flex;
 	justify-content: space-between;
-	font-family: 'Graphik LCG Web';
 	padding: 24px 40px;
 	width: 100%;
 `;
@@ -33,13 +32,11 @@ export const StyledLogoText = styled.h3`
 	color: ${colours.S1000};
 	font-size: 24px;
 	line-height: 40px;
-	font-family: 'Graphik LCG Web';
 	margin: 0;
 `;
 
 export const StyledLink = styled.a`
 	color: ${colours.S1000};
-	font-family: Graphik LCG;
 	font-size: 16px;
 	line-height: 24px;
 	letter-spacing: 0em;

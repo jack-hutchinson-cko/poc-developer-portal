@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colours, device } from '../css/tokens';
 
-export const Background = styled.div`
+export const Background = styled.footer`
 	height: 100%;
 	width: 100%;
 	background: ${colours.S1000};
@@ -40,7 +40,7 @@ export const Section = styled.div`
 	width: 100%;
 	background-color: ${colours.S1000};
 
-	${device.toMobileXL} {
-		padding: 64px 24px;
+	${device.toLaptopL} {
+		padding: 64px 40px;
 	}
 `;

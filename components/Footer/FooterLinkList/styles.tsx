@@ -5,30 +5,35 @@ export const Container = styled.div`
 	display: flex;
 	justify-content: space-between;
 
-	${device.toMobileXL} {
+	${device.toTablet} {
 		flex-direction: column;
 	}
 `;
 
 export const SolutionsLinksContainer = styled.div`
 	width: 32%;
-	margin-top: 40px;
+	margin-top: 20px;
 
 	@media only screen and (min-width: 768px) and (max-width: 1080px) {
+		margin-top: 40px;
+		padding: 0 0 20px 0;
 		width: 36%;
 	}
 
 	${device.toTablet} {
+		border-bottom: 1px solid ${colours.S05};
+		margin-top: 40px;
+		padding: 0 0 20px 0;
 		width: auto;
-		padding: 0;
 	}
 `;
 
 export const LinksContainer = styled.div`
-	margin-top: 40px;
+	margin-top: 20px;
 
 	${device.toTablet} {
-		padding: 0;
+		border-bottom: 1px solid ${colours.S05};
+		padding: 0 0 20px 0;
 	}
 `;
 
@@ -47,6 +52,8 @@ export const ColWrapper = styled.div`
 	flex-direction: column;
 
 	${device.toTablet} {
+		display: ${(props: { isDisplayed: boolean }) => (props.isDisplayed ? 'flex' : 'none')};
+		transition: all 0.5s;
 		&.solutions-second-col {
 			margin-top: 0;
 		}
@@ -54,7 +61,6 @@ export const ColWrapper = styled.div`
 `;
 
 export const FooterTitle = styled.p`
-	font-family: 'Graphik LCG Web', 'sans-serif';
 	font-style: normal;
 	font-weight: 600;
 	font-size: 12px;
@@ -62,11 +68,12 @@ export const FooterTitle = styled.p`
 	letter-spacing: 0.11em;
 	text-transform: uppercase;
 	color: white;
+	display: flex;
+	justify-content: space-between;
 	-webkit-font-smoothing: antialiased;
 `;
 
 export const FooterLink = styled.a`
-	font-family: 'Graphik LCG Web', 'sans-serif';
 	font-style: normal;
 	font-weight: normal;
 	font-size: 14px;
@@ -83,7 +90,6 @@ export const FooterLink = styled.a`
 		props.labelHere
 			? `&::after {
         content:  "WE'RE HIRING";
-        font-family: 'Graphik LCG Web', 'sans-serif';
         font-style: normal;
         font-weight: 500;
         font-size: 10px;
@@ -112,4 +118,13 @@ export const LinkText = styled.div`
 	display: inline;
 	padding-bottom: 4px;
 	transition: border-bottom-color 0.2s ease;
+`;
+
+export const StyledIcon = styled.div`
+	display: none;
+
+	${device.toTablet} {
+		display: flex;
+		align-items: center;
+	}
 `;

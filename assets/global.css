@@ -71,6 +71,14 @@
     font-stretch: normal;
 }
 
+a {
+    color: var(--S1000)!important;
+}
+
+pre {
+    background-color: var(--S05)!important;
+}
+
 /* Code overrides */
 
 .token.property.string, .tab-error, .collapser {

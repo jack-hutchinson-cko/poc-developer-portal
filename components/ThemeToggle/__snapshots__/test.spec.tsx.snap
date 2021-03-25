@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeToggle component component matches snapshot 1`] = `
+<styled.div
+  isDarkMode={false}
+  onClick={[Function]}
+>
+  <styled.div>
+    🌛
+  </styled.div>
+  <styled.div>
+    ☀️
+  </styled.div>
+  <styled.div
+    isDarkMode={false}
+  />
+</styled.div>
+`;
+
+exports[`ThemeToggle component isDarkMode is true on container click 1`] = `
+<styled.div
+  isDarkMode={true}
+  onClick={[Function]}
+>
+  <styled.div>
+    🌛
+  </styled.div>
+  <styled.div>
+    ☀️
+  </styled.div>
+  <styled.div
+    isDarkMode={true}
+  />
+</styled.div>
+`;

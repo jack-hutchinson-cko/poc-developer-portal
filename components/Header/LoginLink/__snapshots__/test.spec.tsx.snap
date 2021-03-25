@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginLink component component matches snapshot with dropdown closed 1`] = `
+<styled.div>
+  <styled.div
+    onClick={[Function]}
+  >
+    <styled.a>
+      Log in
+    </styled.a>
+    <styled.div
+      isOpen={false}
+    >
+      <Chevron />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`LoginLink component component matches snapshot with dropdown open 1`] = `
+<styled.div>
+  <styled.div
+    onClick={[Function]}
+  >
+    <styled.a>
+      Log in
+    </styled.a>
+    <styled.div
+      isOpen={true}
+    >
+      <Chevron />
+    </styled.div>
+  </styled.div>
+  <LoginDropdown />
+</styled.div>
+`;

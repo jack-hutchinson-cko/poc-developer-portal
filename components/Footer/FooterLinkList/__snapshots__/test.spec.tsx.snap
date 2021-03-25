@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooterLinkList component component matches snapshot 1`] = `<styled.div />`;
+
+exports[`FooterLinkList component component matches snapshot 2`] = `
+<styled.div>
+  <styled.div
+    key="0"
+  >
+    <styled.p>
+      Solution
+    </styled.p>
+    <styled.div>
+      <styled.div>
+        <styled.a
+          href="/solutions"
+          key="0"
+          labelHere={false}
+        >
+          <styled.div>
+             
+            Solution overview
+             
+          </styled.div>
+        </styled.a>
+        <styled.a
+          href="/solutions/unified-api"
+          key="1"
+          labelHere={false}
+        >
+          <styled.div>
+             
+            Unified payments platform
+             
+          </styled.div>
+        </styled.a>
+        <styled.a
+          href="/solutions/international-coverage"
+          key="2"
+          labelHere={false}
+        >
+          <styled.div>
+             
+            International Coverage
+             
+          </styled.div>
+        </styled.a>
+        <styled.a
+          href="/solutions/data-and-reporting"
+          key="3"
+          labelHere={false}
+        >
+          <styled.div>
+             
+            Data and Reporting
+             
+          </styled.div>
+        </styled.a>
+        <styled.a
+          href="/solutions/integration"
+          key="4"
+          labelHere={false}
+        >
+          <styled.div>
+             
+            Integrations
+             
+          </styled.div>
+        </styled.a>
+      </styled.div>
+      <styled.div
+        className="solutions-second-col"
+      >
+        <styled.a
+          href="/solutions/fraud"
+          key="0"
+          labelHere={false}
+        >
+          <styled.div>
+             
+            Fraud protection
+             
+          </styled.div>
+        </styled.a>
+        <styled.a
+          href="/payment-methods"
+          key="1"
+          labelHere={false}
+        >
+          <styled.div>
+             
+            Payment methods
+             
+          </styled.div>
+        </styled.a>
+        <styled.a
+          href="/pricing"
+          key="2"
+          labelHere={false}
+        >
+          <styled.div>
+             
+            Pricing
+             
+          </styled.div>
+        </styled.a>
+        <styled.a
+          href="/partners"
+          key="3"
+          labelHere={false}
+        >
+          <styled.div>
+             
+            Partners
+             
+          </styled.div>
+        </styled.a>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="1"
+  >
+    <styled.p>
+      Company
+    </styled.p>
+    <styled.div>
+      <styled.a
+        href="/about-us"
+        key="0"
+        labelHere={false}
+      >
+        <styled.div>
+           
+          About us
+           
+        </styled.div>
+      </styled.a>
+      <styled.a
+        href="/careers"
+        key="1"
+        labelHere={true}
+      >
+        <styled.div>
+           
+          Careers
+           
+        </styled.div>
+      </styled.a>
+      <styled.a
+        href="/newsroom"
+        key="2"
+        labelHere={false}
+      >
+        <styled.div>
+           
+          Newsroom
+           
+        </styled.div>
+      </styled.a>
+      <styled.a
+        href="/contact-us"
+        key="3"
+        labelHere={false}
+      >
+        <styled.div>
+           
+          Contact us
+           
+        </styled.div>
+      </styled.a>
+      <styled.a
+        href="/partners/join"
+        key="4"
+        labelHere={false}
+      >
+        <styled.div>
+           
+          Become a partner
+           
+        </styled.div>
+      </styled.a>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="2"
+  >
+    <styled.p>
+      Insights
+    </styled.p>
+    <styled.div>
+      <styled.a
+        href="/blog"
+        key="0"
+        labelHere={false}
+      >
+        <styled.div>
+           
+          Blog
+           
+        </styled.div>
+      </styled.a>
+      <styled.a
+        href="/case-studies"
+        key="1"
+        labelHere={false}
+      >
+        <styled.div>
+           
+          Customer stories
+           
+        </styled.div>
+      </styled.a>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="3"
+  >
+    <styled.p>
+      Resources
+    </styled.p>
+    <styled.div>
+      <styled.a
+        href="https://docs.checkout.com/"
+        key="0"
+        labelHere={false}
+      >
+        <styled.div>
+           
+          Documentation
+           
+        </styled.div>
+      </styled.a>
+      <styled.a
+        href="https://api-reference.checkout.com/"
+        key="1"
+        labelHere={false}
+      >
+        <styled.div>
+           
+          API Reference
+           
+        </styled.div>
+      </styled.a>
+      <styled.a
+        href="mailto:support@checkout.com"
+        key="2"
+        labelHere={false}
+      >
+        <styled.div>
+           
+          Support
+           
+        </styled.div>
+      </styled.a>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

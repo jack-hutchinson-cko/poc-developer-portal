@@ -12,7 +12,7 @@ import {
 
 const FooterLinkList = ({ links = [] }) => (
 	<Container>
-		{links.map((link, i) => {
+		{links?.map((link, i) => {
 			if (i === 0) {
 				return (
 					<SolutionsLinksContainer key={i}>

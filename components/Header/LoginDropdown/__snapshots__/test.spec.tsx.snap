@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginDropdown component component matches snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <TheHub />
+      The Hub
+    </styled.div>
+    <styled.p>
+      Monitor transactions, business performance and customer trends.
+    </styled.p>
+    <styled.div>
+      <ButtonLink
+        hierarchy="secondary"
+        to="https://hub.checkout.com/login"
+      >
+        Log In
+      </ButtonLink>
+      <styled.p>
+        or
+      </styled.p>
+      <styled.a
+        href="https://www.checkout.com/get-test-account"
+      >
+        Apply for an account
+        <ArrowRight />
+      </styled.a>
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      <TestAccount />
+      Test account
+    </styled.div>
+    <styled.p>
+      <styled.a
+        href="https://sandbox.checkout.com/login"
+      >
+        Log in
+      </styled.a>
+      or
+      <styled.a
+        href="https://www.checkout.com/get-test-account"
+      >
+        apply for a test account
+      </styled.a>
+    </styled.p>
+  </styled.div>
+</styled.div>
+`;

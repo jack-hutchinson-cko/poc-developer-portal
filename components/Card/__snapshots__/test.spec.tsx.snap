@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component component matches snapshot 1`] = `
+<styled.a
+  href="/"
+>
+  <styled.div>
+    Tip
+  </styled.div>
+  <styled.p>
+    Some text
+  </styled.p>
+  <styled.div>
+    <CardArrow />
+  </styled.div>
+</styled.a>
+`;

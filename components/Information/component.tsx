@@ -67,3 +67,4 @@ export const Information = ({ children, header, type = 'information' }: Props): 
 };
 
 export default Information;
+export { StyledWrapper };

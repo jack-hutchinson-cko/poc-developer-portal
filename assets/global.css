@@ -88,7 +88,7 @@ footer a {
 }
 
 pre {
-    background-color: var(--S05)!important;
+    background-color: var(--S05);
 }
 
 /* Code overrides */
@@ -124,5 +124,6 @@ pre {
 }
 
 [data-cy="try-it"] {
-    color: var(--Y80);
+    color: var(--Y80)!important;
+    font-weight: 500;
 }

@@ -255,3 +255,7 @@ footer a > div {
 .react-tabs__tab-panel span, .sc-hwcHae {
     color: var(--S1000)!important;
 }
+
+table div {
+    background: var(--background)!important;
+}

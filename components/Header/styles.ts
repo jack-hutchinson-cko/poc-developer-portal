@@ -44,6 +44,44 @@ export const StyledSearchBox = styled(SearchBox)`
 	ul div:first-child {
 		padding-top: 16px;
 	}
+
+	${device.toLaptop} {
+		width: 280px;
+
+		span {
+			margin: auto;
+			padding: 0px;
+		}
+
+		input {
+			width: 280px;
+		}
+	}
+
+	${device.toTablet} {
+		width: 180px;
+
+		span {
+			margin: auto;
+			padding: 0px;
+		}
+
+		input {
+			width: 180px;
+			margin-top: 4px;
+		}
+
+		span span {
+			display: none;
+		}
+	}
+
+	${device.toMobileXL} {
+		input {
+			height: 32px;
+			margin-top: 0px;
+		}
+	}
 `;
 
 export const StyledLogoIcon = styled(CheckoutLogoIcon)`
@@ -78,6 +116,10 @@ export const StyledLogoText = styled.h3`
 	font-size: 24px;
 	line-height: 40px;
 	margin: 0;
+
+	${device.toMobileXL} {
+		display: none;
+	}
 `;
 
 export const StyledLink = styled.a`
@@ -88,17 +130,17 @@ export const StyledLink = styled.a`
 	text-align: left;
 	margin: auto;
 
-	${device.toTablet} {
+	${device.toLaptop} {
 		display: none;
 	}
 `;
 
 export const StyledLeftHeader = styled.div`
 	display: flex;
-	gap: 136px;
+	gap: 40px;
 
-	${device.fromTablet} {
-		gap: 40px;
+	${device.toMobileXL} {
+		gap: 16px;
 	}
 `;
 

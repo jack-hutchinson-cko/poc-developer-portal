@@ -5,7 +5,7 @@ export const StyledContainer = styled.div`
 	display: flex;
 	gap: 12px;
 
-	${device.toTablet} {
+	${device.toLaptop} {
 		display: none;
 	}
 `;

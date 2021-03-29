@@ -139,7 +139,7 @@ pre {
 
 aside {
     background-color: var(--background)!important;
-    border-right: 1px solid var(--border)!important;
+    border-right: none!important;
     color: var(--font-color)!important;
 }
 

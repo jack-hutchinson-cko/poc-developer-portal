@@ -66,6 +66,7 @@
     --logo-icon-fill: white;
     --border: var(--S05);
     --test-account-background: rgb(230, 231, 236);
+    --code-background: var(--S05);
   }
 
 @font-face {
@@ -119,6 +120,7 @@
     --logo-icon-fill: white;
     --border: var(--S700);
     --test-account-background: #000321;
+    --code-background: var(--S10);
 }
 
 html {
@@ -134,7 +136,7 @@ footer a {
 }
 
 pre {
-    background-color: var(--S05);
+    background-color: var(--code-background);
 }
 
 aside {
@@ -195,6 +197,13 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
     font-weight: 500;
 }
 
+[data-cy="next-to"] {
+    background-color: var(--btn-primary-bg)!important;
+    border: none!important;
+    border-radius: 8px!important;
+    color: var(--btn-primary-font)!important;
+}
+
 [type="post"] {
     background-color: var(--T500)!important;
 }
@@ -222,7 +231,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
     color: var(--S1000)!important;
 }
 
-.fIoQcn polgon {
+polygon {
     fill: var(--S1000)!important;
 } 
 
@@ -232,6 +241,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
 }
 
 .react-tabs__tab {
+    border-radius: 8px;
     color: var(--S1000)!important;
 }
 
@@ -258,4 +268,12 @@ footer a > div {
 
 table div {
     background: var(--background)!important;
+}
+
+span::before, span::after {
+    color: var(--border)!important;
+}
+
+button {
+    border-radius: 8px;
 }

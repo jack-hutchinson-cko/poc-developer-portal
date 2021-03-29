@@ -98,7 +98,7 @@ export const theme = {
 		activeTextColor: '#0C1142',
 		separatorLineColor: '#E6E7EC',
 		separatorLabelColor: '#E6E7EC',
-		caretColor: '#0C1142',
+		caretColor: '#8688A0',
 		fontFamily: '"Graphik LCG Web", sans-serif',
 		fontSize: '16px',
 		offsetLeft: 8,

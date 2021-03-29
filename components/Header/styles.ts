@@ -124,11 +124,17 @@ export const StyledLogoText = styled.h3`
 
 export const StyledLink = styled.a`
 	color: var(--font-color);
+	cursor: pointer;
 	font-size: 16px;
 	line-height: 24px;
 	letter-spacing: 0em;
 	text-align: left;
 	margin: auto;
+	text-decoration: none;
+
+	:hover {
+		text-decoration: none;
+	}
 
 	${device.toLaptop} {
 		display: none;

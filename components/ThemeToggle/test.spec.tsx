@@ -3,6 +3,28 @@ import React from 'react';
 import { ThemeToggle, StyledContainer, StyledThumb } from './component';
 
 describe('ThemeToggle component', () => {
+	beforeEach(() => {
+		global.window = {
+			matchMedia: jest.fn(),
+			sessionStorage: {
+				setItem: jest.fn(),
+				getItem: jest.fn(),
+				removeItem: jest.fn(),
+				clear: jest.fn(),
+				key: jest.fn(),
+				length: 2,
+			},
+		};
+
+		global.document = {
+			getElementById: jest.fn(() => ({ className: '' })),
+		};
+	});
+
+	afterEach(() => {
+		delete global.window;
+	});
+
 	test('component matches snapshot', () => {
 		expect.assertions(1);
 

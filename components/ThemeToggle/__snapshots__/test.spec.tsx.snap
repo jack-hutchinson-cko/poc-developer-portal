@@ -2,7 +2,6 @@
 
 exports[`ThemeToggle component component matches snapshot 1`] = `
 <styled.div
-  isDarkMode={false}
   onClick={[Function]}
 >
   <styled.div>
@@ -19,7 +18,6 @@ exports[`ThemeToggle component component matches snapshot 1`] = `
 
 exports[`ThemeToggle component isDarkMode is true on container click 1`] = `
 <styled.div
-  isDarkMode={true}
   onClick={[Function]}
 >
   <styled.div>

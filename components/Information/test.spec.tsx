@@ -1,15 +1,14 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import { Information, StyledWrapper } from './component';
-import { colours } from '../css/tokens';
 
 describe('Information component', () => {
 	test.each`
 		type             | color
-		${'tip'}         | ${colours.tip}
-		${'information'} | ${colours.information}
-		${'note'}        | ${colours.note}
-		${'warning'}     | ${colours.warning}
+		${'tip'}         | ${'var(--tip)'}
+		${'information'} | ${'var(--information)'}
+		${'note'}        | ${'var(--note)'}
+		${'warning'}     | ${'var(--warning)'}
 	`('component matches snapshot with type $type', ({ color, type }) => {
 		expect.assertions(2);
 

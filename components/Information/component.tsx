@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colours } from '../css/tokens';
 import { InformationIcon, NoteIcon, TipIcon, WarningIcon } from '../svg';
 
 const StyledWrapper = styled.div`
 	border: 1px solid ${(props: { activeBg: string }) => props.activeBg};
 	border-radius: 8px;
-	color: ${colours.S1000};
+	color: var(--font-color);
 	background: white;
 	display: grid;
 	grid-template-columns: 60px 1fr;
@@ -39,10 +38,10 @@ interface Props {
 
 export const Information = ({ children, header, type = 'information' }: Props): JSX.Element => {
 	const bgMap = {
-		information: colours.information,
-		tip: colours.tip,
-		note: colours.note,
-		warning: colours.warning,
+		information: 'var(--information)',
+		tip: 'var(--tip)',
+		note: 'var(--note)',
+		warning: 'var(--warning)',
 	};
 	const headerLabel = header || type;
 	const activeBg = bgMap[type];

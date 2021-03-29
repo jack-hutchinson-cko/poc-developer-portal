@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { colours } from '../../css/tokens';
 
 export const StyledContainer = styled.div`
-	background: white;
-	border: 1px solid ${colours.S05};
+	background: var(--background);
+	border: 1px solid var(--border);
 	box-shadow: 0px 2px 5px rgba(12, 17, 66, 0.15);
-	color: ${colours.S1000};
+	color: var(--font-color);
 	display: flex;
 	flex-direction: column;
 	position: relative;
@@ -34,7 +33,7 @@ export const StyledTop = styled.div`
 `;
 
 export const StyledBottom = styled.div`
-	background: ${colours.S05};
+	background: var(--border);
 	padding: 40px 32px;
 `;
 
@@ -52,7 +51,7 @@ export const StyledTextBottom = styled.p`
 export const StyledApplyLink = styled.a`
 	align-items: center;
 	display: flex;
-	color: ${colours.S1000};
+	color: var(--font-color);
 	font-size: 14px;
 	font-weight: 500;
 	gap: 8px;
@@ -74,7 +73,7 @@ export const StyledArrow = styled.div`
 `;
 
 export const StyledLink = styled.a`
-	color: ${colours.S1000};
+	color: var(--font-color);
 	text-decoration: underline;
 `;
 

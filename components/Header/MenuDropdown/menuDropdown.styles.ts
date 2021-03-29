@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { colours } from '../../css/tokens';
 
 export const StyledContainer = styled.div`
-	background: white;
-	border: 1px solid ${colours.S05};
+	background: var(--background);
+	border: 1px solid var(--border);
 	box-shadow: 0px 2px 5px rgba(12, 17, 66, 0.15);
-	color: ${colours.S1000};
+	color: var(--font-color);
 	display: flex;
 	flex-direction: column;
 	position: relative;
@@ -26,6 +25,7 @@ export const StyledSVG = styled.div`
 export const StyledTopLabel = styled.div`
 	display: flex;
 	gap: 12px;
+	align-items: center;
 `;
 
 export const StyledItem = styled.div``;

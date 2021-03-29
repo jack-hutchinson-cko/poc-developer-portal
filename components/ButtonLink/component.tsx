@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 const StyledLink = styled.a`
 	background: ${(props: { hierarchy: Hierarchy }) =>
-		props.hierarchy === 'primary' ? 'var(--btn-primary-bg)' : 'var(--btn-secondary-bg)'};
+		props.hierarchy === 'primary' ? 'var(--btn-primary-background)' : 'var(--btn-secondary-background)'};
 	border: none;
 	border-radius: 8px;
 	color: ${(props: { hierarchy: Hierarchy }) =>
-		props.hierarchy === 'primary' ? 'var(--btn-primary-font)' : 'var(--btn-secondary-font)!important'};
+		props.hierarchy === 'primary' ? 'var(--btn-primary-font)!important' : 'var(--btn-secondary-font)!important'};
 	display: inline-block;
 	font-size: 16px;
 	font-weight: 500;

@@ -45,10 +45,10 @@ export const theme = {
 		//   dark: ({ colors }) => darken(colors.tonalOffset, colors.info.main),
 		//   contrastText: ({ colors }) => readableColor(colors.info.main),
 		// },
-		text: {
-			primary: '#0C1142',
-			secondary: '#3D4168',
-		},
+		// text: {
+		// 	primary: '#0C1142',
+		// 	secondary: '#3D4168',
+		// },
 		// border: {
 		//   dark: 'rgba(0,0,0, 0.15)',
 		//   light: '#ffffff',
@@ -128,13 +128,11 @@ export const theme = {
 			fontWeight: '500',
 			fontFamily: ({ typography }) => typography.headings.fontFamily,
 			lineHeight: ({ typography }) => typography.lineHeight,
-			color: ({ colors }) => colors.primary.main,
 			capitalize: false,
 		},
 		heading2: {
 			fontSize: '32px',
 			fontWeight: '500',
-			color: ({ colors }) => colors.text.primary,
 			fontFamily: ({ typography }) => typography.headings.fontFamily,
 			lineHeight: ({ typography }) => typography.lineHeight,
 			capitalize: false,
@@ -142,7 +140,6 @@ export const theme = {
 		heading3: {
 			fontSize: '24px',
 			fontWeight: '500',
-			color: ({ colors }) => colors.text.primary,
 			fontFamily: ({ typography }) => typography.headings.fontFamily,
 			lineHeight: ({ typography }) => typography.lineHeight,
 			capitalize: false,

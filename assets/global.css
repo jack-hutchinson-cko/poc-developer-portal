@@ -123,10 +123,6 @@ html {
     font-family: "Graphik LCG Web", Arial, sans-serif;
 }
 
-a {
-    color: var(--S1000);
-}
-
 header a {
     color: var(--font-color)!important;
 }
@@ -137,6 +133,27 @@ footer a {
 
 pre {
     background-color: var(--S05);
+}
+
+aside {
+    background-color: var(--background)!important;
+    border-right: 1px solid var(--border)!important;
+    color: var(--font-color)!important;
+}
+
+#___gatsby {
+    background-color: var(--background);
+    color: var(--font-color)!important;
+}
+
+aside span, aside div, aside i {
+    background-color: var(--background)!important;
+    color: var(--font-color)!important;
+    transition: none!important;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, li {
+    color: var(--font-color)!important;
 }
 
 /* Code overrides */
@@ -174,4 +191,23 @@ pre {
 [data-cy="try-it"] {
     color: var(--Y80)!important;
     font-weight: 500;
+}
+
+[type="post"] {
+    background-color: var(--T500)!important;
+}
+[type="get"] {
+    background-color: var(--G500)!important;
+}
+[type="options"] {
+    background-color: #b77ba1!important;
+}
+[type="put"] {
+    background-color: var(--P600)!important;
+}
+[type="delete"] {
+    background-color: var(--R500)!important;
+}
+[type="patch"] {
+    background-color: var(--yellow)!important;
 }

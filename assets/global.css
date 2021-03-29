@@ -65,6 +65,7 @@
     --card-link-hover: #2BD4DB;
     --logo-icon-fill: white;
     --border: var(--S05);
+    --test-account-background: rgb(230, 231, 236);
   }
 
 @font-face {
@@ -117,6 +118,7 @@
     --card-link-hover: #FFFFC8;
     --logo-icon-fill: white;
     --border: var(--S700);
+    --test-account-background: #000321;
 }
 
 html {
@@ -178,10 +180,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
     color: var(--B500)!important;
 }
 
-.tab-success, .react-tabs__tab--selected {
-    color: var(--Y80)!important;
-}
-
 .boFvsO {
     color: var(--S1000);
     font-weight: 500;
@@ -214,4 +212,38 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
 }
 [type="patch"] {
     background-color: var(--yellow)!important;
+}
+
+.dDnGks, .fIoQcn {
+    background-color: var(--border)!important;
+}
+
+.fIoQcn span, .collapsible div, .fIoQc li {
+    color: var(--S1000)!important;
+}
+
+.fIoQcn polgon {
+    fill: var(--S1000)!important;
+} 
+
+.tab-success, ul > li.react-tabs__tab--selected {
+    color: var(--btn-primary-font)!important;
+    background: var(--btn-primary-bg)!important;
+}
+
+.react-tabs__tab {
+    color: var(--S1000)!important;
+}
+
+.jZSkJr {
+    background: var(--background)!important;
+}
+
+.gxPHEs, .jFldoa {
+    background: var(--btn-primary-bg)!important;
+    color: var(--btn-primary-font)!important;
+}
+
+footer a > div {
+    color: var(--S20)!important;
 }

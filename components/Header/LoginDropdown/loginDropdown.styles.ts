@@ -33,7 +33,7 @@ export const StyledTop = styled.div`
 `;
 
 export const StyledBottom = styled.div`
-	background: var(--footer-background);
+	background: var(--test-account-background);
 	padding: 40px 32px;
 `;
 

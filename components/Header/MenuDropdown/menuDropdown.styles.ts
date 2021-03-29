@@ -8,7 +8,6 @@ export const StyledContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	gap: 16px;
 	padding: 32px;
 	width: 452px;
 	position: absolute;
@@ -26,9 +25,20 @@ export const StyledTopLabel = styled.div`
 	display: flex;
 	gap: 12px;
 	align-items: center;
+	text-decoration: none;
 `;
 
-export const StyledItem = styled.div``;
+export const StyledItem = styled.a`
+	text-decoration: none;
+
+	:hover {
+		text-decoration: none;
+	}
+
+	:first-child {
+		margin-bottom: 24px;
+	}
+`;
 
 export const StyledText = styled.p`
 	display: flex;
@@ -36,4 +46,5 @@ export const StyledText = styled.p`
 	font-size: 14px;
 	gap: 8px;
 	margin: 8px 0 0;
+	text-decoration: none;
 `;

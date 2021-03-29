@@ -5,7 +5,7 @@ import { ArrowRight, ApiRef, FAQ } from '../../svg';
 
 const MenuDropdown = (): JSX.Element => (
 	<StyledContainer>
-		<StyledItem>
+		<StyledItem href="https://docs.checkout.com" target="_blank">
 			<StyledTopLabel>
 				<ApiRef />
 				Guides
@@ -15,7 +15,7 @@ const MenuDropdown = (): JSX.Element => (
 				<ArrowRight />
 			</StyledText>
 		</StyledItem>
-		<StyledItem>
+		<StyledItem href="https://docs.checkout.com/four" target="_blank">
 			<StyledTopLabel>
 				<FAQ />
 				FAQ

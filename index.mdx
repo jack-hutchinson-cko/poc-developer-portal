@@ -21,16 +21,15 @@ import Card from  './components/Card';
 
 export default LandingLayout;
 
-<Jumbotron>
+<div>
   <NavBar location={props.location} standalone={false} />
-  <H1>Checkout.com API Reference</H1>
-  <H2>All you could ever dream of</H2>
+  <H1 style={{display: 'flex', justifyContent: 'center'}}>Checkout.com API Reference</H1>
   <Flex p={20} justifyContent="center">
     <ButtonLink to="developer-portal/docs/">
       Get started
     </ButtonLink>
   </Flex>
-</Jumbotron>
+</div>
 <Box my={25}>
   <SectionHeader>
     Get integrated with us today!

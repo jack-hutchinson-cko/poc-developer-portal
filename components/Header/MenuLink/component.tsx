@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Chevron } from '../../svg';
 import MenuDropdown from '../MenuDropdown';
 import { StyledLink } from '../styles';
 import { StyledContainer, StyledMenuLink, StyledSVG } from './menuLink.styles';
+import useComponentVisible from '../useComponentVisible';
 
 const MenuLink = (): JSX.Element => {
-	const [isOpen, setOpen] = useState<boolean>(false);
+	const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
 
 	return (
-		<StyledMenuLink>
-			<StyledContainer onClick={() => setOpen(!isOpen)}>
+		<StyledMenuLink ref={ref}>
+			<StyledContainer onClick={() => setIsComponentVisible(!isComponentVisible)}>
 				<StyledLink>API Reference</StyledLink>
-				<StyledSVG isOpen={isOpen}>
+				<StyledSVG isOpen={isComponentVisible}>
 					<Chevron />
 				</StyledSVG>
 			</StyledContainer>
-			{isOpen && <MenuDropdown />}
+			{isComponentVisible && <MenuDropdown />}
 		</StyledMenuLink>
 	);
 };

@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Chevron } from '../../svg';
 import { StyledLink } from '../styles';
 import { StyledContainer, StyledLoginLink, StyledSVG } from './loginLink.styles';
 import LoginDropdown from '../LoginDropdown';
+import useComponentVisible from '../useComponentVisible';
 
 const LoginLink = (): JSX.Element => {
-	const [isOpen, setOpen] = useState<boolean>(false);
+	const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
 
 	return (
-		<StyledLoginLink>
-			<StyledContainer onClick={() => setOpen(!isOpen)}>
+		<StyledLoginLink ref={ref}>
+			<StyledContainer onClick={() => setIsComponentVisible(!isComponentVisible)}>
 				<StyledLink>Log in</StyledLink>
-				<StyledSVG isOpen={isOpen}>
+				<StyledSVG isOpen={isComponentVisible}>
 					<Chevron />
 				</StyledSVG>
 			</StyledContainer>
-			{isOpen && <LoginDropdown />}
+			{isComponentVisible && <LoginDropdown />}
 		</StyledLoginLink>
 	);
 };

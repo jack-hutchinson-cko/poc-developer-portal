@@ -2,7 +2,10 @@
 
 exports[`MenuDropdown component component matches snapshot 1`] = `
 <styled.div>
-  <styled.div>
+  <styled.a
+    href="https://docs.checkout.com"
+    target="_blank"
+  >
     <styled.div>
       <ApiRef />
       Guides
@@ -11,8 +14,11 @@ exports[`MenuDropdown component component matches snapshot 1`] = `
       Hey, come look at the guides
       <ArrowRight />
     </styled.p>
-  </styled.div>
-  <styled.div>
+  </styled.a>
+  <styled.a
+    href="https://docs.checkout.com/four"
+    target="_blank"
+  >
     <styled.div>
       <FAQ />
       FAQ
@@ -21,6 +27,6 @@ exports[`MenuDropdown component component matches snapshot 1`] = `
       Find answers to our most frequently asked questions
       <ArrowRight />
     </styled.p>
-  </styled.div>
+  </styled.a>
 </styled.div>
 `;

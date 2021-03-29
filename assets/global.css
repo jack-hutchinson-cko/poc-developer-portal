@@ -247,3 +247,11 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
 footer a > div {
     color: var(--S20)!important;
 }
+
+.sc-ipXKqB, .sc-likbZx {
+    background-color: var(--border)!important;
+}
+
+.react-tabs__tab-panel span, .sc-hwcHae {
+    color: var(--S1000)!important;
+}

@@ -10,6 +10,7 @@ import {
 	StyledLogoIcon,
 	StyledLogoText,
 	StyledRightHeader,
+	StyledSearchBox,
 } from './styles';
 
 const Header = (): JSX.Element => (
@@ -20,6 +21,7 @@ const Header = (): JSX.Element => (
 				<StyledLogoText>Documentation</StyledLogoText>
 			</StyledLogo>
 			<MenuLink />
+			<StyledSearchBox />
 		</StyledLeftHeader>
 		<StyledRightHeader>
 			<LoginLink />

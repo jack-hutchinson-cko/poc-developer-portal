@@ -1,6 +1,50 @@
+// @ts-nocheck
+import { SearchBox } from '@redocly/ui';
 import styled from 'styled-components';
 import { device } from '../css/tokens';
 import { CheckoutLogoIcon } from '../svg';
+
+export const StyledSearchBox = styled(SearchBox)`
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	width: 380px;
+	height: 100%;
+
+	input {
+		border-radius: 8px;
+		color: var(--secondary-font-color);
+		margin-top: 5px;
+		height: 40px;
+		line-height: 24px;
+		padding: 16px 8px;
+		max-width: 380px;
+		width: 380px;
+	}
+
+	input::placeholder {
+		color: var(--secondary-font-color);
+	}
+
+	span {
+		top: 45%;
+	}
+
+	ul {
+		background: var(--header-background);
+		border-radius: 8px;
+		border: 1px solid var(--border);
+		top: calc(100% + 15px);
+		width: 380px;
+	}
+
+	ul div {
+		color: var(--font-color);
+	}
+
+	ul div:first-child {
+		padding-top: 16px;
+	}
+`;
 
 export const StyledLogoIcon = styled(CheckoutLogoIcon)`
 	padding-top: 6px;

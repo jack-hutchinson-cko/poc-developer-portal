@@ -5,7 +5,7 @@ import { InformationIcon, NoteIcon, TipIcon, WarningIcon } from '../svg';
 const StyledWrapper = styled.div`
 	border: 1px solid ${(props: { activeBg: string }) => props.activeBg};
 	border-radius: 8px;
-	color: var(--font-color);
+	color: var(--S1000);
 	background: white;
 	display: grid;
 	grid-template-columns: 60px 1fr;

@@ -43,6 +43,10 @@ export const StyledLink = styled.a`
 	letter-spacing: 0em;
 	text-align: left;
 	margin: auto;
+
+	${device.toTablet} {
+		display: none;
+	}
 `;
 
 export const StyledLeftHeader = styled.div`

@@ -1,8 +1,13 @@
 import styled from 'styled-components';
+import { device } from '../../css/tokens';
 
 export const StyledContainer = styled.div`
 	display: flex;
 	gap: 12px;
+
+	${device.toTablet} {
+		display: none;
+	}
 `;
 
 export const StyledLoginLink = styled.div`

@@ -5,7 +5,7 @@ export const ArrowRight = () => (
 		<path
 			d="M2 7.50615L13.5 7.50615M13.5 7.50615L8.99385 12.0123M13.5 7.50615L8.99385 3"
 			stroke="#0C1142"
-			stroke-width="1"
+			strokeWidthidth="1"
 		/>
 	</svg>
 );

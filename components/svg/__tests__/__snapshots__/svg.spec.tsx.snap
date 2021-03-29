@@ -14,7 +14,7 @@ exports[`svgs ApiRef 1`] = `
   <path
     d="M3.5 5.5L1 8l2.5 2.5M12.5 10.5L15 8l-2.5-2.5M10.5 3.5l-5 9"
     stroke="#0C1142"
-    stroke-linecap="round"
+    strokeLinecap="round"
   />
 </svg>
 `;
@@ -30,7 +30,7 @@ exports[`svgs ArrowRight 1`] = `
   <path
     d="M2 7.50615L13.5 7.50615M13.5 7.50615L8.99385 12.0123M13.5 7.50615L8.99385 3"
     stroke="#0C1142"
-    stroke-width="1"
+    strokeWidthidth="1"
   />
 </svg>
 `;
@@ -138,7 +138,7 @@ exports[`svgs FAQ 1`] = `
   <path
     d="M15 15.5L12.5 13"
     stroke="#0C1142"
-    stroke-linecap="round"
+    strokeLinecap="round"
   />
 </svg>
 `;
@@ -320,26 +320,26 @@ exports[`svgs TestAccount 1`] = `
   <path
     d="M15.5 7.5v5a2 2 0 01-2 2h-11a2 2 0 01-2-2"
     stroke="#00122C"
-    stroke-dasharray="1 2"
-    stroke-linecap="round"
-    stroke-width="1"
+    strokeDasharray="1 2"
+    strokeLinecap="round"
+    strokeWidthidth="1"
   />
   <path
     d="M15.5 5.5v-2a2 2 0 00-2-2h-11a2 2 0 00-2 2v7"
     stroke="#00122C"
-    stroke-linecap="round"
-    stroke-width="1"
+    strokeLinecap="round"
+    strokeWidthidth="1"
   />
   <path
     d="M3 3a.5.5 0 000 1V3zm.5 1a.5.5 0 000-1v1zm2-1a.5.5 0 000 1V3zM6 4a.5.5 0 000-1v1zm2-1a.5.5 0 000 1V3zm.5 1a.5.5 0 000-1v1zM3 4h.5V3H3v1zm2.5 0H6V3h-.5v1zM8 4h.5V3H8v1z"
     fill="#00122C"
-    stroke-width="1"
+    strokeWidthidth="1"
   />
   <path
     d="M.5 5.5h15M4.5 9.5L7 12l4.5-4.5"
     stroke="#00122C"
-    stroke-linecap="round"
-    stroke-width="1"
+    strokeLinecap="round"
+    strokeWidthidth="1"
   />
 </svg>
 `;
@@ -354,26 +354,26 @@ exports[`svgs TheHub 1`] = `
   <path
     d="M15.5 7.5v5a2 2 0 01-2 2h-11a2 2 0 01-2-2"
     stroke="#00122C"
-    stroke-dasharray="1 2"
-    stroke-linecap="round"
-    stroke-width="1"
+    strokeDasharray="1 2"
+    strokeLinecap="round"
+    strokeWidthidth="1"
   />
   <path
     d="M15.5 5.5v-2a2 2 0 00-2-2h-11a2 2 0 00-2 2v7"
     stroke="#00122C"
-    stroke-linecap="round"
-    stroke-width="1"
+    strokeLinecap="round"
+    strokeWidthidth="1"
   />
   <path
     d="M3 3a.5.5 0 000 1V3zm.5 1a.5.5 0 000-1v1zm2-1a.5.5 0 000 1V3zM6 4a.5.5 0 000-1v1zm2-1a.5.5 0 000 1V3zm.5 1a.5.5 0 000-1v1zM3 4h.5V3H3v1zm2.5 0H6V3h-.5v1zM8 4h.5V3H8v1z"
     fill="#00122C"
-    stroke-width="1"
+    strokeWidthidth="1"
   />
   <path
     d="M.5 5.5h15M4.5 9.5L7 12l4.5-4.5"
     stroke="#00122C"
-    stroke-linecap="round"
-    stroke-width="1"
+    strokeLinecap="round"
+    strokeWidthidth="1"
   />
 </svg>
 `;

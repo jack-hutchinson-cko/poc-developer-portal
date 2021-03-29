@@ -5,6 +5,7 @@ export const StyledContainer = styled.div`
 	background: white;
 	border: 1px solid ${colours.S05};
 	box-shadow: 0px 2px 5px rgba(12, 17, 66, 0.15);
+	color: ${colours.S1000};
 	display: flex;
 	flex-direction: column;
 	position: relative;

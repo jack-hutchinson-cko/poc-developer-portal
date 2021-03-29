@@ -7,6 +7,6 @@ export const FAQ = () => (
 			fill="#0C1142"
 		/>
 		<path d="M13.5 10a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0z" stroke="#0C1142" />
-		<path d="M15 15.5L12.5 13" stroke="#0C1142" stroke-linecap="round" />
+		<path d="M15 15.5L12.5 13" stroke="#0C1142" strokeLinecap="round" />
 	</svg>
 );

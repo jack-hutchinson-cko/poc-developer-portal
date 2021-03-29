@@ -42,6 +42,29 @@
     --information: #80E5E9;
     --tip: #70C9B7;
     --warning: #EE6D5F;
+
+    /* light */
+    --background: white;
+    --footer-background: var(--S1000);
+    --header-background: white;
+    --font-color: var(--S1000);
+    --secondary-font-color: var(--S700);
+    --icon-fill: var(--S300);
+    --header-icon-fill: var(--S1000);
+    --toggle-color: var(--S1000);
+    --toggle-circle: white;
+    --btn-primary-bg: var(--S1000);
+    --btn-primary-hover-bg: rgb(61, 65, 104);
+    --btn-primary-font: #FFFFC8;
+    --btn-secondary-background: #2BD4DB;
+    --btn-secondary-font: var(--S1000);
+    --btn-secondary-hover: rgb(107, 225, 230);
+    --btn-tertiary-background: #2BD4DB;
+    --btn-tertiary-hover: rgb(107, 225, 230);
+    --btn-tertiary-font: var(--S1000);
+    --card-link-hover: #2BD4DB;
+    --logo-icon-fill: white;
+    --border: var(--S05);
   }
 
 @font-face {
@@ -71,24 +94,65 @@
     font-stretch: normal;
 }
 
+.dark {
+    --background: #090C30;
+    --footer-background: #000321;
+    --header-background: #090C30;
+    --card-background: #000321;
+    --font-color: white;
+    --secondary-font-color: var(--S10);
+    --toggle-color: var(--S500);
+    --icon-fill: white;
+    --header-icon-fill: white;
+    --toggle-circle: #090C30;
+    --btn-primary-bg: #FFFFC8;
+    --btn-primary-hover-bg: rgb(255, 255, 216);
+    --btn-primary-font:  var(--S1000);
+    --btn-secondary-background: #FFFFC8;
+    --btn-secondary-hover: rgb(255, 255, 216);
+    --btn-secondary-font: var(--S1000);
+    --btn-tertiary-background: #FFFFC8;
+    --btn-tertiary-font: var(--S1000);
+    --btn-tertiary-hover: rgb(107, 225, 230);
+    --card-link-hover: #FFFFC8;
+    --logo-icon-fill: white;
+    --border: var(--S700);
+}
+
 html {
     font-family: "Graphik LCG Web", Arial, sans-serif;
 }
 
-a {
-    color: var(--S1000);
-}
-
 header a {
-    color: var(--S1000)!important;
+    color: var(--font-color)!important;
 }
 
 footer a {
-    color: var(--S20)!important;
+    color: var(--S20);
 }
 
 pre {
     background-color: var(--S05);
+}
+
+aside {
+    background-color: var(--background)!important;
+    border-right: 1px solid var(--border)!important;
+    color: var(--font-color)!important;
+}
+
+#___gatsby {
+    background-color: var(--background);
+    color: var(--font-color)!important;
+}
+
+aside span, aside div, aside i {
+    background-color: var(--background)!important;
+    color: var(--font-color)!important;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, li {
+    color: var(--font-color)!important;
 }
 
 /* Code overrides */
@@ -126,4 +190,20 @@ pre {
 [data-cy="try-it"] {
     color: var(--Y80)!important;
     font-weight: 500;
+}
+
+[type="post"] {
+    background-color: var(--T500)!important;
+}
+[type="get"] {
+    background-color: var(--G500)!important;
+}
+[type="options"] {
+    background-color: #b77ba1!important;
+}
+[type="put"] {
+    background-color: var(--P600)!important;
+}
+[type="delete"] {
+    background-color: var(--R500)!important;
 }

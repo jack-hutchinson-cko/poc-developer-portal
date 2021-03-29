@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
-import { colours } from '../css/tokens';
 
 const StyledContainer = styled.div`
-	background: ${(props: { isDarkMode: boolean }) => (props.isDarkMode ? colours.S500 : colours.S1000)};
+	background: var(--toggle-color);
 	border-radius: 30px;
 	cursor: pointer;
 	display: flex;
@@ -26,16 +25,16 @@ const SunAndMoonStyles = css`
 `;
 
 const StyledMoon = styled.div`
-	${SunAndMoonStyles}
+	${SunAndMoonStyles};
 	justify-content: flex-end;
 `;
 
 const StyledSun = styled.div`
-	${SunAndMoonStyles}
+	${SunAndMoonStyles};
 `;
 
 const StyledThumb = styled.div`
-	background: ${(props: { isDarkMode: boolean }) => (props.isDarkMode ? '#090C30' : 'white')};
+	background: var(--toggle-circle);
 	border-radius: 50%;
 	height: 20px;
 	left: 2px;
@@ -49,8 +48,24 @@ const StyledThumb = styled.div`
 export const ThemeToggle = (): JSX.Element => {
 	const [isDarkMode, setDarkMode] = useState<boolean>(false);
 
+	useEffect(() => {
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.getElementById('___gatsby').className = 'dark';
+			setDarkMode(true);
+		} else {
+			setDarkMode(false);
+		}
+	}, []);
+
+	const toggleTheme = () => {
+		const activeTheme = !isDarkMode ? 'dark' : 'light';
+		window.sessionStorage.setItem('theme', activeTheme);
+		document.getElementById('___gatsby').className = activeTheme;
+		setDarkMode(!isDarkMode);
+	};
+
 	return (
-		<StyledContainer isDarkMode={isDarkMode} onClick={() => setDarkMode(!isDarkMode)}>
+		<StyledContainer onClick={() => toggleTheme()}>
 			<StyledMoon>🌛</StyledMoon>
 			<StyledSun>☀️</StyledSun>
 			<StyledThumb isDarkMode={isDarkMode}></StyledThumb>

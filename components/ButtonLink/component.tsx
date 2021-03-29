@@ -1,14 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colours } from '../css/tokens';
 
 const StyledLink = styled.a`
 	background: ${(props: { hierarchy: Hierarchy }) =>
-		props.hierarchy === 'primary' ? colours.S1000 : colours.primaryTurqoise};
+		props.hierarchy === 'primary' ? 'var(--btn-primary-background)' : 'var(--btn-secondary-background)'};
 	border: none;
 	border-radius: 8px;
 	color: ${(props: { hierarchy: Hierarchy }) =>
-		props.hierarchy === 'primary' ? colours.Y80 : colours.S1000}!important;
+		props.hierarchy === 'primary' ? 'var(--btn-primary-font)!important' : 'var(--btn-secondary-font)!important'};
 	display: inline-block;
 	font-size: 16px;
 	font-weight: 500;
@@ -20,7 +19,8 @@ const StyledLink = styled.a`
 	width: max-content;
 
 	:hover {
-		background: ${colours.S1000_hover};
+		background: ${(props: { hierarchy: Hierarchy }) =>
+			props.hierarchy === 'primary' ? 'var(--btn-primary-hover)' : 'var(--btn-secondary-hover)'};
 	}
 `;
 

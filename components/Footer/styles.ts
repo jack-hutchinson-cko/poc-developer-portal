@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { colours, device } from '../css/tokens';
+import { device } from '../css/tokens';
 
 export const Background = styled.footer`
 	height: 100%;
 	width: 100%;
-	background: ${colours.S1000};
+	background: var(--footer-background);
 	margin-top: 0;
 `;
 
@@ -28,7 +28,7 @@ export const LineSeparator = styled.div`
 	width: 100%;
 	height: 1px;
 	max-width: 1232px;
-	background: ${colours.S1000};
+	background: var(--footer-background);
 	margin: 40px auto;
 `;
 
@@ -38,7 +38,7 @@ export const Section = styled.div`
 	padding: 64px 0px;
 	max-width: 1360px;
 	width: 100%;
-	background-color: ${colours.S1000};
+	background-color: var(--footer-background);
 
 	${device.toLaptopL} {
 		padding: 64px 40px;

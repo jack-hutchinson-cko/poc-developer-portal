@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colours } from '../css/tokens';
 
 const StyledLink = styled.a`
-	color: ${colours.S1000};
+	color: var(--font-color);
 	display: inline-block;
 	font-size: 16px;
 	font-weight: 500;

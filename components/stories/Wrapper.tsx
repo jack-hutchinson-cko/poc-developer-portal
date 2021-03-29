@@ -7,7 +7,8 @@ interface Props {
 
 const StyledWrapper = styled.div`
 	margin: 40px;
-	color: ${colours.S1000};
+	color: ${colours.fontColor};
+	background: ${colours.background};
 `;
 
 const Wrapper = ({ children }: Props): JSX.Element => <StyledWrapper>{children}</StyledWrapper>;

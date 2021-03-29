@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colours, device } from '../css/tokens';
+import { device } from '../css/tokens';
 import { CheckoutLogoIcon } from '../svg';
 
 export const StyledLogoIcon = styled(CheckoutLogoIcon)`
@@ -7,8 +7,9 @@ export const StyledLogoIcon = styled(CheckoutLogoIcon)`
 `;
 
 export const StyledContainer = styled.header`
-	background: white;
-	border-bottom: 1px solid ${colours.S05};
+	background: var(--header-background);
+	border-bottom: 1px solid var(--border);
+	color: var(--font-color);
 	display: flex;
 	justify-content: space-between;
 	padding: 24px 40px;
@@ -29,14 +30,14 @@ export const StyledLogo = styled.a`
 `;
 
 export const StyledLogoText = styled.h3`
-	color: ${colours.S1000};
+	color: var(--font-color);
 	font-size: 24px;
 	line-height: 40px;
 	margin: 0;
 `;
 
 export const StyledLink = styled.a`
-	color: ${colours.S1000};
+	color: var(--font-color);
 	font-size: 16px;
 	line-height: 24px;
 	letter-spacing: 0em;

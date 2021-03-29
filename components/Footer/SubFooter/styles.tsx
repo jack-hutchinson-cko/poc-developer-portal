@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colours, device } from '../../css/tokens';
+import { device } from '../../css/tokens';
 
 export const Container = styled.div`
 	display: flex;
@@ -34,7 +34,7 @@ export const Description = styled.div`
 	font-weight: normal;
 	font-size: 10px;
 	line-height: 18px;
-	color: ${colours.S20};
+	color: var(--S20);
 	margin-top: 16px;
 	width: 30%;
 
@@ -65,7 +65,7 @@ export const LinkItem = styled.a`
 	font-weight: normal;
 	font-size: 11px;
 	line-height: 16px;
-	color: ${colours.S20};
+	color: var(--S20);
 	text-decoration: none;
 	padding-left: 40px;
 	text-align: center;
@@ -94,7 +94,7 @@ export const WrapperLogos = styled.div`
 	}
 
 	svg * {
-		fill: ${colours.S20};
+		fill: var(--logo-icon-fill);
 	}
 
 	${device.toLaptop} {

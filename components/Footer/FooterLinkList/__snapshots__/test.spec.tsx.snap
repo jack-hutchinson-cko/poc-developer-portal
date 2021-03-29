@@ -8,12 +8,12 @@ exports[`FooterLinkList component component matches snapshot 2`] = `
     key="0"
     onClick={[Function]}
   >
-    <styled.p>
+    <styled.div>
       Solution
       <styled.div>
         <Chevron />
       </styled.div>
-    </styled.p>
+    </styled.div>
     <styled.div>
       <styled.div
         isDisplayed={false}
@@ -128,12 +128,12 @@ exports[`FooterLinkList component component matches snapshot 2`] = `
     key="1"
     onClick={[Function]}
   >
-    <styled.p>
+    <styled.div>
       Company
       <styled.div>
         <Chevron />
       </styled.div>
-    </styled.p>
+    </styled.div>
     <styled.div
       isDisplayed={false}
     >
@@ -198,12 +198,12 @@ exports[`FooterLinkList component component matches snapshot 2`] = `
     key="2"
     onClick={[Function]}
   >
-    <styled.p>
+    <styled.div>
       Insights
       <styled.div>
         <Chevron />
       </styled.div>
-    </styled.p>
+    </styled.div>
     <styled.div
       isDisplayed={false}
     >
@@ -235,12 +235,12 @@ exports[`FooterLinkList component component matches snapshot 2`] = `
     key="3"
     onClick={[Function]}
   >
-    <styled.p>
+    <styled.div>
       Resources
       <styled.div>
         <Chevron />
       </styled.div>
-    </styled.p>
+    </styled.div>
     <styled.div
       isDisplayed={false}
     >

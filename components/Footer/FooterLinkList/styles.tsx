@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colours, device } from '../../css/tokens';
+import { device } from '../../css/tokens';
 
 export const Container = styled.div`
 	display: flex;
@@ -21,7 +21,7 @@ export const SolutionsLinksContainer = styled.div`
 	}
 
 	${device.toTablet} {
-		border-bottom: 1px solid ${colours.S05};
+		border-bottom: 1px solid var(--border);
 		margin-top: 40px;
 		padding: 0 0 20px 0;
 		width: auto;
@@ -32,7 +32,7 @@ export const LinksContainer = styled.div`
 	margin-top: 20px;
 
 	${device.toTablet} {
-		border-bottom: 1px solid ${colours.S05};
+		border-bottom: 1px solid var(--border);
 		padding: 0 0 20px 0;
 	}
 `;
@@ -60,7 +60,7 @@ export const ColWrapper = styled.div`
 	}
 `;
 
-export const FooterTitle = styled.p`
+export const FooterTitle = styled.div`
 	font-style: normal;
 	font-weight: 600;
 	font-size: 12px;
@@ -79,11 +79,11 @@ export const FooterLink = styled.a`
 	font-size: 14px;
 	line-height: 40px;
 	text-decoration: none;
-	color: ${colours.S20};
+	color: var(--S20);
 	-webkit-font-smoothing: antialiased;
 
 	:hover div {
-		border-bottom: 1px solid ${colours.S20};
+		border-bottom: 1px solid var(--S20);
 	}
 
 	${(props: { labelHere: boolean }) =>
@@ -95,8 +95,8 @@ export const FooterLink = styled.a`
         font-size: 10px;
         line-height: 16px;
         text-transform: uppercase;
-        color: ${colours.S1000};
-        background: ${colours.primaryTurqoise};
+        color: var(--font-color);
+        background: #2BD4DB;
         border-radius: 4px;
         margin-left: 8px;
         padding: 4px;

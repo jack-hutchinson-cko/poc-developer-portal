@@ -1,4 +1,5 @@
-import { lighten, darken, readableColor } from 'polished';
+import { lighten, darken } from 'polished';
+import { size } from './components/css/tokens';
 
 export const theme = {
 	// spacing: {
@@ -8,14 +9,14 @@ export const theme = {
 	// },
 	breakpoints: {
 		xs: 0,
-		small: '550px',
-		medium: '900px',
-		large: '1200px',
+		small: size.mobileXL,
+		medium: size.laptop,
+		large: size.laptopL,
 	},
 	colors: {
 		// tonalOffset: 0.2,
 		primary: {
-			main: '#0C1141',
+			main: '#0C1142',
 			// light: ({ colors }) => lighten(colors.tonalOffset, colors.primary.main),
 			// dark: ({ colors }) => darken(colors.tonalOffset, colors.primary.main),
 			// contrastText: ({ colors }) => readableColor(colors.primary.main),
@@ -44,10 +45,10 @@ export const theme = {
 		//   dark: ({ colors }) => darken(colors.tonalOffset, colors.info.main),
 		//   contrastText: ({ colors }) => readableColor(colors.info.main),
 		// },
-		text: {
-			primary: '#0C1141',
-			secondary: '#3D4168',
-		},
+		// text: {
+		// 	primary: '#0C1142',
+		// 	secondary: '#3D4168',
+		// },
 		// border: {
 		//   dark: 'rgba(0,0,0, 0.15)',
 		//   light: '#ffffff',
@@ -73,13 +74,13 @@ export const theme = {
 		http: {
 			get: '#009E7E',
 			post: '#3AB9F4',
-			put: '#6964B2',
-			options: '#d3ca12',
+			put: '#b77ba1',
+			options: '#b77ba1',
 			patch: '#F3C25D',
 			delete: '#EE6D5F',
-			basic: '#999',
-			link: '#31bbb6',
-			head: '#c167e4',
+			basic: '#E6E7EC',
+			link: '#0C1142',
+			head: 'white',
 		},
 		// navbar: {
 		//   main: ({ colors }) => colors.primary.main,
@@ -89,15 +90,15 @@ export const theme = {
 	},
 
 	sidebar: {
-		backgroundColor: '#fff',
-		activeBgColor: '#fff',
+		backgroundColor: 'white',
+		activeBgColor: 'white',
 		width: '360px',
-		textColor: '#0C1141',
-		textColorSecondary: '#239b56',
-		activeTextColor: '#0C1141',
-		separatorLineColor: '#e67e22',
-		separatorLabelColor: '#e67e22',
-		caretColor: '#0C1141',
+		textColor: '#0C1142',
+		textColorSecondary: '#3D4168',
+		activeTextColor: '#0C1142',
+		separatorLineColor: '#E6E7EC',
+		separatorLabelColor: '#E6E7EC',
+		caretColor: '#0C1142',
 		fontFamily: '"Graphik LCG Web", sans-serif',
 		fontSize: '16px',
 		offsetLeft: 8,
@@ -127,13 +128,11 @@ export const theme = {
 			fontWeight: '500',
 			fontFamily: ({ typography }) => typography.headings.fontFamily,
 			lineHeight: ({ typography }) => typography.lineHeight,
-			color: ({ colors }) => colors.primary.main,
 			capitalize: false,
 		},
 		heading2: {
 			fontSize: '32px',
 			fontWeight: '500',
-			color: ({ colors }) => colors.text.primary,
 			fontFamily: ({ typography }) => typography.headings.fontFamily,
 			lineHeight: ({ typography }) => typography.lineHeight,
 			capitalize: false,
@@ -141,7 +140,6 @@ export const theme = {
 		heading3: {
 			fontSize: '24px',
 			fontWeight: '500',
-			color: ({ colors }) => colors.text.primary,
 			fontFamily: ({ typography }) => typography.headings.fontFamily,
 			lineHeight: ({ typography }) => typography.lineHeight,
 			capitalize: false,
@@ -160,7 +158,7 @@ export const theme = {
 			fontSize: '14px',
 			fontFamily: 'Courier, monospace',
 			fontWeight: ({ typography }) => typography.fontWeightRegular,
-			color: '#0C1141',
+			color: '#0C1142',
 			backgroundColor: '#E6E7EC',
 			wrap: false,
 		},
@@ -177,10 +175,10 @@ export const theme = {
 	rightPanel: {
 		backgroundColor: '#E6E7EC',
 		width: '40%',
-		textColor: '#0C1141',
+		textColor: '#0C1142',
 	},
 	schema: {
-		nestedBackground: '#FFFFFF',
+		nestedBackground: 'white',
 		// linesColor: theme => lighten( theme.colors.tonalOffset, desaturate(theme.colors.tonalOffset, theme.colors.primary.main) ),
 		// defaultDetailsWidth: '75%',
 		// typeNameColor: theme => theme.colors.text.secondary,
@@ -196,6 +194,6 @@ export const theme = {
 	codeBlock: {
 		backgroundColor: ({ rightPanel }) => darken(0.1, rightPanel.backgroundColor),
 		tokens: {},
-		textColor: '#0C1141',
+		textColor: '#0C1142',
 	},
 };

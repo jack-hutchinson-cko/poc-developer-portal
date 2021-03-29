@@ -1,14 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colours } from '../css/tokens';
 import { CardArrow } from '../svg';
 
 const StyledContainer = styled.a`
 	background: transparent;
 	border-radius: 8px;
-	border: 1px solid ${colours.S05};
+	border: 1px solid var(--border);
 	box-shadow: rgb(0 18 44 / 15%) 0px 1px 3px;
-	color: ${colours.S1000};
+	color: var(--font-color);
 	display: flex;
 	flex-direction: column;
 	padding: 32px 32px 40px;
@@ -16,12 +15,12 @@ const StyledContainer = styled.a`
 	text-decoration: none;
 
 	:hover {
-		border: 1px solid ${colours.primaryTurqoise};
+		border: 1px solid var(--card-link-hover);
 		text-decoration: none;
 	}
 `;
 
-const StyledTitle = styled.div`
+const StyledTitle = styled.h3`
 	font-size: 24px;
 	font-weight: 500;
 	margin: 0px;

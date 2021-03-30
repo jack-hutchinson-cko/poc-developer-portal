@@ -1,12 +1,7 @@
-import { lighten, darken } from 'polished';
+import { lighten } from 'polished';
 import { size } from './components/css/tokens';
 
 export const theme = {
-	// spacing: {
-	//   unit: 5,
-	//   sectionHorizontal: ({ spacing }) => spacing.unit * 8,
-	//   sectionVertical: ({ spacing }) => spacing.unit * 8,
-	// },
 	breakpoints: {
 		xs: 0,
 		small: size.mobileXL,
@@ -14,63 +9,9 @@ export const theme = {
 		large: size.laptopL,
 	},
 	colors: {
-		// tonalOffset: 0.2,
 		primary: {
 			main: '#0C1142',
-			// light: ({ colors }) => lighten(colors.tonalOffset, colors.primary.main),
-			// dark: ({ colors }) => darken(colors.tonalOffset, colors.primary.main),
-			// contrastText: ({ colors }) => readableColor(colors.primary.main),
 		},
-		// success: {
-		//   main: '#70C9B7',
-		//   light: ({ colors }) => lighten(colors.tonalOffset * 3, colors.success.main),
-		//   dark: ({ colors }) => darken(colors.tonalOffset, colors.success.main),
-		//   contrastText: ({ colors }) => readableColor(colors.success.main),
-		// },
-		// note: {
-		//   main: '#F3C25D',
-		//   light: ({ colors }) => lighten(colors.tonalOffset * 2, colors.note.main),
-		//   dark: ({ colors }) => darken(colors.tonalOffset, colors.note.main),
-		//   contrastText: ({ colors }) => readableColor(colors.note.main),
-		// },
-		// warning: {
-		//   main: '#EE6D5F',
-		//   light: ({ colors }) => lighten(colors.tonalOffset * 2, colors.warning.main),
-		//   dark: ({ colors }) => darken(colors.tonalOffset, colors.warning.main),
-		//   contrastText: ({ colors }) => readableColor(colors.warning.main),
-		// },
-		// info: {
-		//   main: '#80E5E9',
-		//   light: ({ colors }) => lighten(colors.tonalOffset * 2, colors.info.main),
-		//   dark: ({ colors }) => darken(colors.tonalOffset, colors.info.main),
-		//   contrastText: ({ colors }) => readableColor(colors.info.main),
-		// },
-		// text: {
-		// 	primary: '#0C1142',
-		// 	secondary: '#3D4168',
-		// },
-		// border: {
-		//   dark: 'rgba(0,0,0, 0.15)',
-		//   light: '#ffffff',
-		// },
-		// responses: {
-		//   success: {
-		//     color: ({ colors }) => colors.success.main,
-		//     backgroundColor: ({ colors }) => transparentize(0.9, colors.success.main),
-		//   },
-		//   error: {
-		//     color: ({ colors }) => colors.error.main,
-		//     backgroundColor: ({ colors }) => transparentize(0.9, colors.error.main),
-		//   },
-		//   redirect: {
-		//     color: ({ colors }) => colors.warning.main,
-		//     backgroundColor: ({ colors }) => transparentize(0.9, colors.responses.redirect.color),
-		//   },
-		//   info: {
-		//     color: ({ colors }) => colors.info.main,
-		//     backgroundColor: ({ colors }) => transparentize(0.9, colors.responses.info.color),
-		//   },
-		// },
 		http: {
 			get: '#009E7E',
 			post: '#3AB9F4',
@@ -82,13 +23,10 @@ export const theme = {
 			link: '#0C1142',
 			head: 'white',
 		},
-		// navbar: {
-		//   main: ({ colors }) => colors.primary.main,
-		//   gradient: ({ colors }) => darken(colors.tonalOffset / 2, colors.navbar.main),
-		//   contrastText: 'white'
-		// },
 	},
-
+	navbar: {
+		main: '#8688A0',
+	},
 	sidebar: {
 		backgroundColor: 'white',
 		activeBgColor: 'white',
@@ -108,10 +46,6 @@ export const theme = {
 			paddingVertical: 8,
 		},
 	},
-	// tocPanel: {
-	//   width: '240px',
-	// },
-
 	typography: {
 		fontSize: '16px',
 		lineHeight: '1.5em',
@@ -145,15 +79,6 @@ export const theme = {
 			capitalize: false,
 			margin: 0,
 		},
-		// heading4: {
-		// // ...
-		// },
-		// heading5: {
-		// // ...
-		// },
-		// heading6: {
-		// // ...
-		// },
 		code: {
 			fontSize: '14px',
 			fontFamily: 'Courier, monospace',
@@ -179,20 +104,9 @@ export const theme = {
 	},
 	schema: {
 		nestedBackground: 'white',
-		// linesColor: theme => lighten( theme.colors.tonalOffset, desaturate(theme.colors.tonalOffset, theme.colors.primary.main) ),
-		// defaultDetailsWidth: '75%',
-		// typeNameColor: theme => theme.colors.text.secondary,
-		// typeTitleColor: theme => theme.schema.typeNameColor,
-		// requireLabelColor: theme => theme.colors.error.main,
-		// labelsTextSize: '0.9em',
-		// nestingSpacing: '1em',
-		// arrow: {
-		//   size: '1.1em',
-		//   color: theme => theme.colors.text.secondary,
-		// },
 	},
 	codeBlock: {
-		backgroundColor: ({ rightPanel }) => darken(0.1, rightPanel.backgroundColor),
+		backgroundColor: ({ rightPanel }) => rightPanel.backgroundColor,
 		tokens: {},
 		textColor: '#0C1142',
 	},

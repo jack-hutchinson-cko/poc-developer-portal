@@ -10,3 +10,5 @@ openApiGenerator/.vs/
 yarn-error.log
 
 coverage
+
+developer-portal/swagger.*

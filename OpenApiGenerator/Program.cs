@@ -11,7 +11,7 @@ namespace openApiGenerator
   class Program
   {
     static string _outputDirectory = "output";
-    static string _specDirectory = "developer-portal/spec";
+    static string _specDirectory = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "abc" ? "developer-portal/abc_spec" : "developer-portal/nas_spec";
     static string _yamlOutputFile = "developer-portal/swagger.yaml";
     static string _jsonOutputFile = "developer-portal/swagger.json";
     static List<CodeSample> _codeSamples = new List<CodeSample>();

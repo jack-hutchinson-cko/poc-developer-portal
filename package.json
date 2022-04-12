@@ -7,6 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./scripts/build.js && redocly-portal develop -p 3000",
+    "start:abc": "ACCOUNT=abc node ./scripts/build.js && redocly-portal develop -p 3000",
+    "start:nas": "ACCOUNT=nas node ./scripts/build.js && redocly-portal develop -p 3000",
     "build": "redocly-portal build",
     "clean": "redocly-portal clean",
     "storybook": "start-storybook -p 6006",

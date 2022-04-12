@@ -1,10 +1,12 @@
 #!/usr/bin/env node
-'use strict';
+"use strict";
 
-require('shelljs/global');
-set('-e');
+require("shelljs/global");
+set("-e");
 
-exec('dotnet build ./openApiGenerator/OpenApiGenerator.csproj');
-exec('dotnet run -p ./openApiGenerator/OpenApiGenerator.csproj');
+exec("dotnet build ./OpenApiGenerator/OpenApiGenerator.csproj");
+exec(
+  `ASPNETCORE_ENVIRONMENT=${process.env.ACCOUNT} dotnet run -p ./OpenApiGenerator/OpenApiGenerator.csproj`
+);
 
-rm('-rf', 'output');
+rm("-rf", "output");

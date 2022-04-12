@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    { 
+      "source": "/",
+      "destination": "/developer-portal/reference/overview/", 
+      "permanent": true
+    }
+  ]
+}

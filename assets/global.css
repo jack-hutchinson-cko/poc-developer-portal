@@ -287,3 +287,11 @@ span::before, span::after {
 button {
     border-radius: 8px;
 }
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
+aside a div {
+    margin-left: 24px;
+}

@@ -10,7 +10,7 @@ export const StyledLink = styled.a<Props>`
   font-weight: inherit;
   line-height: inherit;
   cursor: pointer;
-  color: var(--footer-secondary-color);
+  color: var(--footer-secondary-color) !important;
 
   &:hover {
     text-decoration: ${({ isUnderlined }) =>

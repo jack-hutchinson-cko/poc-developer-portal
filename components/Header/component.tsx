@@ -16,7 +16,7 @@ import {
 const Header = (): JSX.Element => (
 	<StyledContainer>
 		<StyledLeftHeader>
-			<StyledLogo href="/">
+			<StyledLogo href="/developer-portal/api/swagger-reference/overview/">
 				<StyledLogoIcon />
 				<StyledLogoText>Documentation</StyledLogoText>
 			</StyledLogo>

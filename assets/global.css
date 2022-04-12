@@ -166,6 +166,10 @@ p, span, a, li {
     color: var(--font-secondary-color)!important;
 }
 
+h1 *, h2 *, h3 * {
+    color: var(--font-primary-color)!important;
+}
+
 /* Code overrides */
 
 .token.property.string, .tab-error, .collapser {

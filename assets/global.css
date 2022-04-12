@@ -42,12 +42,17 @@
     --information: #80E5E9;
     --tip: #70C9B7;
     --warning: #EE6D5F;
-
+    --footer-primary-color: white;
+    --footer-secondary-color: #B6B8C6;
+    
     /* light */
     --background: white;
     --footer-background: var(--S1000);
     --header-background: white;
     --font-color: var(--S1000);
+    --font-secondary-color: var(--S700);
+    --footer-primary-color: white;
+    --footer-secondary-color: #B6B8C6;
     --secondary-font-color: var(--S700);
     --icon-fill: var(--S300);
     --header-icon-fill: var(--S1000);
@@ -102,6 +107,7 @@
     --header-background: #090C30;
     --card-background: #000321;
     --font-color: white;
+    --font-secondary-color: var(--S05);
     --secondary-font-color: var(--S10);
     --toggle-color: var(--S500);
     --icon-fill: white;
@@ -131,10 +137,6 @@ header a {
     color: var(--font-color)!important;
 }
 
-footer a {
-    color: var(--S20);
-}
-
 pre {
     background-color: var(--code-background);
 }
@@ -156,8 +158,12 @@ aside span, aside div, aside i {
     transition: none!important;
 }
 
-h1, h2, h3, h4, h5, h6, p, span, a, li {
+h1, h2, h3, h4, h5, h6 {
     color: var(--font-color)!important;
+}
+
+p, span, a, li {
+    color: var(--font-secondary-color)!important;
 }
 
 /* Code overrides */

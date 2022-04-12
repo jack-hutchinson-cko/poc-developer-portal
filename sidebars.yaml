@@ -1,3 +1,5 @@
 checkout:
   - page: developer-portal/api/swagger-reference.page.yaml
     expanded: true
+  - Group: Extra page
+  - page: developer-portal/docs/index.mdx
